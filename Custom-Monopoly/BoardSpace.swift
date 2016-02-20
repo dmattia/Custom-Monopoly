@@ -9,26 +9,48 @@
 import Foundation
 
 protocol BoardSpace {
-    var board_index : Int {get}
+    var space_name : String {get}
 }
 
 extension BoardSpace {
-    func on_land() {}
-    func on_leave() {}
+    func on_land() {
+        print("landed on space: \(self.space_name)")
+    }
+    func on_leave() {
+        print("leaving space: \(self.space_name)")
+    }
 }
 
-class Property: BoardSpace {
-    var board_index : Int
-    
-    func on_land() {
-        print("landed on space number: \(self.board_index)")
+protocol Ownable : BoardSpace {
+    var space_name : String {get}
+    var price : Int {get}
+}
+
+extension Ownable {
+    func on_buy() {
+        print("Bought property: \(self.space_name)")
     }
-    
-    func on_leave() {
-        print("leaving space number: \(self.board_index)")
+    func on_mortgage() {
+        print("Mortgaged property: \(self.space_name)")
     }
+}
+
+class Property: Ownable {
+    var space_name : String
+    var price : Int
     
-    init(index: Int) {
-        self.board_index = index
+    init(name: String, cost: Int) {
+        self.space_name = name
+        self.price = cost
+    }
+}
+
+class Railroad : Ownable {
+    var space_name : String
+    var price : Int
+    
+    init(name: String, cost: Int) {
+        self.space_name = name
+        self.price = cost
     }
 }

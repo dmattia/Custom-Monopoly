@@ -16,6 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let gameBoard = Board(name: "Monopoly Board")
+        var index = 0
+        
+        while(true) {
+            gameBoard.displayBoardSpace(index)
+            index += 1
+            sleep(1)
+        }
+        
         return true
     }
 
