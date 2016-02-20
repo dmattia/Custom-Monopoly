@@ -15,13 +15,13 @@ class RightToLeftSegue: UIStoryboardSegue {
         let src: UIViewController = self.sourceViewController 
         let dst: UIViewController = self.destinationViewController 
         let transition: CATransition = CATransition()
-        let timeFunc : CAMediaTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        let timeFunc : CAMediaTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         transition.duration = 1.25
         transition.timingFunction = timeFunc
         transition.type = kCATransitionPush
         transition.subtype = kCATransitionFromLeft
         src.navigationController!.view.layer.addAnimation(transition, forKey: kCATransition)
-        src.navigationController!.pushViewController(dst, animated: false)
+        src.navigationController!.pushViewController(dst, animated: true)
     }
     
 }

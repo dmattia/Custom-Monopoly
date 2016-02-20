@@ -26,6 +26,23 @@ class PropertyViewController: UIViewController {
         }
     }
     
+    func moveToNextVC() {
+        if nextSpace is Property {
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let nextVC = storyBoard.instantiateViewControllerWithIdentifier("Property") as? PropertyViewController
+            nextVC!.property = nextSpace as? Property
+            
+            let navController = UINavigationController(rootViewController: nextVC!)
+            let segue = RightToLeftSegue(identifier: "PropertyToProperty", source: self, destination: nextVC!, performHandler: { () -> Void in })
+
+            segue.perform()
+        } else if nextSpace is Railroad {
+            self.performSegueWithIdentifier("PropertyToNon", sender: nil)
+        } else {
+            print("I'm confused man")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         nextSpace = myVars.gameBoard.getBoardSpace((property?.board_index)! + 1)
@@ -34,20 +51,17 @@ class PropertyViewController: UIViewController {
         self.navigationController?.navigationBarHidden = true
     }
     
+    func waitForCompletion(completion: () -> Void) {
+            completion()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        sleep(1)
+        moveToNextVC()
+    }
+    
     @IBAction func nextClicked(sender: AnyObject) {
-        if nextSpace is Property {
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let nextVC = storyBoard.instantiateViewControllerWithIdentifier("Property") as? PropertyViewController
-            nextVC!.property = nextSpace as? Property
-            
-            let navController = UINavigationController(rootViewController: nextVC!)
-            let segue = RightToLeftSegue(identifier: "PropertyToProperty", source: self, destination: nextVC!, performHandler: { () -> Void in})
-            segue.perform()
-        } else if nextSpace is Railroad {
-            self.performSegueWithIdentifier("PropertyToNon", sender: nil)
-        } else {
-            print("I'm confused man")
-        }
+        moveToNextVC()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
