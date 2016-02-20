@@ -31,13 +31,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hC-L7-jDR">
-                                <rect key="frame" x="284" y="285" width="32" height="30"/>
-                                <state key="normal" title="Next"/>
-                                <connections>
-                                    <action selector="nextClicked:" destination="ZTD-I8-fT5" eventType="touchUpInside" id="eHG-fc-BvU"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1l8-ym-8tR">
                                 <rect key="frame" x="240" y="240" width="120" height="120"/>
                                 <constraints>
@@ -95,10 +88,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6C-5J-mfA">
-                                <rect key="frame" x="20" y="130" width="560" height="340"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6C-5J-mfA">
+                                <rect key="frame" x="20" y="466" width="560" height="114"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="45"/>
                                 <state key="normal" title="Play">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -106,18 +99,42 @@
                                     <action selector="playButtonPressed:" destination="dvS-ge-9Cn" eventType="touchUpInside" id="6q5-5w-yqW"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Customonopoly" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeL-AB-Cul">
+                                <rect key="frame" x="153" y="87" width="294" height="105"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="35"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Xr1-r3-Uvc">
+                                <rect key="frame" x="253" y="270" width="94" height="29"/>
+                                <connections>
+                                    <action selector="stepperPressed:" destination="dvS-ge-9Cn" eventType="valueChanged" id="zFG-pk-WlF"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdH-M1-lsS">
+                                <rect key="frame" x="253" y="216" width="94" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="leadingMargin" secondItem="q6C-5J-mfA" secondAttribute="leading" id="8dD-Pq-i9A"/>
-                            <constraint firstItem="q6C-5J-mfA" firstAttribute="centerX" secondItem="2YN-eI-Xck" secondAttribute="centerX" id="Gi2-xV-GSf"/>
-                            <constraint firstItem="q6C-5J-mfA" firstAttribute="top" secondItem="ifr-S6-fvf" secondAttribute="bottom" constant="110" id="QG3-zz-MmY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="q6C-5J-mfA" secondAttribute="trailing" id="c1C-rQ-vDq"/>
-                            <constraint firstItem="q6C-5J-mfA" firstAttribute="centerY" secondItem="2YN-eI-Xck" secondAttribute="centerY" id="xXU-Xg-fwH"/>
+                            <constraint firstItem="qeL-AB-Cul" firstAttribute="top" secondItem="ifr-S6-fvf" secondAttribute="bottom" constant="23" id="100-w4-uP3"/>
+                            <constraint firstItem="Xr1-r3-Uvc" firstAttribute="centerX" secondItem="2YN-eI-Xck" secondAttribute="centerX" id="1NS-eL-CTH"/>
+                            <constraint firstItem="jdH-M1-lsS" firstAttribute="top" secondItem="qeL-AB-Cul" secondAttribute="bottom" constant="24" id="Ibm-Jw-Csl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="q6C-5J-mfA" secondAttribute="trailing" id="WLr-Wk-2fU"/>
+                            <constraint firstItem="qeL-AB-Cul" firstAttribute="centerX" secondItem="2YN-eI-Xck" secondAttribute="centerX" id="dfE-kK-avQ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="q6C-5J-mfA" secondAttribute="leading" id="egU-Ba-IEk"/>
+                            <constraint firstItem="Xr1-r3-Uvc" firstAttribute="top" secondItem="jdH-M1-lsS" secondAttribute="bottom" constant="8" id="fWr-y0-g8E"/>
+                            <constraint firstItem="jdH-M1-lsS" firstAttribute="centerX" secondItem="2YN-eI-Xck" secondAttribute="centerX" id="jXm-AW-cjm"/>
+                            <constraint firstItem="Gi1-iP-4f5" firstAttribute="top" secondItem="q6C-5J-mfA" secondAttribute="bottom" constant="20" id="oq2-uU-y28"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gFZ-Sm-UTj"/>
                     <connections>
+                        <outlet property="playerCountLabel" destination="jdH-M1-lsS" id="cew-0H-he4"/>
+                        <outlet property="stepper" destination="Xr1-r3-Uvc" id="uCv-Cm-7vC"/>
                         <segue destination="ZTD-I8-fT5" kind="show" identifier="MenuToProperty" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="NCb-oe-77j"/>
                         <segue destination="Hdb-GZ-MTo" kind="show" identifier="MenuToChance" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="oY3-Kn-4Qi"/>
                         <segue destination="tps-V5-hqA" kind="show" identifier="MenuToNon" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="Qt3-C8-Fb6"/>
@@ -145,8 +162,8 @@
                                     <constraint firstAttribute="height" constant="375" id="qQP-Bz-nu3"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Goblet of Fire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbB-FP-BxZ">
-                                <rect key="frame" x="20" y="46" width="560" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goblet of Fire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbB-FP-BxZ">
+                                <rect key="frame" x="20" y="46" width="560" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -195,7 +212,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="hogwarts express" translatesAutoresizingMaskIntoConstraints="NO" id="lAf-ks-hbB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="hogwarts express" translatesAutoresizingMaskIntoConstraints="NO" id="lAf-ks-hbB">
                                 <rect key="frame" x="20" y="99" width="560" height="407"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="$400" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hvt-n3-2N8">
@@ -204,13 +221,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0p-58-Fdu">
-                                <rect key="frame" x="284" y="285" width="32" height="30"/>
-                                <state key="normal" title="Next"/>
-                                <connections>
-                                    <action selector="nextClicked:" destination="tps-V5-hqA" eventType="touchUpInside" id="FN5-di-4i0"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xtL-Na-8F2">
                                 <rect key="frame" x="240" y="240" width="120" height="120"/>
                                 <constraints>
@@ -218,7 +228,7 @@
                                     <constraint firstAttribute="width" constant="120" id="roJ-4Z-cLb"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Hogwarts Express" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SE-ax-Tjc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Hogwarts Express" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SE-ax-Tjc">
                                 <rect key="frame" x="20" y="49" width="560" height="42"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -280,8 +290,8 @@
         <image name="hogwarts express" width="1500" height="1177"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HD0-Py-gk7"/>
+        <segue reference="J1s-cW-lBp"/>
+        <segue reference="aY6-CT-a5H"/>
         <segue reference="Mso-c9-KcU"/>
-        <segue reference="ATZ-t4-onc"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -17,6 +17,16 @@ class ChanceViewController : UIViewController {
     var boardSpace : MiscSpace?
     var nextSpace : BoardSpace?
     
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        if motion == .MotionShake {
+            moveToNextVC()
+        }
+    }
+    
     func display() {
         if let boardSpace = boardSpace {
             self.nameLabel.text = boardSpace.space_name
@@ -24,6 +34,12 @@ class ChanceViewController : UIViewController {
     }
     
     func moveToNextVC() {
+        let window = UIApplication.sharedApplication().keyWindow
+        
+        window!.addSubview(self.gamePieceImageView)
+        window!.bringSubviewToFront(self.gamePieceImageView)
+        window!.makeKeyAndVisible()
+
         if nextSpace is MiscSpace {
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let nextVC = storyBoard.instantiateViewControllerWithIdentifier("Chance") as? ChanceViewController
@@ -59,14 +75,21 @@ class ChanceViewController : UIViewController {
         self.navigationController?.navigationBarHidden = true
     }
     
+    override func viewWillAppear(animated: Bool) {
+        gamePieceImageView.hidden = true
+    }
+    
     override func viewDidAppear(animated: Bool) {
-        // TODO: Display the active user
-        //let active_player = myVars.gameplay.getActivePlayer()
+        gamePieceImageView.hidden = false
+        
+        let window = UIApplication.sharedApplication().keyWindow
+        
+        window!.addSubview(self.gamePieceImageView)
+        window!.sendSubviewToBack(self.gamePieceImageView)
+        window!.makeKeyAndVisible()
         
         if !myVars.gameplay.hasRolled {
-            myVars.gameplay.hasRolled = true
-            myVars.gameplay.movesLeftInTurn = random() % 11 + 2
-            print("Rolled a \(myVars.gameplay.movesLeftInTurn)")
+            myVars.gameplay.newTurn()
         }
         if myVars.gameplay.movesLeftInTurn > 0 {
             sleep(1)

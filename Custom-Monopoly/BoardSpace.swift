@@ -25,6 +25,7 @@ extension BoardSpace {
 protocol Ownable : BoardSpace {
     var space_name : String {get}
     var price : Int {get}
+    var owner : Player? {get}
 }
 
 extension Ownable {
@@ -41,12 +42,14 @@ class Property: Ownable {
     var space_name : String
     var price : Int
     var color : UIColor
+    var owner : Player?
     
     init(name: String, cost: Int, index: Int, color: UIColor) {
         self.space_name = name
         self.price = cost
         self.board_index = index
         self.color = color
+        self.owner = nil
     }
 }
 
@@ -54,11 +57,13 @@ class Railroad : Ownable {
     var board_index : Int
     var space_name : String
     var price : Int
+    var owner : Player?
     
     init(name: String, cost: Int, index: Int) {
         self.space_name = name
         self.price = cost
         self.board_index = index
+        self.owner = nil
     }
 }
 
@@ -67,9 +72,9 @@ class MiscSpace : BoardSpace {
     var space_name : String
     var board_index : Int
     
-    init(name: String, board_index: Int) {
+    init(name: String, index: Int) {
         space_name = name
-        self.board_index = board_index
+        self.board_index = index
     }
 }
 

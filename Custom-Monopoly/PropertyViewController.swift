@@ -15,6 +15,16 @@ class PropertyViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var gamePieceImageView: UIImageView!
     
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        if motion == .MotionShake {
+            moveToNextVC()
+        }
+    }
+    
     var property : Property?
     var nextSpace : BoardSpace?
     
@@ -27,7 +37,15 @@ class PropertyViewController: UIViewController {
     }
     
     func moveToNextVC() {
+        let window = UIApplication.sharedApplication().keyWindow
+        
+        window!.addSubview(self.gamePieceImageView)
+        window!.bringSubviewToFront(self.gamePieceImageView)
+        window!.makeKeyAndVisible()
+                
         if nextSpace is Property {
+            self.gamePieceImageView.hidden = true
+            
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let nextVC = storyBoard.instantiateViewControllerWithIdentifier("Property") as? PropertyViewController
             nextVC!.property = nextSpace as? Property
@@ -40,8 +58,6 @@ class PropertyViewController: UIViewController {
             self.performSegueWithIdentifier("PropertyToNon", sender: nil)
         } else if nextSpace is MiscSpace {
             self.performSegueWithIdentifier("PropertyToChance", sender: nil)
-        } else {
-            print("I'm confused man")
         }
     }
     
@@ -63,16 +79,23 @@ class PropertyViewController: UIViewController {
         self.navigationController?.navigationBarHidden = true
     }
     
+    override func viewWillAppear(animated: Bool) {
+        gamePieceImageView.hidden = true
+    }
+    
     override func viewDidAppear(animated: Bool) {
-        // TODO: Display the active user
+        gamePieceImageView.hidden = false
+        
+        let window = UIApplication.sharedApplication().keyWindow
+        
+        window!.addSubview(self.gamePieceImageView)
+        window!.sendSubviewToBack(self.gamePieceImageView)
+        window!.makeKeyAndVisible()
         
         if !myVars.gameplay.hasRolled {
-            print("Rolling dice...")
-            sleep(3)
-            myVars.gameplay.hasRolled = true
-            myVars.gameplay.movesLeftInTurn = random() % 11 + 2
-            print("Rolled a \(myVars.gameplay.movesLeftInTurn)")
+            myVars.gameplay.newTurn()
         }
+        
         if myVars.gameplay.movesLeftInTurn > 0 {
             sleep(1)
             property?.on_leave()
@@ -84,10 +107,6 @@ class PropertyViewController: UIViewController {
             myVars.gameplay.gameTurn += 1
             myVars.gameplay.hasRolled = false
         }
-    }
-    
-    @IBAction func nextClicked(sender: AnyObject) {
-        moveToNextVC()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
