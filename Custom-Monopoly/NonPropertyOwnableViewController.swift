@@ -36,6 +36,8 @@ class NonPropertyOwnableViewController: UIViewController {
             segue.perform()
         } else if nextSpace is Property {
             self.performSegueWithIdentifier("NonToProperty", sender: nil)
+        } else if nextSpace is MiscSpace {
+            self.performSegueWithIdentifier("NonToChance", sender: nil)
         } else {
             print("I'm confused man")
         }
@@ -91,7 +93,8 @@ class NonPropertyOwnableViewController: UIViewController {
             destinationVC?.property = nextSpace as? Property
             print("Going to property: \(nextSpace)")
         } else if segue.identifier == "NonToChance" {
-            /// TODO: DO this
+            let destinationVC = segue.destinationViewController as? ChanceViewController
+            destinationVC?.boardSpace = nextSpace as? MiscSpace
         }
     }
 }

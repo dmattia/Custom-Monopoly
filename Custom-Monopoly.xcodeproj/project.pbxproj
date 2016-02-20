@@ -20,6 +20,7 @@
 		F1C949D61C789602006A6A86 /* Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C949D51C789602006A6A86 /* Gameplay.swift */; };
 		F1C949D81C78962F006A6A86 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C949D71C78962F006A6A86 /* Player.swift */; };
 		F1C949DA1C7897F0006A6A86 /* globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C949D91C7897F0006A6A86 /* globals.swift */; };
+		F1C949DC1C78B05A006A6A86 /* ChanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C949DB1C78B05A006A6A86 /* ChanceViewController.swift */; };
 		F1FC69E31C7826BE006C2611 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FC69E21C7826BE006C2611 /* AppDelegate.swift */; };
 		F1FC69E81C7826BE006C2611 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1FC69E61C7826BE006C2611 /* Main.storyboard */; };
 		F1FC69EA1C7826BE006C2611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1FC69E91C7826BE006C2611 /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		F1C949D51C789602006A6A86 /* Gameplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gameplay.swift; sourceTree = "<group>"; };
 		F1C949D71C78962F006A6A86 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		F1C949D91C7897F0006A6A86 /* globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = globals.swift; sourceTree = "<group>"; };
+		F1C949DB1C78B05A006A6A86 /* ChanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChanceViewController.swift; sourceTree = "<group>"; };
 		F1FC69DF1C7826BE006C2611 /* Custom-Monopoly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Custom-Monopoly.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1FC69E21C7826BE006C2611 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1FC69E71C7826BE006C2611 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 			children = (
 				F1FC69FE1C784455006C2611 /* PropertyViewController.swift */,
 				F1FC6A001C784EC4006C2611 /* NonPropertyOwnableViewController.swift */,
+				F1C949DB1C78B05A006A6A86 /* ChanceViewController.swift */,
 				F1FC6A021C786122006C2611 /* MenuViewController.swift */,
 			);
 			name = "View Controllers";
@@ -267,6 +270,7 @@
 				F1FC6A031C786122006C2611 /* MenuViewController.swift in Sources */,
 				F1C949C71C787256006A6A86 /* CoreImageTransition.m in Sources */,
 				F1FC69FD1C783682006C2611 /* BoardSpace.swift in Sources */,
+				F1C949DC1C78B05A006A6A86 /* ChanceViewController.swift in Sources */,
 				F1FC69E31C7826BE006C2611 /* AppDelegate.swift in Sources */,
 				F1C949C81C787256006A6A86 /* CoreImageTransitionHelper.m in Sources */,
 				F1C949D21C787E40006A6A86 /* RightToLeftSegue.swift in Sources */,

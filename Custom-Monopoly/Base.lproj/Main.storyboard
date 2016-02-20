@@ -127,10 +127,10 @@
             </objects>
             <point key="canvasLocation" x="1048" y="-356"/>
         </scene>
-        <!--View Controller-->
+        <!--Chance View Controller-->
         <scene sceneID="hRR-uE-lum">
             <objects>
-                <viewController storyboardIdentifier="Chance" id="Hdb-GZ-MTo" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Chance" id="Hdb-GZ-MTo" customClass="ChanceViewController" customModule="Custom_Monopoly" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bzb-0c-npF"/>
                         <viewControllerLayoutGuide type="bottom" id="IWN-Bt-Y7Q"/>
@@ -139,29 +139,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="goblet_of_fire" translatesAutoresizingMaskIntoConstraints="NO" id="3hX-ud-Ufn">
-                                <rect key="frame" x="20" y="157" width="560" height="412"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goblet_of_fire" translatesAutoresizingMaskIntoConstraints="NO" id="3hX-ud-Ufn">
+                                <rect key="frame" x="20" y="112" width="560" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="375" id="qQP-Bz-nu3"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Goblet of Fire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbB-FP-BxZ">
-                                <rect key="frame" x="20" y="66" width="560" height="83"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Goblet of Fire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbB-FP-BxZ">
+                                <rect key="frame" x="20" y="46" width="560" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LV2-ex-6CA">
+                                <rect key="frame" x="240" y="240" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="IsE-Or-zCB"/>
+                                    <constraint firstAttribute="height" constant="120" id="qPn-Un-6Hj"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="3hX-ud-Ufn" secondAttribute="trailing" id="3mX-Sg-UNv"/>
-                            <constraint firstItem="3hX-ud-Ufn" firstAttribute="top" secondItem="ZbB-FP-BxZ" secondAttribute="bottom" constant="8" id="QjB-SF-izc"/>
-                            <constraint firstItem="ZbB-FP-BxZ" firstAttribute="top" secondItem="Bzb-0c-npF" secondAttribute="bottom" constant="46" id="ZUs-3A-ebC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZbB-FP-BxZ" secondAttribute="trailing" id="gaT-HV-OPy"/>
-                            <constraint firstItem="IWN-Bt-Y7Q" firstAttribute="top" secondItem="3hX-ud-Ufn" secondAttribute="bottom" constant="31" id="ncR-ae-200"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="ZbB-FP-BxZ" secondAttribute="leading" id="pTd-yD-s3R"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="3hX-ud-Ufn" secondAttribute="leading" id="vCe-kh-wjU"/>
-                            <constraint firstItem="ZbB-FP-BxZ" firstAttribute="centerX" secondItem="6iU-ZZ-lLm" secondAttribute="centerX" id="xsl-pc-Ofa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3hX-ud-Ufn" secondAttribute="trailing" id="3en-il-s6l"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZbB-FP-BxZ" secondAttribute="trailing" id="6cA-PX-f8Y"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="3hX-ud-Ufn" secondAttribute="leading" id="Chd-WC-9O4"/>
+                            <constraint firstItem="LV2-ex-6CA" firstAttribute="centerY" secondItem="6iU-ZZ-lLm" secondAttribute="centerY" id="bBh-6j-xnu"/>
+                            <constraint firstItem="ZbB-FP-BxZ" firstAttribute="top" secondItem="Bzb-0c-npF" secondAttribute="bottom" constant="26" id="day-OK-OsA"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="ZbB-FP-BxZ" secondAttribute="leading" id="eiR-6u-348"/>
+                            <constraint firstItem="3hX-ud-Ufn" firstAttribute="centerY" secondItem="6iU-ZZ-lLm" secondAttribute="centerY" id="fPQ-xk-U95"/>
+                            <constraint firstItem="LV2-ex-6CA" firstAttribute="centerX" secondItem="6iU-ZZ-lLm" secondAttribute="centerX" id="xzl-Ra-7P0"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="gamePieceImageView" destination="LV2-ex-6CA" id="Pwj-pY-Yo8"/>
+                        <outlet property="imageLabel" destination="3hX-ud-Ufn" id="5gd-Fa-0Vf"/>
+                        <outlet property="nameLabel" destination="ZbB-FP-BxZ" id="AYZ-Uy-eEL"/>
                         <segue destination="ZTD-I8-fT5" kind="show" identifier="ChanceToProperty" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="ATZ-t4-onc"/>
                         <segue destination="tps-V5-hqA" kind="show" identifier="ChanceToNon" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="HD0-Py-gk7"/>
                     </connections>
@@ -267,8 +280,8 @@
         <image name="hogwarts express" width="1500" height="1177"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="J1s-cW-lBp"/>
-        <segue reference="aY6-CT-a5H"/>
+        <segue reference="HD0-Py-gk7"/>
         <segue reference="Mso-c9-KcU"/>
+        <segue reference="ATZ-t4-onc"/>
     </inferredMetricsTieBreakers>
 </document>

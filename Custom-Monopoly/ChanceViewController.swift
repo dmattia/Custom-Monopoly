@@ -1,5 +1,5 @@
 //
-//  PropertyViewController.swift
+//  ChanceViewController.swift
 //  Custom-Monopoly
 //
 //  Created by David Mattia on 2/20/16.
@@ -8,38 +8,34 @@
 
 import UIKit
 
-class PropertyViewController: UIViewController {
+class ChanceViewController : UIViewController {
     
-    @IBOutlet weak var colorView: UIView!
-    @IBOutlet weak var costLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var imageLabel: UIImageView!
     @IBOutlet weak var gamePieceImageView: UIImageView!
     
-    var property : Property?
+    var boardSpace : MiscSpace?
     var nextSpace : BoardSpace?
     
     func display() {
-        if let property = property {
-            self.costLabel.text = "$\(property.price)"
-            self.titleLabel.text = property.space_name
-            self.colorView.backgroundColor = property.color
+        if let boardSpace = boardSpace {
+            self.nameLabel.text = boardSpace.space_name
         }
     }
     
     func moveToNextVC() {
-        if nextSpace is Property {
+        if nextSpace is MiscSpace {
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let nextVC = storyBoard.instantiateViewControllerWithIdentifier("Property") as? PropertyViewController
-            nextVC!.property = nextSpace as? Property
+            let nextVC = storyBoard.instantiateViewControllerWithIdentifier("Chance") as? ChanceViewController
+            nextVC!.boardSpace = nextSpace as? MiscSpace
             
             let navController = UINavigationController(rootViewController: nextVC!)
-            let segue = RightToLeftSegue(identifier: "PropertyToProperty", source: self, destination: nextVC!, performHandler: { () -> Void in })
-
+            let segue = RightToLeftSegue(identifier: "ChanceToChance", source: self, destination: nextVC!, performHandler: { () -> Void in})
             segue.perform()
+        } else if nextSpace is Property {
+            self.performSegueWithIdentifier("ChanceToProperty", sender: nil)
         } else if nextSpace is Railroad {
-            self.performSegueWithIdentifier("PropertyToNon", sender: nil)
-        } else if nextSpace is MiscSpace {
-            self.performSegueWithIdentifier("PropertyToChance", sender: nil)
+            self.performSegueWithIdentifier("ChanceToNon", sender: nil)
         } else {
             print("I'm confused man")
         }
@@ -47,7 +43,7 @@ class PropertyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nextSpace = myVars.gameBoard.getBoardSpace((property?.board_index)! + 1)
+        nextSpace = myVars.gameBoard.getBoardSpace((self.boardSpace?.board_index)! + 1)
         display()
         
         let active_player = myVars.gameplay.getActivePlayer()
@@ -65,39 +61,33 @@ class PropertyViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         // TODO: Display the active user
+        //let active_player = myVars.gameplay.getActivePlayer()
         
         if !myVars.gameplay.hasRolled {
-            print("Rolling dice...")
-            sleep(3)
             myVars.gameplay.hasRolled = true
             myVars.gameplay.movesLeftInTurn = random() % 11 + 2
             print("Rolled a \(myVars.gameplay.movesLeftInTurn)")
         }
         if myVars.gameplay.movesLeftInTurn > 0 {
             sleep(1)
-            property?.on_leave()
+            boardSpace?.on_leave()
             myVars.gameplay.movesLeftInTurn -= 1
             moveToNextVC()
         } else {
             sleep(5)
-            property?.on_land()
+            self.boardSpace?.on_land()
             myVars.gameplay.gameTurn += 1
             myVars.gameplay.hasRolled = false
         }
     }
     
-    @IBAction func nextClicked(sender: AnyObject) {
-        moveToNextVC()
-    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "PropertyToNon" {
+        if segue.identifier == "ChanceToProperty" {
+            let destinationVC = segue.destinationViewController as? PropertyViewController
+            destinationVC?.property = nextSpace as? Property
+        } else if segue.identifier == "ChanceToNon" {
             let destinationVC = segue.destinationViewController as? NonPropertyOwnableViewController
             destinationVC?.boardSpace = nextSpace as? Railroad
-            print("Going to property: \(nextSpace)")
-        } else if segue.identifier == "PropertyToChance" {
-            let destinationVC = segue.destinationViewController as? ChanceViewController
-            destinationVC?.boardSpace = nextSpace as? MiscSpace
         }
     }
 }

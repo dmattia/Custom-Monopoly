@@ -61,3 +61,15 @@ class Railroad : Ownable {
         self.board_index = index
     }
 }
+
+class MiscSpace : BoardSpace {
+    // Any chance, comunity chest, or corner spot
+    var space_name : String
+    var board_index : Int
+    
+    init(name: String, board_index: Int) {
+        space_name = name
+        self.board_index = board_index
+    }
+}
+
