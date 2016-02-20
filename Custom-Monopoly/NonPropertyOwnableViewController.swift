@@ -94,7 +94,7 @@ class NonPropertyOwnableViewController: UIViewController {
             myVars.gameplay.newTurn()
         }
         if myVars.gameplay.movesLeftInTurn > 0 {
-            sleep(1)
+            usleep(500000)
             boardSpace?.on_leave()
             myVars.gameplay.movesLeftInTurn -= 1
             moveToNextVC()
@@ -116,7 +116,10 @@ class NonPropertyOwnableViewController: UIViewController {
             destinationVC?.boardSpace = nextSpace as? MiscSpace
         } else if segue.identifier == "NonToDetail" {
             let destinationVC = segue.destinationViewController as? DetailViewController
-            destinationVC?.detailString = "Do you want to buy \(boardSpace!.space_name)"
+            destinationVC?.detailString = "Do you want to buy \(boardSpace!.space_name) for \(boardSpace!.price)?"
+            destinationVC?.shouldDisplayYesButton = true
+            destinationVC?.balance = myVars.gameplay.getActivePlayer().balance
+            destinationVC?.cost = boardSpace!.price
         }
     }
 }

@@ -19,6 +19,10 @@ class Board {
         return board[index % board.count]
     }
     
+    func getBoardLength() -> Int {
+        return board.count
+    }
+    
     func displayBoardSpace(index: Int) {
         let board_space = board[index % board.count]
         if board_space is Property {

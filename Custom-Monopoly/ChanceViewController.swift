@@ -92,7 +92,14 @@ class ChanceViewController : UIViewController {
             myVars.gameplay.newTurn()
         }
         if myVars.gameplay.movesLeftInTurn > 0 {
-            sleep(1)
+            usleep(500000)
+            if((boardSpace?.board_index)! % myVars.gameBoard.getBoardLength() == 0) {
+                if myVars.gameplay.getActivePlayer().hasPassedGo {
+                    self.performSegueWithIdentifier("PassedGo", sender: nil)
+                } else {
+                    myVars.gameplay.getActivePlayer().hasPassedGo = true
+                }
+            }
             boardSpace?.on_leave()
             myVars.gameplay.movesLeftInTurn -= 1
             moveToNextVC()
@@ -114,6 +121,14 @@ class ChanceViewController : UIViewController {
         } else if segue.identifier == "ChanceToDetail" {
             let destinationVC = segue.destinationViewController as? DetailViewController
             destinationVC?.detailString = "Some kind of chance card"
+            destinationVC?.shouldDisplayYesButton = false
+            destinationVC?.balance = myVars.gameplay.getActivePlayer().balance
+        } else if segue.identifier == "PassedGo" {
+            let destinationVC = segue.destinationViewController as? DetailViewController
+            destinationVC?.detailString = "You earned $200 for passing Go!"
+            destinationVC?.shouldDisplayYesButton = false
+            destinationVC?.balance = myVars.gameplay.getActivePlayer().balance + 200
+            myVars.gameplay.getActivePlayer().balance += 200
         }
     }
 }

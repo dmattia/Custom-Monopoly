@@ -97,7 +97,7 @@ class PropertyViewController: UIViewController {
         }
         
         if myVars.gameplay.movesLeftInTurn > 0 {
-            sleep(1)
+            usleep(500000)
             property?.on_leave()
             myVars.gameplay.movesLeftInTurn -= 1
             moveToNextVC()
@@ -120,7 +120,10 @@ class PropertyViewController: UIViewController {
             destinationVC?.boardSpace = nextSpace as? MiscSpace
         } else if segue.identifier == "PropertyToDetail" {
             let destinationVC = segue.destinationViewController as? DetailViewController
-            destinationVC?.detailString = "Do you want to buy \(property!.space_name)"
+            destinationVC?.detailString = "Do you want to buy \(property!.space_name) for \(property!.price)?"
+            destinationVC?.shouldDisplayYesButton = true
+            destinationVC?.balance = myVars.gameplay.getActivePlayer().balance
+            destinationVC?.cost = property!.price
         }
     }
 }

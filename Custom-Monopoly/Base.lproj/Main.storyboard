@@ -196,6 +196,7 @@
                         <segue destination="ZTD-I8-fT5" kind="show" identifier="ChanceToProperty" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="ATZ-t4-onc"/>
                         <segue destination="tps-V5-hqA" kind="show" identifier="ChanceToNon" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="HD0-Py-gk7"/>
                         <segue destination="DO4-ub-CgA" kind="presentation" identifier="ChanceToDetail" modalPresentationStyle="overFullScreen" id="HPa-l3-1cT"/>
+                        <segue destination="DO4-ub-CgA" kind="presentation" identifier="PassedGo" id="lF1-fd-qg4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFh-Lr-9BM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -233,19 +234,47 @@
                                     <action selector="closeClicked:" destination="DO4-ub-CgA" eventType="touchUpInside" id="z2q-eC-9la"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3F-1P-XxX">
+                                <rect key="frame" x="20" y="418" width="560" height="73"/>
+                                <color key="backgroundColor" red="0.095018796990000001" green="0.29984669860000002" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="73" id="BCQ-Tk-RIq"/>
+                                    <constraint firstAttribute="height" constant="73" id="acX-1T-TET"/>
+                                </constraints>
+                                <state key="normal" title="Yes">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="yesClicked:" destination="DO4-ub-CgA" eventType="touchUpInside" id="ni5-yx-TWh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="You have $1500" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzT-nu-0vY">
+                                <rect key="frame" x="20" y="346" width="560" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="D3F-1P-XxX" secondAttribute="trailing" id="835-e2-yoY"/>
+                            <constraint firstItem="D3F-1P-XxX" firstAttribute="top" secondItem="rzT-nu-0vY" secondAttribute="bottom" constant="18" id="99K-pj-kLY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uof-td-wuM" secondAttribute="trailing" id="99v-Fi-OEJ"/>
                             <constraint firstItem="2fS-DY-b7K" firstAttribute="top" secondItem="cCv-V6-L9K" secondAttribute="bottom" constant="20" id="Cp8-u2-4Q2"/>
                             <constraint firstAttribute="leadingMargin" secondItem="cCv-V6-L9K" secondAttribute="leading" id="VG7-11-Yx4"/>
+                            <constraint firstItem="cCv-V6-L9K" firstAttribute="top" secondItem="D3F-1P-XxX" secondAttribute="bottom" constant="16" id="WXI-Sh-iPe"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="rzT-nu-0vY" secondAttribute="leading" id="cKj-yz-DN1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cCv-V6-L9K" secondAttribute="trailing" id="gO3-C9-UeU"/>
                             <constraint firstAttribute="leadingMargin" secondItem="uof-td-wuM" secondAttribute="leading" id="nb5-KB-feJ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="D3F-1P-XxX" secondAttribute="leading" id="nds-fa-hj2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rzT-nu-0vY" secondAttribute="trailing" id="pcd-Mo-vtO"/>
                             <constraint firstItem="uof-td-wuM" firstAttribute="top" secondItem="gda-4V-mp2" secondAttribute="bottom" constant="168" id="uME-F5-bIY"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="detailLabel" destination="uof-td-wuM" id="GMY-H4-98x"/>
+                        <outlet property="moneyLabel" destination="rzT-nu-0vY" id="Cyc-NH-Fus"/>
+                        <outlet property="yesButton" destination="D3F-1P-XxX" id="96H-7G-tUB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yr1-PO-njw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -343,9 +372,9 @@
         <image name="hogwarts express" width="1500" height="1177"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="lF1-fd-qg4"/>
         <segue reference="U2Z-C4-Hq6"/>
-        <segue reference="aY6-CT-a5H"/>
-        <segue reference="J1s-cW-lBp"/>
-        <segue reference="brI-eK-T7q"/>
+        <segue reference="ATZ-t4-onc"/>
+        <segue reference="HD0-Py-gk7"/>
     </inferredMetricsTieBreakers>
 </document>
