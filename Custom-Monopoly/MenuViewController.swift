@@ -19,6 +19,7 @@ class MenuViewController : UIViewController {
         stepper.minimumValue = 1.00
         stepper.maximumValue = 4.00
         stepper.stepValue = 1.00
+        stepper.wraps = true
         
         // Setup global myVars
         let player1 = Player(name: "David", imageName: "harry")
@@ -40,7 +41,8 @@ class MenuViewController : UIViewController {
     }
     
     @IBAction func stepperPressed(sender: AnyObject) {
-        self.playerCountLabel.text = "\(self.stepper.value)"
+        let intValue = Int(self.stepper.value)
+        self.playerCountLabel.text = "\(intValue)"
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
