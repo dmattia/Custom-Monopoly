@@ -6,10 +6,11 @@
 //  Copyright © 2016 David Mattia. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol BoardSpace {
     var space_name : String {get}
+    var board_index : Int {get}
 }
 
 extension BoardSpace {
@@ -36,21 +37,27 @@ extension Ownable {
 }
 
 class Property: Ownable {
+    var board_index : Int
     var space_name : String
     var price : Int
+    var color : UIColor
     
-    init(name: String, cost: Int) {
+    init(name: String, cost: Int, index: Int, color: UIColor) {
         self.space_name = name
         self.price = cost
+        self.board_index = index
+        self.color = color
     }
 }
 
 class Railroad : Ownable {
+    var board_index : Int
     var space_name : String
     var price : Int
     
-    init(name: String, cost: Int) {
+    init(name: String, cost: Int, index: Int) {
         self.space_name = name
         self.price = cost
+        self.board_index = index
     }
 }

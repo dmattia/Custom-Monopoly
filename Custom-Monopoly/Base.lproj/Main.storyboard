@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tps-V5-hqA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dvS-ge-9Cn">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -9,7 +9,7 @@
         <!--Property View Controller-->
         <scene sceneID="syq-gP-Jrp">
             <objects>
-                <viewController id="ZTD-I8-fT5" customClass="PropertyViewController" customModule="Custom_Monopoly" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Property" id="ZTD-I8-fT5" customClass="PropertyViewController" customModule="Custom_Monopoly" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ffV-1H-leA"/>
                         <viewControllerLayoutGuide type="bottom" id="XuK-hK-61D"/>
@@ -37,6 +37,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hC-L7-jDR">
+                                <rect key="frame" x="284" y="285" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextClicked:" destination="ZTD-I8-fT5" eventType="touchUpInside" id="eHG-fc-BvU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -53,20 +60,68 @@
                             <constraint firstItem="hEo-ph-743" firstAttribute="top" secondItem="L6k-q4-2BV" secondAttribute="bottom" constant="9" id="wTz-ps-T2V"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="vYI-wg-Cvk"/>
                     <connections>
+                        <outlet property="colorView" destination="yXZ-1a-zHy" id="5SI-wP-lGl"/>
                         <outlet property="costLabel" destination="J4o-5d-Hvx" id="Zeo-g4-QCI"/>
                         <outlet property="imageView" destination="hEo-ph-743" id="jHC-wj-KfM"/>
                         <outlet property="titleLabel" destination="L6k-q4-2BV" id="n5f-dL-FN9"/>
+                        <segue destination="Hdb-GZ-MTo" kind="presentation" identifier="PropertyToChance" modalTransitionStyle="flipHorizontal" id="U2Z-C4-Hq6"/>
+                        <segue destination="tps-V5-hqA" kind="show" identifier="PropertyToNon" id="J1s-cW-lBp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cPl-3i-DSj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="331" y="394"/>
+            <point key="canvasLocation" x="372" y="407"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="Wbo-TG-cCH">
+            <objects>
+                <viewController id="dvS-ge-9Cn" customClass="MenuViewController" customModule="Custom_Monopoly" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ifr-S6-fvf"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gi1-iP-4f5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2YN-eI-Xck">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6C-5J-mfA">
+                                <rect key="frame" x="20" y="130" width="560" height="340"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playButtonPressed:" destination="dvS-ge-9Cn" eventType="touchUpInside" id="6q5-5w-yqW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="q6C-5J-mfA" secondAttribute="leading" id="8dD-Pq-i9A"/>
+                            <constraint firstItem="q6C-5J-mfA" firstAttribute="centerX" secondItem="2YN-eI-Xck" secondAttribute="centerX" id="Gi2-xV-GSf"/>
+                            <constraint firstItem="q6C-5J-mfA" firstAttribute="top" secondItem="ifr-S6-fvf" secondAttribute="bottom" constant="110" id="QG3-zz-MmY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="q6C-5J-mfA" secondAttribute="trailing" id="c1C-rQ-vDq"/>
+                            <constraint firstItem="q6C-5J-mfA" firstAttribute="centerY" secondItem="2YN-eI-Xck" secondAttribute="centerY" id="xXU-Xg-fwH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gFZ-Sm-UTj"/>
+                    <connections>
+                        <segue destination="ZTD-I8-fT5" kind="show" identifier="MenuToProperty" id="NCb-oe-77j"/>
+                        <segue destination="Hdb-GZ-MTo" kind="presentation" identifier="MenuToChance" modalTransitionStyle="flipHorizontal" id="oY3-Kn-4Qi"/>
+                        <segue destination="tps-V5-hqA" kind="show" identifier="MenuToNon" id="Qt3-C8-Fb6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RAR-FA-uWH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1036" y="-340"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hRR-uE-lum">
             <objects>
-                <viewController id="Hdb-GZ-MTo" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Chance" id="Hdb-GZ-MTo" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bzb-0c-npF"/>
                         <viewControllerLayoutGuide type="bottom" id="IWN-Bt-Y7Q"/>
@@ -97,15 +152,19 @@
                             <constraint firstItem="ZbB-FP-BxZ" firstAttribute="centerX" secondItem="6iU-ZZ-lLm" secondAttribute="centerX" id="xsl-pc-Ofa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="ZTD-I8-fT5" kind="presentation" identifier="ChanceToProperty" modalTransitionStyle="flipHorizontal" id="ATZ-t4-onc"/>
+                        <segue destination="tps-V5-hqA" kind="presentation" identifier="ChanceToNon" modalTransitionStyle="flipHorizontal" id="HD0-Py-gk7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFh-Lr-9BM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1036" y="407"/>
+            <point key="canvasLocation" x="1036" y="1283"/>
         </scene>
         <!--Non Property Ownable View Controller-->
         <scene sceneID="Nf0-67-Buu">
             <objects>
-                <viewController id="tps-V5-hqA" customClass="NonPropertyOwnableViewController" customModule="Custom_Monopoly" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Non" id="tps-V5-hqA" customClass="NonPropertyOwnableViewController" customModule="Custom_Monopoly" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u4v-KN-sCi"/>
                         <viewControllerLayoutGuide type="bottom" id="xw7-lM-gtK"/>
@@ -123,6 +182,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0p-58-Fdu">
+                                <rect key="frame" x="284" y="285" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextClicked:" destination="tps-V5-hqA" eventType="touchUpInside" id="FN5-di-4i0"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Hogwarts Express" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SE-ax-Tjc">
                                 <rect key="frame" x="20" y="49" width="560" height="42"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
@@ -149,6 +215,8 @@
                         <outlet property="costLabel" destination="Hvt-n3-2N8" id="Cva-PA-bkb"/>
                         <outlet property="imageView" destination="lAf-ks-hbB" id="Z7o-sy-K7U"/>
                         <outlet property="titleLabel" destination="3SE-ax-Tjc" id="gpd-YZ-U5F"/>
+                        <segue destination="Hdb-GZ-MTo" kind="presentation" identifier="NonToChance" modalTransitionStyle="flipHorizontal" id="Mso-c9-KcU"/>
+                        <segue destination="ZTD-I8-fT5" kind="show" identifier="NonToProperty" id="aY6-CT-a5H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OTV-t4-pJa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -161,4 +229,9 @@
         <image name="harry" width="620" height="465"/>
         <image name="hogwarts express" width="1500" height="1177"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Qt3-C8-Fb6"/>
+        <segue reference="NCb-oe-77j"/>
+        <segue reference="oY3-Kn-4Qi"/>
+    </inferredMetricsTieBreakers>
 </document>
