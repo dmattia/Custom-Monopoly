@@ -28,6 +28,8 @@ class NonPropertyOwnableViewController: UIViewController {
         super.viewDidLoad()
         nextSpace = myVars.gameBoard.getBoardSpace((self.boardSpace?.board_index)! + 1)
         display()
+        
+        self.navigationController?.navigationBarHidden = true
     }
     
     @IBAction func nextClicked(sender: AnyObject) {

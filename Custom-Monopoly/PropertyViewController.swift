@@ -31,11 +31,7 @@ class PropertyViewController: UIViewController {
         nextSpace = myVars.gameBoard.getBoardSpace((property?.board_index)! + 1)
         display()
         
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.translucent = true;
-        self.navigationController?.view.backgroundColor = UIColor.clearColor();
-        self.navigationController?.navigationBar.backgroundColor = UIColor.clearColor();
+        self.navigationController?.navigationBarHidden = true
     }
     
     @IBAction func nextClicked(sender: AnyObject) {
