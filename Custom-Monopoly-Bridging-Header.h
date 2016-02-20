@@ -6,4 +6,4 @@
 //  Copyright © 2016 David Mattia. All rights reserved.
 //
 
-#import "CoreImageTransitionView.h"
+#import "CoreImageMotionBlurTransition.h"

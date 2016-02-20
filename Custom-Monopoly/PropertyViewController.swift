@@ -43,8 +43,10 @@ class PropertyViewController: UIViewController {
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let nextVC = storyBoard.instantiateViewControllerWithIdentifier("Property") as? PropertyViewController
             nextVC!.property = nextSpace as? Property
-            self.navigationController!.pushViewController(nextVC!, animated: true)
-            //self.presentViewController(nextVC!, animated: true, completion: nil)
+            
+            let navController = UINavigationController(rootViewController: nextVC!)
+            let segue = RightToLeftSegue(identifier: "PropertyToProperty", source: self, destination: nextVC!, performHandler: { () -> Void in})
+            segue.perform()
         } else if nextSpace is Railroad {
             self.performSegueWithIdentifier("PropertyToNon", sender: nil)
         } else {

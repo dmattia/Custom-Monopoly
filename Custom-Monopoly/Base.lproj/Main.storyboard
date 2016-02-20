@@ -51,12 +51,12 @@
                             <constraint firstItem="hEo-ph-743" firstAttribute="centerX" secondItem="XzD-vp-ZLu" secondAttribute="centerX" id="J9q-6B-evE"/>
                             <constraint firstItem="L6k-q4-2BV" firstAttribute="top" secondItem="yXZ-1a-zHy" secondAttribute="bottom" constant="8" id="L0n-Mc-jFb"/>
                             <constraint firstItem="L6k-q4-2BV" firstAttribute="centerX" secondItem="XzD-vp-ZLu" secondAttribute="centerX" id="YXl-5D-Iq3"/>
-                            <constraint firstItem="XuK-hK-61D" firstAttribute="top" secondItem="J4o-5d-Hvx" secondAttribute="bottom" constant="8" id="ZDN-V2-DU6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="J4o-5d-Hvx" secondAttribute="trailing" id="bEO-69-Q61"/>
                             <constraint firstItem="J4o-5d-Hvx" firstAttribute="top" secondItem="hEo-ph-743" secondAttribute="bottom" constant="15" id="fBo-8r-Edj"/>
                             <constraint firstAttribute="leadingMargin" secondItem="hEo-ph-743" secondAttribute="leading" id="gbK-HF-jQH"/>
                             <constraint firstItem="J4o-5d-Hvx" firstAttribute="centerX" secondItem="XzD-vp-ZLu" secondAttribute="centerX" id="rGa-RI-d1E"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hEo-ph-743" secondAttribute="trailing" id="rU4-Ox-B5o"/>
+                            <constraint firstItem="XuK-hK-61D" firstAttribute="top" secondItem="J4o-5d-Hvx" secondAttribute="bottom" constant="8" id="u3r-Sh-wrl"/>
                             <constraint firstItem="hEo-ph-743" firstAttribute="top" secondItem="L6k-q4-2BV" secondAttribute="bottom" constant="9" id="wTz-ps-T2V"/>
                         </constraints>
                     </view>
@@ -111,7 +111,7 @@
                     <connections>
                         <segue destination="ZTD-I8-fT5" kind="show" identifier="MenuToProperty" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="NCb-oe-77j"/>
                         <segue destination="Hdb-GZ-MTo" kind="presentation" identifier="MenuToChance" modalTransitionStyle="flipHorizontal" id="oY3-Kn-4Qi"/>
-                        <segue destination="tps-V5-hqA" kind="presentation" identifier="MenuToNon" modalTransitionStyle="flipHorizontal" id="Qt3-C8-Fb6"/>
+                        <segue destination="tps-V5-hqA" kind="show" identifier="MenuToNon" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="Qt3-C8-Fb6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RAR-FA-uWH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -216,7 +216,7 @@
                         <outlet property="imageView" destination="lAf-ks-hbB" id="Z7o-sy-K7U"/>
                         <outlet property="titleLabel" destination="3SE-ax-Tjc" id="gpd-YZ-U5F"/>
                         <segue destination="Hdb-GZ-MTo" kind="presentation" identifier="NonToChance" modalTransitionStyle="flipHorizontal" id="Mso-c9-KcU"/>
-                        <segue destination="ZTD-I8-fT5" kind="show" identifier="NonToProperty" id="aY6-CT-a5H"/>
+                        <segue destination="ZTD-I8-fT5" kind="show" identifier="NonToProperty" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="aY6-CT-a5H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OTV-t4-pJa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -248,7 +248,7 @@
         <image name="hogwarts express" width="1500" height="1177"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="J1s-cW-lBp"/>
+        <segue reference="Qt3-C8-Fb6"/>
         <segue reference="NCb-oe-77j"/>
         <segue reference="U2Z-C4-Hq6"/>
     </inferredMetricsTieBreakers>
