@@ -27,6 +27,7 @@
 		F1C949E41C78D5EE006A6A86 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C949E31C78D5EE006A6A86 /* CFNetwork.framework */; };
 		F1C949E61C78D5F6006A6A86 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C949E51C78D5F6006A6A86 /* Security.framework */; };
 		F1C949E81C78D600006A6A86 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C949E71C78D600006A6A86 /* SystemConfiguration.framework */; };
+		F1C949EC1C78EECE006A6A86 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C949EB1C78EECE006A6A86 /* DetailViewController.swift */; };
 		F1FC69E31C7826BE006C2611 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FC69E21C7826BE006C2611 /* AppDelegate.swift */; };
 		F1FC69E81C7826BE006C2611 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1FC69E61C7826BE006C2611 /* Main.storyboard */; };
 		F1FC69EA1C7826BE006C2611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1FC69E91C7826BE006C2611 /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 		F1C949E31C78D5EE006A6A86 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		F1C949E51C78D5F6006A6A86 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		F1C949E71C78D600006A6A86 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F1C949EB1C78EECE006A6A86 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F1FC69DF1C7826BE006C2611 /* Custom-Monopoly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Custom-Monopoly.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1FC69E21C7826BE006C2611 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1FC69E71C7826BE006C2611 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				F1FC69FE1C784455006C2611 /* PropertyViewController.swift */,
 				F1FC6A001C784EC4006C2611 /* NonPropertyOwnableViewController.swift */,
 				F1C949DB1C78B05A006A6A86 /* ChanceViewController.swift */,
+				F1C949EB1C78EECE006A6A86 /* DetailViewController.swift */,
 				F1FC6A021C786122006C2611 /* MenuViewController.swift */,
 			);
 			name = "View Controllers";
@@ -297,6 +300,7 @@
 				F1C949DC1C78B05A006A6A86 /* ChanceViewController.swift in Sources */,
 				F1FC69E31C7826BE006C2611 /* AppDelegate.swift in Sources */,
 				F1C949C81C787256006A6A86 /* CoreImageTransitionHelper.m in Sources */,
+				F1C949EC1C78EECE006A6A86 /* DetailViewController.swift in Sources */,
 				F1C949D21C787E40006A6A86 /* RightToLeftSegue.swift in Sources */,
 				F1C949B61C787245006A6A86 /* CoreImageBlurTransition.m in Sources */,
 				F1C949C51C787256006A6A86 /* CoreImageMotionBlurTransition.m in Sources */,

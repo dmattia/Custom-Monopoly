@@ -70,6 +70,7 @@
                         <outlet property="titleLabel" destination="L6k-q4-2BV" id="n5f-dL-FN9"/>
                         <segue destination="Hdb-GZ-MTo" kind="show" identifier="PropertyToChance" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="U2Z-C4-Hq6"/>
                         <segue destination="tps-V5-hqA" kind="show" identifier="PropertyToNon" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="J1s-cW-lBp"/>
+                        <segue destination="DO4-ub-CgA" kind="presentation" identifier="PropertyToDetail" modalPresentationStyle="overFullScreen" id="0L5-gu-QWR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cPl-3i-DSj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -194,11 +195,62 @@
                         <outlet property="nameLabel" destination="ZbB-FP-BxZ" id="AYZ-Uy-eEL"/>
                         <segue destination="ZTD-I8-fT5" kind="show" identifier="ChanceToProperty" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="ATZ-t4-onc"/>
                         <segue destination="tps-V5-hqA" kind="show" identifier="ChanceToNon" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="HD0-Py-gk7"/>
+                        <segue destination="DO4-ub-CgA" kind="presentation" identifier="ChanceToDetail" modalPresentationStyle="overFullScreen" id="HPa-l3-1cT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFh-Lr-9BM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1036" y="1283"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="bPi-F3-r1m">
+            <objects>
+                <viewController id="DO4-ub-CgA" customClass="DetailViewController" customModule="Custom_Monopoly" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gda-4V-mp2"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fS-DY-b7K"/>
+                    </layoutGuides>
+                    <view key="view" alpha="0.90000000000000002" contentMode="scaleToFill" id="u5Z-oI-zQy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uof-td-wuM">
+                                <rect key="frame" x="20" y="188" width="560" height="128"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCv-V6-L9K">
+                                <rect key="frame" x="20" y="507" width="560" height="73"/>
+                                <color key="backgroundColor" red="0.095018796990000001" green="0.29984669860000002" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="Y3b-KF-fGB"/>
+                                </constraints>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeClicked:" destination="DO4-ub-CgA" eventType="touchUpInside" id="z2q-eC-9la"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="uof-td-wuM" secondAttribute="trailing" id="99v-Fi-OEJ"/>
+                            <constraint firstItem="2fS-DY-b7K" firstAttribute="top" secondItem="cCv-V6-L9K" secondAttribute="bottom" constant="20" id="Cp8-u2-4Q2"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="cCv-V6-L9K" secondAttribute="leading" id="VG7-11-Yx4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cCv-V6-L9K" secondAttribute="trailing" id="gO3-C9-UeU"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="uof-td-wuM" secondAttribute="leading" id="nb5-KB-feJ"/>
+                            <constraint firstItem="uof-td-wuM" firstAttribute="top" secondItem="gda-4V-mp2" secondAttribute="bottom" constant="168" id="uME-F5-bIY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailLabel" destination="uof-td-wuM" id="GMY-H4-98x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yr1-PO-njw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048" y="2011"/>
         </scene>
         <!--Non Property Ownable View Controller-->
         <scene sceneID="Nf0-67-Buu">
@@ -212,7 +264,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="hogwarts express" translatesAutoresizingMaskIntoConstraints="NO" id="lAf-ks-hbB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="hogwarts express" translatesAutoresizingMaskIntoConstraints="NO" id="lAf-ks-hbB">
                                 <rect key="frame" x="20" y="99" width="560" height="407"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="$400" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hvt-n3-2N8">
@@ -228,7 +280,7 @@
                                     <constraint firstAttribute="width" constant="120" id="roJ-4Z-cLb"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Hogwarts Express" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SE-ax-Tjc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Hogwarts Express" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SE-ax-Tjc">
                                 <rect key="frame" x="20" y="49" width="560" height="42"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -259,6 +311,7 @@
                         <outlet property="titleLabel" destination="3SE-ax-Tjc" id="gpd-YZ-U5F"/>
                         <segue destination="Hdb-GZ-MTo" kind="show" identifier="NonToChance" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="Mso-c9-KcU"/>
                         <segue destination="ZTD-I8-fT5" kind="show" identifier="NonToProperty" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="aY6-CT-a5H"/>
+                        <segue destination="DO4-ub-CgA" kind="presentation" identifier="NonToDetail" modalPresentationStyle="overFullScreen" id="brI-eK-T7q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OTV-t4-pJa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -290,8 +343,9 @@
         <image name="hogwarts express" width="1500" height="1177"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="J1s-cW-lBp"/>
+        <segue reference="U2Z-C4-Hq6"/>
         <segue reference="aY6-CT-a5H"/>
-        <segue reference="Mso-c9-KcU"/>
+        <segue reference="J1s-cW-lBp"/>
+        <segue reference="brI-eK-T7q"/>
     </inferredMetricsTieBreakers>
 </document>

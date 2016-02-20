@@ -97,8 +97,8 @@ class ChanceViewController : UIViewController {
             myVars.gameplay.movesLeftInTurn -= 1
             moveToNextVC()
         } else {
-            sleep(5)
-            self.boardSpace?.on_land()
+            self.performSegueWithIdentifier("ChanceToDetail", sender: nil)
+            
             myVars.gameplay.gameTurn += 1
             myVars.gameplay.hasRolled = false
         }
@@ -111,6 +111,9 @@ class ChanceViewController : UIViewController {
         } else if segue.identifier == "ChanceToNon" {
             let destinationVC = segue.destinationViewController as? NonPropertyOwnableViewController
             destinationVC?.boardSpace = nextSpace as? Railroad
+        } else if segue.identifier == "ChanceToDetail" {
+            let destinationVC = segue.destinationViewController as? DetailViewController
+            destinationVC?.detailString = "Some kind of chance card"
         }
     }
 }

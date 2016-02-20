@@ -102,8 +102,9 @@ class PropertyViewController: UIViewController {
             myVars.gameplay.movesLeftInTurn -= 1
             moveToNextVC()
         } else {
-            sleep(5)
-            property?.on_land()
+            // Display action for landing
+            self.performSegueWithIdentifier("PropertyToDetail", sender: nil)
+            
             myVars.gameplay.gameTurn += 1
             myVars.gameplay.hasRolled = false
         }
@@ -117,6 +118,9 @@ class PropertyViewController: UIViewController {
         } else if segue.identifier == "PropertyToChance" {
             let destinationVC = segue.destinationViewController as? ChanceViewController
             destinationVC?.boardSpace = nextSpace as? MiscSpace
+        } else if segue.identifier == "PropertyToDetail" {
+            let destinationVC = segue.destinationViewController as? DetailViewController
+            destinationVC?.detailString = "Do you want to buy \(property!.space_name)"
         }
     }
 }
