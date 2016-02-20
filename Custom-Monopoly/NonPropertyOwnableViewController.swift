@@ -35,7 +35,9 @@ class NonPropertyOwnableViewController: UIViewController {
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let nextVC = storyBoard.instantiateViewControllerWithIdentifier("Non") as? NonPropertyOwnableViewController
             nextVC!.boardSpace = nextSpace as? Railroad
-            self.presentViewController(nextVC!, animated: true, completion: nil)
+            
+            self.navigationController!.pushViewController(nextVC!, animated: true)
+            //self.presentViewController(nextVC!, animated: true, completion: nil)
         } else if nextSpace is Property {
             self.performSegueWithIdentifier("NonToProperty", sender: nil)
         } else {

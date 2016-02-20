@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dvS-ge-9Cn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tgn-se-5aX">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -67,7 +67,7 @@
                         <outlet property="imageView" destination="hEo-ph-743" id="jHC-wj-KfM"/>
                         <outlet property="titleLabel" destination="L6k-q4-2BV" id="n5f-dL-FN9"/>
                         <segue destination="Hdb-GZ-MTo" kind="presentation" identifier="PropertyToChance" modalTransitionStyle="flipHorizontal" id="U2Z-C4-Hq6"/>
-                        <segue destination="tps-V5-hqA" kind="show" identifier="PropertyToNon" id="J1s-cW-lBp"/>
+                        <segue destination="tps-V5-hqA" kind="show" identifier="PropertyToNon" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="J1s-cW-lBp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cPl-3i-DSj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -109,14 +109,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="gFZ-Sm-UTj"/>
                     <connections>
-                        <segue destination="ZTD-I8-fT5" kind="show" identifier="MenuToProperty" id="NCb-oe-77j"/>
+                        <segue destination="ZTD-I8-fT5" kind="show" identifier="MenuToProperty" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="NCb-oe-77j"/>
                         <segue destination="Hdb-GZ-MTo" kind="presentation" identifier="MenuToChance" modalTransitionStyle="flipHorizontal" id="oY3-Kn-4Qi"/>
-                        <segue destination="tps-V5-hqA" kind="show" identifier="MenuToNon" id="Qt3-C8-Fb6"/>
+                        <segue destination="tps-V5-hqA" kind="presentation" identifier="MenuToNon" modalTransitionStyle="flipHorizontal" id="Qt3-C8-Fb6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RAR-FA-uWH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1036" y="-340"/>
+            <point key="canvasLocation" x="1848" y="-340"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hRR-uE-lum">
@@ -223,6 +223,24 @@
             </objects>
             <point key="canvasLocation" x="1759" y="407"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Egm-V3-Qei">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tgn-se-5aX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aKd-1i-fS8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dvS-ge-9Cn" kind="relationship" relationship="rootViewController" id="yRB-wk-Vzb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rVp-Nn-gWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1036" y="-340"/>
+        </scene>
     </scenes>
     <resources>
         <image name="goblet_of_fire" width="1200" height="888"/>
@@ -230,8 +248,8 @@
         <image name="hogwarts express" width="1500" height="1177"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Qt3-C8-Fb6"/>
+        <segue reference="J1s-cW-lBp"/>
         <segue reference="NCb-oe-77j"/>
-        <segue reference="oY3-Kn-4Qi"/>
+        <segue reference="U2Z-C4-Hq6"/>
     </inferredMetricsTieBreakers>
 </document>

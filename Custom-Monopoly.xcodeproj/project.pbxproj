@@ -15,7 +15,8 @@
 		F1C949C81C787256006A6A86 /* CoreImageTransitionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C949C01C787256006A6A86 /* CoreImageTransitionHelper.m */; };
 		F1C949C91C787256006A6A86 /* CoreImageTransitionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C949C31C787256006A6A86 /* CoreImageTransitionView.m */; };
 		F1C949CC1C787261006A6A86 /* UIViewController+CoreImageTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C949CB1C787261006A6A86 /* UIViewController+CoreImageTransition.m */; };
-		F1C949D01C787ACD006A6A86 /* leftTransitionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C949CF1C787ACD006A6A86 /* leftTransitionSegue.swift */; };
+		F1C949D21C787E40006A6A86 /* RightToLeftSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C949D11C787E40006A6A86 /* RightToLeftSegue.swift */; };
+		F1C949D41C787E8C006A6A86 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C949D31C787E8C006A6A86 /* QuartzCore.framework */; };
 		F1FC69E31C7826BE006C2611 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FC69E21C7826BE006C2611 /* AppDelegate.swift */; };
 		F1FC69E81C7826BE006C2611 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1FC69E61C7826BE006C2611 /* Main.storyboard */; };
 		F1FC69EA1C7826BE006C2611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1FC69E91C7826BE006C2611 /* Assets.xcassets */; };
@@ -46,7 +47,8 @@
 		F1C949CA1C787261006A6A86 /* UIViewController+CoreImageTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CoreImageTransition.h"; sourceTree = "<group>"; };
 		F1C949CB1C787261006A6A86 /* UIViewController+CoreImageTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CoreImageTransition.m"; sourceTree = "<group>"; };
 		F1C949CE1C78729A006A6A86 /* Custom-Monopoly-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Custom-Monopoly-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
-		F1C949CF1C787ACD006A6A86 /* leftTransitionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = leftTransitionSegue.swift; sourceTree = "<group>"; };
+		F1C949D11C787E40006A6A86 /* RightToLeftSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightToLeftSegue.swift; sourceTree = "<group>"; };
+		F1C949D31C787E8C006A6A86 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F1FC69DF1C7826BE006C2611 /* Custom-Monopoly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Custom-Monopoly.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1FC69E21C7826BE006C2611 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1FC69E71C7826BE006C2611 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1C949D41C787E8C006A6A86 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +101,7 @@
 		F1FC69D61C7826BE006C2611 = {
 			isa = PBXGroup;
 			children = (
+				F1C949D31C787E8C006A6A86 /* QuartzCore.framework */,
 				F1FC69E11C7826BE006C2611 /* Custom-Monopoly */,
 				F1FC69E01C7826BE006C2611 /* Products */,
 			);
@@ -135,9 +139,9 @@
 		F1FC69F51C78272C006C2611 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F1C949CF1C787ACD006A6A86 /* leftTransitionSegue.swift */,
 				F1FC69F91C782757006C2611 /* View Controllers */,
 				F1FC69F81C78274E006C2611 /* Storyboards */,
+				F1C949D11C787E40006A6A86 /* RightToLeftSegue.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -256,6 +260,7 @@
 				F1FC69FD1C783682006C2611 /* BoardSpace.swift in Sources */,
 				F1FC69E31C7826BE006C2611 /* AppDelegate.swift in Sources */,
 				F1C949C81C787256006A6A86 /* CoreImageTransitionHelper.m in Sources */,
+				F1C949D21C787E40006A6A86 /* RightToLeftSegue.swift in Sources */,
 				F1C949B61C787245006A6A86 /* CoreImageBlurTransition.m in Sources */,
 				F1C949C51C787256006A6A86 /* CoreImageMotionBlurTransition.m in Sources */,
 				F1FC69FF1C784455006C2611 /* PropertyViewController.swift in Sources */,
@@ -264,7 +269,6 @@
 				F1C949C61C787256006A6A86 /* CoreImageMotionBlurTransitionView.m in Sources */,
 				F1C949CC1C787261006A6A86 /* UIViewController+CoreImageTransition.m in Sources */,
 				F1C949C91C787256006A6A86 /* CoreImageTransitionView.m in Sources */,
-				F1C949D01C787ACD006A6A86 /* leftTransitionSegue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
