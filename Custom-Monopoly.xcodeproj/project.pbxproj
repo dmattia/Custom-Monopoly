@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F1FC69E31C7826BE006C2611 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FC69E21C7826BE006C2611 /* AppDelegate.swift */; };
-		F1FC69E51C7826BE006C2611 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FC69E41C7826BE006C2611 /* ViewController.swift */; };
 		F1FC69E81C7826BE006C2611 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1FC69E61C7826BE006C2611 /* Main.storyboard */; };
 		F1FC69EA1C7826BE006C2611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1FC69E91C7826BE006C2611 /* Assets.xcassets */; };
 		F1FC69ED1C7826BE006C2611 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1FC69EB1C7826BE006C2611 /* LaunchScreen.storyboard */; };
@@ -17,7 +16,6 @@
 /* Begin PBXFileReference section */
 		F1FC69DF1C7826BE006C2611 /* Custom-Monopoly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Custom-Monopoly.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1FC69E21C7826BE006C2611 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F1FC69E41C7826BE006C2611 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F1FC69E71C7826BE006C2611 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F1FC69E91C7826BE006C2611 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1FC69EC1C7826BE006C2611 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,14 +52,61 @@
 		F1FC69E11C7826BE006C2611 /* Custom-Monopoly */ = {
 			isa = PBXGroup;
 			children = (
-				F1FC69E21C7826BE006C2611 /* AppDelegate.swift */,
-				F1FC69E41C7826BE006C2611 /* ViewController.swift */,
-				F1FC69E61C7826BE006C2611 /* Main.storyboard */,
-				F1FC69E91C7826BE006C2611 /* Assets.xcassets */,
-				F1FC69EB1C7826BE006C2611 /* LaunchScreen.storyboard */,
-				F1FC69EE1C7826BE006C2611 /* Info.plist */,
+				F1FC69F71C782740006C2611 /* Resources */,
+				F1FC69F61C782731006C2611 /* Controller */,
+				F1FC69F51C78272C006C2611 /* View */,
+				F1FC69F41C782726006C2611 /* Model */,
 			);
 			path = "Custom-Monopoly";
+			sourceTree = "<group>";
+		};
+		F1FC69F41C782726006C2611 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F1FC69F51C78272C006C2611 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F1FC69F91C782757006C2611 /* View Controllers */,
+				F1FC69F81C78274E006C2611 /* Storyboards */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		F1FC69F61C782731006C2611 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F1FC69E21C7826BE006C2611 /* AppDelegate.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F1FC69F71C782740006C2611 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F1FC69E91C7826BE006C2611 /* Assets.xcassets */,
+				F1FC69EE1C7826BE006C2611 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F1FC69F81C78274E006C2611 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F1FC69E61C7826BE006C2611 /* Main.storyboard */,
+				F1FC69EB1C7826BE006C2611 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		F1FC69F91C782757006C2611 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +180,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1FC69E51C7826BE006C2611 /* ViewController.swift in Sources */,
 				F1FC69E31C7826BE006C2611 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
