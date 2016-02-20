@@ -13,6 +13,7 @@ class DetailViewController : UIViewController {
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var yesButton: UIButton!
     @IBOutlet weak var moneyLabel: UILabel!
+    @IBOutlet weak var closeButton: UIButton!
     var detailString : String?
     var shouldDisplayYesButton : Bool?
     var balance : Int = 0
@@ -30,6 +31,9 @@ class DetailViewController : UIViewController {
         if let shouldDisplayYesButton = shouldDisplayYesButton {
             self.yesButton.hidden = !shouldDisplayYesButton
             self.yesButton.enabled = shouldDisplayYesButton
+            if shouldDisplayYesButton {
+                self.closeButton.setTitle("No", forState: .Normal)
+            }
         }
         
         self.moneyLabel.text = "You have $\(balance)"
