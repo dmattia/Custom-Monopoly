@@ -13,9 +13,15 @@ class MenuViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Setup global myVars
+        let player1 = Player(name: "David", imageName: "harry")
+        myVars.gameplay.addPlayer(player1)
     }
 
     @IBAction func playButtonPressed(sender: AnyObject) {
+        print("Launching game with \(myVars.gameplay.players.count) players")
+        
         firstSpace = myVars.gameBoard.getBoardSpace(0)
         
         if firstSpace is Property {

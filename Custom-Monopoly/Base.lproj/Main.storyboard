@@ -19,20 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yXZ-1a-zHy">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="110"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="83"/>
                                 <color key="backgroundColor" red="0.095018796992481225" green="0.29984669859097746" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="harry" translatesAutoresizingMaskIntoConstraints="NO" id="hEo-ph-743">
-                                <rect key="frame" x="20" y="184" width="560" height="336"/>
+                                <rect key="frame" x="20" y="166" width="560" height="336"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Harry Potter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6k-q4-2BV">
-                                <rect key="frame" x="20" y="118" width="560" height="57"/>
-                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$400" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4o-5d-Hvx">
-                                <rect key="frame" x="20" y="535" width="560" height="57"/>
+                                <rect key="frame" x="20" y="100" width="560" height="57"/>
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -44,19 +38,34 @@
                                     <action selector="nextClicked:" destination="ZTD-I8-fT5" eventType="touchUpInside" id="eHG-fc-BvU"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1l8-ym-8tR">
+                                <rect key="frame" x="240" y="240" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="5bm-Jm-XA0"/>
+                                    <constraint firstAttribute="height" constant="120" id="kiJ-iU-adg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$400" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4o-5d-Hvx">
+                                <rect key="frame" x="20" y="523" width="560" height="57"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="J4o-5d-Hvx" secondAttribute="leading" id="0Sn-ku-dZT"/>
                             <constraint firstItem="hEo-ph-743" firstAttribute="centerX" secondItem="XzD-vp-ZLu" secondAttribute="centerX" id="J9q-6B-evE"/>
-                            <constraint firstItem="L6k-q4-2BV" firstAttribute="top" secondItem="yXZ-1a-zHy" secondAttribute="bottom" constant="8" id="L0n-Mc-jFb"/>
+                            <constraint firstItem="1l8-ym-8tR" firstAttribute="centerY" secondItem="XzD-vp-ZLu" secondAttribute="centerY" id="LnY-u9-oEh"/>
+                            <constraint firstItem="1l8-ym-8tR" firstAttribute="centerX" secondItem="XzD-vp-ZLu" secondAttribute="centerX" id="Vdf-Hh-mi0"/>
                             <constraint firstItem="L6k-q4-2BV" firstAttribute="centerX" secondItem="XzD-vp-ZLu" secondAttribute="centerX" id="YXl-5D-Iq3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="J4o-5d-Hvx" secondAttribute="trailing" id="bEO-69-Q61"/>
-                            <constraint firstItem="J4o-5d-Hvx" firstAttribute="top" secondItem="hEo-ph-743" secondAttribute="bottom" constant="15" id="fBo-8r-Edj"/>
+                            <constraint firstItem="J4o-5d-Hvx" firstAttribute="top" secondItem="hEo-ph-743" secondAttribute="bottom" constant="21" id="fBo-8r-Edj"/>
                             <constraint firstAttribute="leadingMargin" secondItem="hEo-ph-743" secondAttribute="leading" id="gbK-HF-jQH"/>
+                            <constraint firstItem="L6k-q4-2BV" firstAttribute="top" secondItem="yXZ-1a-zHy" secondAttribute="bottom" constant="17" id="ilV-nm-IFm"/>
                             <constraint firstItem="J4o-5d-Hvx" firstAttribute="centerX" secondItem="XzD-vp-ZLu" secondAttribute="centerX" id="rGa-RI-d1E"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hEo-ph-743" secondAttribute="trailing" id="rU4-Ox-B5o"/>
-                            <constraint firstItem="XuK-hK-61D" firstAttribute="top" secondItem="J4o-5d-Hvx" secondAttribute="bottom" constant="8" id="u3r-Sh-wrl"/>
+                            <constraint firstItem="XuK-hK-61D" firstAttribute="top" secondItem="J4o-5d-Hvx" secondAttribute="bottom" constant="20" id="u3r-Sh-wrl"/>
                             <constraint firstItem="hEo-ph-743" firstAttribute="top" secondItem="L6k-q4-2BV" secondAttribute="bottom" constant="9" id="wTz-ps-T2V"/>
                         </constraints>
                     </view>
@@ -64,7 +73,7 @@
                     <connections>
                         <outlet property="colorView" destination="yXZ-1a-zHy" id="5SI-wP-lGl"/>
                         <outlet property="costLabel" destination="J4o-5d-Hvx" id="Zeo-g4-QCI"/>
-                        <outlet property="imageView" destination="hEo-ph-743" id="jHC-wj-KfM"/>
+                        <outlet property="gamePieceImageView" destination="1l8-ym-8tR" id="eoV-hK-JMt"/>
                         <outlet property="titleLabel" destination="L6k-q4-2BV" id="n5f-dL-FN9"/>
                         <segue destination="Hdb-GZ-MTo" kind="show" identifier="PropertyToChance" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="U2Z-C4-Hq6"/>
                         <segue destination="tps-V5-hqA" kind="show" identifier="PropertyToNon" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="J1s-cW-lBp"/>
@@ -189,6 +198,13 @@
                                     <action selector="nextClicked:" destination="tps-V5-hqA" eventType="touchUpInside" id="FN5-di-4i0"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xtL-Na-8F2">
+                                <rect key="frame" x="240" y="240" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Xth-Zd-yi8"/>
+                                    <constraint firstAttribute="width" constant="120" id="roJ-4Z-cLb"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Hogwarts Express" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SE-ax-Tjc">
                                 <rect key="frame" x="20" y="49" width="560" height="42"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
@@ -205,14 +221,17 @@
                             <constraint firstItem="xw7-lM-gtK" firstAttribute="top" secondItem="Hvt-n3-2N8" secondAttribute="bottom" constant="28" id="FpO-eE-mAa"/>
                             <constraint firstItem="lAf-ks-hbB" firstAttribute="centerX" secondItem="YKI-53-ndf" secondAttribute="centerX" id="Lth-ad-LLb"/>
                             <constraint firstAttribute="leadingMargin" secondItem="lAf-ks-hbB" secondAttribute="leading" id="QCR-N1-a4H"/>
+                            <constraint firstItem="xtL-Na-8F2" firstAttribute="centerY" secondItem="YKI-53-ndf" secondAttribute="centerY" id="WYu-a1-qgF"/>
                             <constraint firstItem="3SE-ax-Tjc" firstAttribute="top" secondItem="u4v-KN-sCi" secondAttribute="bottom" constant="29" id="Y5x-T4-Vwp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lAf-ks-hbB" secondAttribute="trailing" id="bz0-2F-C2K"/>
+                            <constraint firstItem="xtL-Na-8F2" firstAttribute="centerX" secondItem="YKI-53-ndf" secondAttribute="centerX" id="o1W-DL-Cjq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3SE-ax-Tjc" secondAttribute="trailing" id="vUZ-w5-gRb"/>
                             <constraint firstAttribute="leadingMargin" secondItem="3SE-ax-Tjc" secondAttribute="leading" id="xKD-tp-gzF"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="costLabel" destination="Hvt-n3-2N8" id="Cva-PA-bkb"/>
+                        <outlet property="gamePieceImageView" destination="xtL-Na-8F2" id="XzE-k7-sDD"/>
                         <outlet property="imageView" destination="lAf-ks-hbB" id="Z7o-sy-K7U"/>
                         <outlet property="titleLabel" destination="3SE-ax-Tjc" id="gpd-YZ-U5F"/>
                         <segue destination="Hdb-GZ-MTo" kind="show" identifier="NonToChance" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="Mso-c9-KcU"/>
@@ -248,8 +267,8 @@
         <image name="hogwarts express" width="1500" height="1177"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HD0-Py-gk7"/>
-        <segue reference="U2Z-C4-Hq6"/>
-        <segue reference="ATZ-t4-onc"/>
+        <segue reference="J1s-cW-lBp"/>
+        <segue reference="aY6-CT-a5H"/>
+        <segue reference="Mso-c9-KcU"/>
     </inferredMetricsTieBreakers>
 </document>

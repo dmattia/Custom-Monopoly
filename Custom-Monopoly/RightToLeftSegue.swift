@@ -10,7 +10,6 @@ import UIKit
 import QuartzCore
 
 class RightToLeftSegue: UIStoryboardSegue {
-    
     override func perform() {
         let src: UIViewController = self.sourceViewController 
         let dst: UIViewController = self.destinationViewController 
@@ -23,6 +22,5 @@ class RightToLeftSegue: UIStoryboardSegue {
         src.navigationController!.view.layer.addAnimation(transition, forKey: kCATransition)
         src.navigationController!.pushViewController(dst, animated: true)
     }
-    
 }
 

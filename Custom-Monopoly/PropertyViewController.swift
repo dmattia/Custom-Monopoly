@@ -13,7 +13,7 @@ class PropertyViewController: UIViewController {
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var costLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var gamePieceImageView: UIImageView!
     
     var property : Property?
     var nextSpace : BoardSpace?
@@ -48,16 +48,40 @@ class PropertyViewController: UIViewController {
         nextSpace = myVars.gameBoard.getBoardSpace((property?.board_index)! + 1)
         display()
         
+        let active_player = myVars.gameplay.getActivePlayer()
+        let image = UIImage(named: active_player.pictureName)
+        self.gamePieceImageView.image = image
+        
+        gamePieceImageView.layer.borderWidth = 5.0
+        gamePieceImageView.layer.masksToBounds = false
+        gamePieceImageView.layer.borderColor = UIColor.whiteColor().CGColor
+        gamePieceImageView.layer.cornerRadius = gamePieceImageView.frame.width / 2
+        gamePieceImageView.clipsToBounds = true
+        
         self.navigationController?.navigationBarHidden = true
     }
     
-    func waitForCompletion(completion: () -> Void) {
-            completion()
-    }
-    
     override func viewDidAppear(animated: Bool) {
-        sleep(1)
-        moveToNextVC()
+        // TODO: Display the active user
+        
+        if !myVars.gameplay.hasRolled {
+            print("Rolling dice...")
+            sleep(3)
+            myVars.gameplay.hasRolled = true
+            myVars.gameplay.movesLeftInTurn = random() % 11 + 2
+            print("Rolled a \(myVars.gameplay.movesLeftInTurn)")
+        }
+        if myVars.gameplay.movesLeftInTurn > 0 {
+            sleep(1)
+            property?.on_leave()
+            myVars.gameplay.movesLeftInTurn -= 1
+            moveToNextVC()
+        } else {
+            sleep(5)
+            property?.on_land()
+            myVars.gameplay.gameTurn += 1
+            myVars.gameplay.hasRolled = false
+        }
     }
     
     @IBAction func nextClicked(sender: AnyObject) {
