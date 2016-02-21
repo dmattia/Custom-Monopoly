@@ -133,16 +133,19 @@ class ChanceAndCommunityViewController : UIViewController, UIImagePickerControll
         let chance_spot : [String : AnyObject] = [
             "name": self.topTextField!.text!,
             "price": 0,
-            "image": topImageString
+            "image": "" //topImageString
         ]
         let community_chest_spot : [String : AnyObject] = [
             "name": self.bottomTextField!.text!,
             "price": 0,
-            "image": bottomImageString
+            "image": "" //bottomImageString
         ]
         
+        // Todo: Ensure this isn't overwriting data
         var ref = Firebase(url:"https://blistering-fire-9767.firebaseio.com/")
         var boardRef = ref.childByAppendingPath(self.boardName)
+        //boardRef.childByAppendingPath("boardName").setValue(self.boardName!)
+        //boardRef.childByAppendingPath("main_image").setValue(topImageString)
         boardRef.childByAppendingPath("Property 2").setValue(chance_spot)
         boardRef.childByAppendingPath("Property 7").setValue(community_chest_spot)
     }

@@ -29,8 +29,9 @@ class MenuViewController : UIViewController {
     @IBAction func playButtonPressed(sender: AnyObject) {
         print("Launching game with \(myVars.gameplay.players.count) players")
         
-        firstSpace = myVars.gameBoard.getBoardSpace(0)
+        //firstSpace = myVars.gameBoard.getBoardSpace(0)
         
+        /*
         if firstSpace is Property {
             self.performSegueWithIdentifier("MenuToProperty", sender: nil)
         } else if firstSpace is Railroad {
@@ -38,6 +39,7 @@ class MenuViewController : UIViewController {
         } else {
             self.performSegueWithIdentifier("MenuToChance", sender: nil)
         }
+        */
     }
     
     @IBAction func stepperPressed(sender: AnyObject) {
@@ -45,6 +47,7 @@ class MenuViewController : UIViewController {
         self.playerCountLabel.text = "\(intValue)"
     }
     
+    /*
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "MenuToProperty" {
             let destinationVC = segue.destinationViewController as? PropertyViewController
@@ -60,4 +63,5 @@ class MenuViewController : UIViewController {
             print("Going to Go")
         }
     }
+    */
 }

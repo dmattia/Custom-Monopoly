@@ -14,6 +14,7 @@ class DetailViewController : UIViewController {
     @IBOutlet weak var yesButton: UIButton!
     @IBOutlet weak var moneyLabel: UILabel!
     @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var homeButton: FabButton!
     var detailString : String?
     var shouldDisplayYesButton : Bool?
     var balance : Int = 0
@@ -23,6 +24,8 @@ class DetailViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.homeButton.backgroundColor = MaterialColor.white
         
         if let detailString = detailString {
             self.detailLabel?.text = detailString

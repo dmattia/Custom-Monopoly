@@ -64,6 +64,7 @@
 		F15917621C7916A3001B9AFB /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15917331C7916A3001B9AFB /* TextView.swift */; };
 		F15917661C791BEE001B9AFB /* NewNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15917651C791BEE001B9AFB /* NewNameViewController.swift */; };
 		F15917681C794D5D001B9AFB /* ChanceAndCommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15917671C794D5D001B9AFB /* ChanceAndCommunityViewController.swift */; };
+		F159176B1C79B2EC001B9AFB /* ChooseThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F159176A1C79B2EC001B9AFB /* ChooseThemeViewController.swift */; };
 		F1C949B61C787245006A6A86 /* CoreImageBlurTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C949B51C787245006A6A86 /* CoreImageBlurTransition.m */; };
 		F1C949C41C787256006A6A86 /* CoreImageBlurTransitionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C949B81C787256006A6A86 /* CoreImageBlurTransitionView.m */; };
 		F1C949C51C787256006A6A86 /* CoreImageMotionBlurTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C949BA1C787256006A6A86 /* CoreImageMotionBlurTransition.m */; };
@@ -155,6 +156,7 @@
 		F15917331C7916A3001B9AFB /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		F15917651C791BEE001B9AFB /* NewNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewNameViewController.swift; sourceTree = "<group>"; };
 		F15917671C794D5D001B9AFB /* ChanceAndCommunityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChanceAndCommunityViewController.swift; sourceTree = "<group>"; };
+		F159176A1C79B2EC001B9AFB /* ChooseThemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseThemeViewController.swift; sourceTree = "<group>"; };
 		F1C949B41C78723A006A6A86 /* CoreImageBlurTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreImageBlurTransition.h; sourceTree = "<group>"; };
 		F1C949B51C787245006A6A86 /* CoreImageBlurTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreImageBlurTransition.m; sourceTree = "<group>"; };
 		F1C949B71C78724C006A6A86 /* CoreImageBlurTransitionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreImageBlurTransitionView.h; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				F1FC6A001C784EC4006C2611 /* NonPropertyOwnableViewController.swift */,
 				F1C949DB1C78B05A006A6A86 /* ChanceViewController.swift */,
 				F1C949EB1C78EECE006A6A86 /* DetailViewController.swift */,
+				F159176A1C79B2EC001B9AFB /* ChooseThemeViewController.swift */,
 			);
 			name = GameViewControllers;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				F15917421C7916A3001B9AFB /* MaterialDepth.swift in Sources */,
 				F15917541C7916A3001B9AFB /* NavigationBarView.swift in Sources */,
 				F1FC69FF1C784455006C2611 /* PropertyViewController.swift in Sources */,
+				F159176B1C79B2EC001B9AFB /* ChooseThemeViewController.swift in Sources */,
 				F159173B1C7916A3001B9AFB /* Material+UIImage+Resize.swift in Sources */,
 				F15916FE1C791697001B9AFB /* CaptureView.swift in Sources */,
 				F159174C1C7916A3001B9AFB /* MaterialShape.swift in Sources */,
