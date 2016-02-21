@@ -8,11 +8,47 @@
 
 import UIKit
 import Firebase
+import AWSCore
+import AWSCognito
+import AWSS3
+import AWSDynamoDB
+import AWSSQS
+import AWSSNS
 
 class ChooseThemeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
     @IBOutlet weak var tableView: UITableView!
     var data : [AnyObject]?
+    var image : UIImage?
+    
+    func getImageWithUrl(url: String) {
+        let downloadingFilePath1 = NSTemporaryDirectory() + "temp-download"
+        let downloadingFileURL1 = NSURL(fileURLWithPath: downloadingFilePath1)
+        let transferManager = AWSS3TransferManager.defaultS3TransferManager()
+        
+        let readRequest1 : AWSS3TransferManagerDownloadRequest = AWSS3TransferManagerDownloadRequest()
+        readRequest1.bucket = "custom-monopoly"
+        readRequest1.key =  url
+        readRequest1.downloadingFileURL = downloadingFileURL1
+        
+        let task = transferManager.download(readRequest1)
+        task.continueWithBlock { (task) -> AnyObject! in
+            print(task.error)
+            if task.error != nil {
+            } else {
+                dispatch_async(dispatch_get_main_queue()
+                    , { () -> Void in
+                        self.image = UIImage(contentsOfFile: downloadingFilePath1)
+                        //self.selectedImage = UIImage(contentsOfFile: downloadingFilePath1)
+                        //self.selectedImage.setNeedsDisplay()
+                        //self.selectedImage.reloadInputViews()
+                        
+                })
+                print("Fetched image")
+            }
+            return nil
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +78,38 @@ class ChooseThemeViewController: UIViewController, UITableViewDelegate, UITableV
             let snap : FDataSnapshot = data[indexPath.row] as! FDataSnapshot
             cell!.textLabel?.text = snap.key
             
-            //let dict = snap.value as! NSDictionary
-            //cell!.textLabel?.text = dict["boardName"] as! String
+            let dict = snap.value as! NSDictionary
+            let imageURL = dict["display_image"] as! String
+            
+            //getImageWithUrl(imageURL)
+            
+            let url = imageURL
+            
+            let downloadingFilePath1 = NSTemporaryDirectory() + "temp-download"
+            let downloadingFileURL1 = NSURL(fileURLWithPath: downloadingFilePath1)
+            let transferManager = AWSS3TransferManager.defaultS3TransferManager()
+            
+            let readRequest1 : AWSS3TransferManagerDownloadRequest = AWSS3TransferManagerDownloadRequest()
+            readRequest1.bucket = "custom-monopoly"
+            readRequest1.key =  url
+            readRequest1.downloadingFileURL = downloadingFileURL1
+            
+            let task = transferManager.download(readRequest1)
+            task.continueWithBlock { (task) -> AnyObject! in
+                if task.error != nil {
+                    print(task.error)
+                } else {
+                    dispatch_async(dispatch_get_main_queue()
+                        , { () -> Void in
+                            cell?.imageView?.image = UIImage(contentsOfFile: downloadingFilePath1)
+                            cell?.imageView?.setNeedsDisplay()
+                            cell?.imageView?.reloadInputViews()
+                            
+                            print(cell?.imageView?.image)
+                    })
+                }
+                return nil
+            }
         }
         
         return cell!

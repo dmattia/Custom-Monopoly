@@ -139,20 +139,24 @@ class ChanceAndCommunityViewController : UIViewController, UIImagePickerControll
         let chance_spot : [String : AnyObject] = [
             "name": self.topTextField!.text!,
             "price": 0,
-            "image": "" //topImageString
+            "image": self.boardName! + "/" + self.topTextField!.text!
         ]
         let community_chest_spot : [String : AnyObject] = [
             "name": self.bottomTextField!.text!,
             "price": 0,
-            "image": "" //bottomImageString
+            "image": self.boardName! + "/" + self.bottomTextField!.text!
         ]
         
         // Todo: Ensure this isn't overwriting data
         let transferManager = AWSS3TransferManager.defaultS3TransferManager()
         let ref = Firebase(url:"https://blistering-fire-9767.firebaseio.com/")
         let boardRef = ref.childByAppendingPath(self.boardName)
-        boardRef.childByAppendingPath("Property 2").setValue(chance_spot)
-        boardRef.childByAppendingPath("Property 7").setValue(community_chest_spot)
+        for index in [2,17,33] {
+            boardRef.childByAppendingPath("Property \(index)").setValue(chance_spot)
+        }
+        for index in [7,22,36] {
+            boardRef.childByAppendingPath("Property \(index)").setValue(community_chest_spot)
+        }
         
         // Add images to s3 instance
         let topFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory() + "temp")
