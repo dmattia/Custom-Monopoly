@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class ChanceAndCommunityViewController : UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    // From Segue
+    var boardName : String?
+    
     var topView = UIImageView()
     var bottomView = UIImageView()
     var navBuffer = UIView()
@@ -21,7 +25,10 @@ class ChanceAndCommunityViewController : UIViewController, UIImagePickerControll
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBarHidden
+        let saveButton : UIBarButtonItem = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "SaveData")
+        self.navigationItem.rightBarButtonItem = saveButton
+        
+        //self.navigationController?.navigationBarHidden = true
         
         navBuffer.grid.rows = 1
         topView.grid.rows = 3
@@ -98,7 +105,6 @@ class ChanceAndCommunityViewController : UIViewController, UIImagePickerControll
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            topView.contentMode = .ScaleAspectFill
             if topClicked {
                 topView.image = pickedImage
                 topView.contentMode = .ScaleAspectFit
@@ -110,5 +116,34 @@ class ChanceAndCommunityViewController : UIViewController, UIImagePickerControll
         topClicked = false
         bottomClicked = false
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func SaveData() {
+        print("Saving Chance and Community Chest")
+        
+        let topImage = topView.image
+        let topImageData: NSData = UIImageJPEGRepresentation(topImage!, 0.1)!
+        let topImageString: String = topImageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
+        
+        let bottomImage = bottomView.image
+        let bottomImageData: NSData = UIImageJPEGRepresentation(bottomImage!, 0.1)!
+        let bottomImageString: String = bottomImageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
+        
+        
+        let chance_spot : [String : AnyObject] = [
+            "name": self.topTextField!.text!,
+            "price": 0,
+            "image": topImageString
+        ]
+        let community_chest_spot : [String : AnyObject] = [
+            "name": self.bottomTextField!.text!,
+            "price": 0,
+            "image": bottomImageString
+        ]
+        
+        var ref = Firebase(url:"https://blistering-fire-9767.firebaseio.com/")
+        var boardRef = ref.childByAppendingPath(self.boardName)
+        boardRef.childByAppendingPath("Property 2").setValue(chance_spot)
+        boardRef.childByAppendingPath("Property 7").setValue(community_chest_spot)
     }
 }

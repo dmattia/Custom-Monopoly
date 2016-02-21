@@ -42,4 +42,11 @@ class NewNameViewController : UIViewController, UITextFieldDelegate {
         self.performSegueWithIdentifier("NameToChance", sender: nil)
         return true
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "NameToChance" {
+            let destinationVC = segue.destinationViewController as? ChanceAndCommunityViewController
+            destinationVC!.boardName = self.boardNameField.text
+        }
+    }
 }
