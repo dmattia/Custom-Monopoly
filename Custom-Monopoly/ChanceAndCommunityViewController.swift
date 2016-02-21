@@ -128,12 +128,12 @@ class ChanceAndCommunityViewController : UIViewController, UIImagePickerControll
         print("Saving Chance and Community Chest")
         
         let topImage = topView.image
-        let topImageData: NSData = UIImageJPEGRepresentation(topImage!, 0.1)!
-        let topImageString: String = topImageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
+        //let topImageData: NSData = UIImageJPEGRepresentation(topImage!, 0.1)!
+        //let topImageString: String = topImageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
         
         let bottomImage = bottomView.image
-        let bottomImageData: NSData = UIImageJPEGRepresentation(bottomImage!, 0.1)!
-        let bottomImageString: String = bottomImageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
+        //let bottomImageData: NSData = UIImageJPEGRepresentation(bottomImage!, 0.1)!
+        //let bottomImageString: String = bottomImageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
         
         
         let chance_spot : [String : AnyObject] = [
@@ -149,29 +149,46 @@ class ChanceAndCommunityViewController : UIViewController, UIImagePickerControll
         
         // Todo: Ensure this isn't overwriting data
         let transferManager = AWSS3TransferManager.defaultS3TransferManager()
-        var ref = Firebase(url:"https://blistering-fire-9767.firebaseio.com/")
-        var boardRef = ref.childByAppendingPath(self.boardName)
-        //boardRef.childByAppendingPath("boardName").setValue(self.boardName!)
-        //boardRef.childByAppendingPath("main_image").setValue(topImageString)
+        let ref = Firebase(url:"https://blistering-fire-9767.firebaseio.com/")
+        let boardRef = ref.childByAppendingPath(self.boardName)
         boardRef.childByAppendingPath("Property 2").setValue(chance_spot)
         boardRef.childByAppendingPath("Property 7").setValue(community_chest_spot)
         
         // Add images to s3 instance
-        let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory() + "temp")
+        let topFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory() + "temp")
+        let bottomFileURL2 = NSURL(fileURLWithPath: NSTemporaryDirectory() + "temp")
         let uploadRequest1 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
+        let uploadRequest2 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
+
+        let topData = UIImageJPEGRepresentation(topImage!, 0.5)
+        let bottomData = UIImageJPEGRepresentation(bottomImage!, 0.5)
+        topData!.writeToURL(topFileURL1, atomically: true)
+        bottomData!.writeToURL(bottomFileURL2, atomically: true)
         
-        let data = UIImageJPEGRepresentation(topImage!, 0.5)
-        data!.writeToURL(testFileURL1, atomically: true)
         uploadRequest1.bucket = "custom-monopoly"
-        uploadRequest1.key =  self.topTextField!.text
-        uploadRequest1.body = testFileURL1
+        uploadRequest1.key =  self.boardName! + "/" + self.topTextField!.text!
+        uploadRequest1.body = topFileURL1
         
-        let task = transferManager.upload(uploadRequest1)
+        uploadRequest2.bucket = "custom-monopoly"
+        uploadRequest2.key =  self.boardName! + "/" + self.bottomTextField!.text!
+        uploadRequest2.body = bottomFileURL2
+        
+        var task = transferManager.upload(uploadRequest1)
         task.continueWithBlock { (task) -> AnyObject? in
             if task.error != nil {
                 print("Error: \(task.error)")
             } else {
-                print("Upload successful")
+                print("Upload top successful")
+            }
+            return nil
+        }
+        
+        task = transferManager.upload(uploadRequest2)
+        task.continueWithBlock { (task) -> AnyObject? in
+            if task.error != nil {
+                print("Error: \(task.error)")
+            } else {
+                print("Upload bottom successful")
             }
             return nil
         }
