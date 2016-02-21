@@ -8,6 +8,12 @@
 
 import UIKit
 import Firebase
+import AWSCore
+import AWSCognito
+import AWSS3
+import AWSDynamoDB
+import AWSSQS
+import AWSSNS
 
 class ChanceAndCommunityViewController : UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -142,11 +148,32 @@ class ChanceAndCommunityViewController : UIViewController, UIImagePickerControll
         ]
         
         // Todo: Ensure this isn't overwriting data
+        let transferManager = AWSS3TransferManager.defaultS3TransferManager()
         var ref = Firebase(url:"https://blistering-fire-9767.firebaseio.com/")
         var boardRef = ref.childByAppendingPath(self.boardName)
         //boardRef.childByAppendingPath("boardName").setValue(self.boardName!)
         //boardRef.childByAppendingPath("main_image").setValue(topImageString)
         boardRef.childByAppendingPath("Property 2").setValue(chance_spot)
         boardRef.childByAppendingPath("Property 7").setValue(community_chest_spot)
+        
+        // Add images to s3 instance
+        let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory() + "temp")
+        let uploadRequest1 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
+        
+        let data = UIImageJPEGRepresentation(topImage!, 0.5)
+        data!.writeToURL(testFileURL1, atomically: true)
+        uploadRequest1.bucket = "custom-monopoly"
+        uploadRequest1.key =  self.topTextField!.text
+        uploadRequest1.body = testFileURL1
+        
+        let task = transferManager.upload(uploadRequest1)
+        task.continueWithBlock { (task) -> AnyObject? in
+            if task.error != nil {
+                print("Error: \(task.error)")
+            } else {
+                print("Upload successful")
+            }
+            return nil
+        }
     }
 }
