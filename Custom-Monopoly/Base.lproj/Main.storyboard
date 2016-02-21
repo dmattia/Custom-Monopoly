@@ -333,23 +333,44 @@
             </objects>
             <point key="canvasLocation" x="1048" y="2011"/>
         </scene>
-        <!--View Controller-->
+        <!--New Name View Controller-->
         <scene sceneID="Ib4-co-6LD">
             <objects>
-                <viewController id="Fqb-3E-OPb" sceneMemberID="viewController">
+                <viewController id="Fqb-3E-OPb" customClass="NewNameViewController" customModule="Custom_Monopoly" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mBK-BT-F0p"/>
                         <viewControllerLayoutGuide type="bottom" id="7H7-Lo-2O2"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Gnl-Zi-tzD" customClass="NavigationBarView" customModule="Custom_Monopoly" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="Gnl-Zi-tzD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="KTL-98-u82" kind="show" identifier="NameToChance" id="d4E-ER-c9m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I4X-Fi-dOB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1816" y="-355"/>
+        </scene>
+        <!--Chance And Community View Controller-->
+        <scene sceneID="egp-5q-kdz">
+            <objects>
+                <viewController id="KTL-98-u82" customClass="ChanceAndCommunityViewController" customModule="Custom_Monopoly" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="T9d-17-HEX"/>
+                        <viewControllerLayoutGuide type="bottom" id="UzH-Vc-5AW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G8b-Va-mdE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="I4X-Fi-dOB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e1p-LK-SQx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1816" y="-355"/>
+            <point key="canvasLocation" x="2561" y="-355"/>
         </scene>
         <!--Non Property Ownable View Controller-->
         <scene sceneID="Nf0-67-Buu">
@@ -447,6 +468,6 @@
         <segue reference="NCb-oe-77j"/>
         <segue reference="oY3-Kn-4Qi"/>
         <segue reference="Qt3-C8-Fb6"/>
-        <segue reference="lF1-fd-qg4"/>
+        <segue reference="brI-eK-T7q"/>
     </inferredMetricsTieBreakers>
 </document>

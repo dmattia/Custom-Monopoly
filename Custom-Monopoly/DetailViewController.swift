@@ -36,6 +36,11 @@ class DetailViewController : UIViewController {
             }
         }
         
+        if balance - cost < 0 {
+            self.yesButton.enabled = false
+            self.yesButton.backgroundColor = MaterialColor.grey.base
+        }
+        
         self.moneyLabel.text = "You have $\(balance)"
     }
     
