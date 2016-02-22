@@ -47,6 +47,9 @@ class TwoPropertyViewController : UIViewController, UIImagePickerControllerDeleg
         bottomView.grid.rows = 3
         view.grid.axis.direction = .Vertical
         
+        topView.backgroundColor = MaterialColor.blue.base
+        bottomView.backgroundColor = MaterialColor.blue.base
+        
         topView.image = UIImage(named: image1!)
         bottomView.image = UIImage(named: image2!)
         
@@ -119,9 +122,11 @@ class TwoPropertyViewController : UIViewController, UIImagePickerControllerDeleg
             if topClicked {
                 topView.image = pickedImage
                 topView.contentMode = .ScaleAspectFit
+                topView.backgroundColor = UIColor.clearColor()
             } else if bottomClicked {
                 bottomView.image = pickedImage
                 bottomView.contentMode = .ScaleAspectFit
+                bottomView.backgroundColor = UIColor.clearColor()
             }
         }
         topClicked = false
