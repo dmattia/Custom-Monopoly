@@ -21,11 +21,6 @@
             <string>Roboto-Thin</string>
             <string>Roboto-Thin</string>
             <string>Roboto-Thin</string>
-            <string>Roboto-Thin</string>
-            <string>Roboto-Thin</string>
-            <string>Roboto-Thin</string>
-            <string>Roboto-Thin</string>
-            <string>Roboto-Thin</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -110,82 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgz-sz-Dkq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-546" y="407"/>
-        </scene>
-        <!--Property View Controller-->
-        <scene sceneID="syq-gP-Jrp">
-            <objects>
-                <viewController storyboardIdentifier="Property" id="ZTD-I8-fT5" customClass="PropertyViewController" customModule="Custom_Monopoly" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ffV-1H-leA"/>
-                        <viewControllerLayoutGuide type="bottom" id="XuK-hK-61D"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="XzD-vp-ZLu">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yXZ-1a-zHy">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="83"/>
-                                <color key="backgroundColor" red="0.095018796992481225" green="0.29984669859097746" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="83" id="e8N-Tg-eFP"/>
-                                </constraints>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="harry" translatesAutoresizingMaskIntoConstraints="NO" id="hEo-ph-743">
-                                <rect key="frame" x="20" y="166" width="560" height="336"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Harry Potter" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="L6k-q4-2BV">
-                                <rect key="frame" x="20" y="105" width="560" height="52"/>
-                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1l8-ym-8tR">
-                                <rect key="frame" x="240" y="240" width="120" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="5bm-Jm-XA0"/>
-                                    <constraint firstAttribute="height" constant="120" id="kiJ-iU-adg"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$400" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4o-5d-Hvx">
-                                <rect key="frame" x="20" y="523" width="560" height="57"/>
-                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="leadingMargin" secondItem="L6k-q4-2BV" secondAttribute="leading" id="5JX-Q0-TfF"/>
-                            <constraint firstItem="L6k-q4-2BV" firstAttribute="top" secondItem="yXZ-1a-zHy" secondAttribute="bottom" constant="22" id="DBK-fc-CnI"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="L6k-q4-2BV" secondAttribute="trailing" id="J8m-Qw-1Hx"/>
-                            <constraint firstItem="J4o-5d-Hvx" firstAttribute="top" secondItem="hEo-ph-743" secondAttribute="bottom" constant="21" id="JA2-PC-1I4"/>
-                            <constraint firstItem="yXZ-1a-zHy" firstAttribute="top" secondItem="XzD-vp-ZLu" secondAttribute="topMargin" id="JcZ-Dc-e8B"/>
-                            <constraint firstItem="1l8-ym-8tR" firstAttribute="centerX" secondItem="XzD-vp-ZLu" secondAttribute="centerX" id="MZ8-mP-RU8"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="hEo-ph-743" secondAttribute="leading" id="XZo-0C-tSP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hEo-ph-743" secondAttribute="trailing" id="Zm1-lM-q7y"/>
-                            <constraint firstItem="1l8-ym-8tR" firstAttribute="centerY" secondItem="XzD-vp-ZLu" secondAttribute="centerY" id="bzj-UK-Xfl"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="J4o-5d-Hvx" secondAttribute="leading" id="hJY-7b-LjH"/>
-                            <constraint firstItem="XuK-hK-61D" firstAttribute="top" secondItem="J4o-5d-Hvx" secondAttribute="bottom" constant="20" id="hVx-fg-S0n"/>
-                            <constraint firstItem="hEo-ph-743" firstAttribute="top" secondItem="L6k-q4-2BV" secondAttribute="bottom" constant="9" id="sIK-tQ-glK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="J4o-5d-Hvx" secondAttribute="trailing" id="tqd-9y-wjC"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="vYI-wg-Cvk"/>
-                    <connections>
-                        <outlet property="colorView" destination="yXZ-1a-zHy" id="5SI-wP-lGl"/>
-                        <outlet property="costLabel" destination="J4o-5d-Hvx" id="Zeo-g4-QCI"/>
-                        <outlet property="gamePieceImageView" destination="1l8-ym-8tR" id="eoV-hK-JMt"/>
-                        <outlet property="mainImage" destination="hEo-ph-743" id="y6g-je-24o"/>
-                        <outlet property="titleLabel" destination="L6k-q4-2BV" id="n5f-dL-FN9"/>
-                        <segue destination="Hdb-GZ-MTo" kind="show" identifier="PropertyToChance" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="U2Z-C4-Hq6"/>
-                        <segue destination="tps-V5-hqA" kind="show" identifier="PropertyToNon" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="J1s-cW-lBp"/>
-                        <segue destination="DO4-ub-CgA" kind="presentation" identifier="PropertyToDetail" modalPresentationStyle="overFullScreen" id="0L5-gu-QWR"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cPl-3i-DSj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="372" y="407"/>
+            <point key="canvasLocation" x="1100" y="607"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="Wbo-TG-cCH">
@@ -348,71 +268,12 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="VJP-Qu-jaV" id="3hk-Al-3kk"/>
-                        <segue destination="Hdb-GZ-MTo" kind="show" identifier="menuToGo" id="32J-nQ-Drb"/>
                         <segue destination="t1s-YZ-L2i" kind="show" identifier="menuToBoardSpace" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="moM-4Q-5i0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kZa-ip-e7Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1100" y="-171"/>
-        </scene>
-        <!--Chance View Controller-->
-        <scene sceneID="hRR-uE-lum">
-            <objects>
-                <viewController storyboardIdentifier="Chance" id="Hdb-GZ-MTo" customClass="ChanceViewController" customModule="Custom_Monopoly" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Bzb-0c-npF"/>
-                        <viewControllerLayoutGuide type="bottom" id="IWN-Bt-Y7Q"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6iU-ZZ-lLm">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goblet_of_fire" translatesAutoresizingMaskIntoConstraints="NO" id="3hX-ud-Ufn">
-                                <rect key="frame" x="20" y="112" width="560" height="375"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="375" id="qQP-Bz-nu3"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Goblet of Fire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbB-FP-BxZ">
-                                <rect key="frame" x="20" y="46" width="560" height="36"/>
-                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LV2-ex-6CA">
-                                <rect key="frame" x="240" y="240" width="120" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="IsE-Or-zCB"/>
-                                    <constraint firstAttribute="height" constant="120" id="qPn-Un-6Hj"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="3hX-ud-Ufn" secondAttribute="trailing" id="3en-il-s6l"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZbB-FP-BxZ" secondAttribute="trailing" id="6cA-PX-f8Y"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="3hX-ud-Ufn" secondAttribute="leading" id="Chd-WC-9O4"/>
-                            <constraint firstItem="LV2-ex-6CA" firstAttribute="centerY" secondItem="6iU-ZZ-lLm" secondAttribute="centerY" id="bBh-6j-xnu"/>
-                            <constraint firstItem="ZbB-FP-BxZ" firstAttribute="top" secondItem="Bzb-0c-npF" secondAttribute="bottom" constant="26" id="day-OK-OsA"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="ZbB-FP-BxZ" secondAttribute="leading" id="eiR-6u-348"/>
-                            <constraint firstItem="3hX-ud-Ufn" firstAttribute="centerY" secondItem="6iU-ZZ-lLm" secondAttribute="centerY" id="fPQ-xk-U95"/>
-                            <constraint firstItem="LV2-ex-6CA" firstAttribute="centerX" secondItem="6iU-ZZ-lLm" secondAttribute="centerX" id="xzl-Ra-7P0"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="gamePieceImageView" destination="LV2-ex-6CA" id="Pwj-pY-Yo8"/>
-                        <outlet property="imageLabel" destination="3hX-ud-Ufn" id="5gd-Fa-0Vf"/>
-                        <outlet property="nameLabel" destination="ZbB-FP-BxZ" id="AYZ-Uy-eEL"/>
-                        <segue destination="ZTD-I8-fT5" kind="show" identifier="ChanceToProperty" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="ATZ-t4-onc"/>
-                        <segue destination="tps-V5-hqA" kind="show" identifier="ChanceToNon" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="HD0-Py-gk7"/>
-                        <segue destination="DO4-ub-CgA" kind="presentation" identifier="ChanceToDetail" modalPresentationStyle="overFullScreen" id="HPa-l3-1cT"/>
-                        <segue destination="DO4-ub-CgA" kind="presentation" identifier="PassedGo" id="lF1-fd-qg4"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WFh-Lr-9BM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1036" y="1283"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="bPi-F3-r1m">
@@ -506,7 +367,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yr1-PO-njw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1048" y="2011"/>
+            <point key="canvasLocation" x="1100" y="1333"/>
         </scene>
         <!--New Name View Controller-->
         <scene sceneID="Ib4-co-6LD">
@@ -548,7 +409,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1p-LK-SQx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2613" y="-879"/>
+            <point key="canvasLocation" x="1868" y="-171"/>
         </scene>
         <!--Two Property View Controller-->
         <scene sceneID="FsF-92-phG">
@@ -566,75 +427,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fb6-Wc-Pkk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2613" y="-93"/>
-        </scene>
-        <!--Non Property Ownable View Controller-->
-        <scene sceneID="Nf0-67-Buu">
-            <objects>
-                <viewController storyboardIdentifier="Non" id="tps-V5-hqA" customClass="NonPropertyOwnableViewController" customModule="Custom_Monopoly" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="u4v-KN-sCi"/>
-                        <viewControllerLayoutGuide type="bottom" id="xw7-lM-gtK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="YKI-53-ndf">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="hogwarts express" translatesAutoresizingMaskIntoConstraints="NO" id="lAf-ks-hbB">
-                                <rect key="frame" x="20" y="99" width="560" height="407"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="$400" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hvt-n3-2N8">
-                                <rect key="frame" x="20" y="537" width="560" height="35"/>
-                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xtL-Na-8F2">
-                                <rect key="frame" x="240" y="240" width="120" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="Xth-Zd-yi8"/>
-                                    <constraint firstAttribute="width" constant="120" id="roJ-4Z-cLb"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Hogwarts Express" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="3SE-ax-Tjc">
-                                <rect key="frame" x="20" y="49" width="560" height="42"/>
-                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Hvt-n3-2N8" firstAttribute="top" secondItem="lAf-ks-hbB" secondAttribute="bottom" constant="31" id="0cE-lg-UZy"/>
-                            <constraint firstItem="lAf-ks-hbB" firstAttribute="top" secondItem="3SE-ax-Tjc" secondAttribute="bottom" constant="8" id="AOL-8W-KkW"/>
-                            <constraint firstItem="3SE-ax-Tjc" firstAttribute="centerX" secondItem="YKI-53-ndf" secondAttribute="centerX" id="AXU-Zk-YGL"/>
-                            <constraint firstItem="Hvt-n3-2N8" firstAttribute="centerX" secondItem="YKI-53-ndf" secondAttribute="centerX" id="FFr-di-sOS"/>
-                            <constraint firstItem="xw7-lM-gtK" firstAttribute="top" secondItem="Hvt-n3-2N8" secondAttribute="bottom" constant="28" id="FpO-eE-mAa"/>
-                            <constraint firstItem="lAf-ks-hbB" firstAttribute="centerX" secondItem="YKI-53-ndf" secondAttribute="centerX" id="Lth-ad-LLb"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="lAf-ks-hbB" secondAttribute="leading" id="QCR-N1-a4H"/>
-                            <constraint firstItem="xtL-Na-8F2" firstAttribute="centerY" secondItem="YKI-53-ndf" secondAttribute="centerY" id="WYu-a1-qgF"/>
-                            <constraint firstItem="3SE-ax-Tjc" firstAttribute="top" secondItem="u4v-KN-sCi" secondAttribute="bottom" constant="29" id="Y5x-T4-Vwp"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lAf-ks-hbB" secondAttribute="trailing" id="bz0-2F-C2K"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="Hvt-n3-2N8" secondAttribute="leading" id="dWs-hU-JxR"/>
-                            <constraint firstItem="xtL-Na-8F2" firstAttribute="centerX" secondItem="YKI-53-ndf" secondAttribute="centerX" id="o1W-DL-Cjq"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Hvt-n3-2N8" secondAttribute="trailing" id="oba-i8-HXq"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="3SE-ax-Tjc" secondAttribute="trailing" id="vUZ-w5-gRb"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="3SE-ax-Tjc" secondAttribute="leading" id="xKD-tp-gzF"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="costLabel" destination="Hvt-n3-2N8" id="Cva-PA-bkb"/>
-                        <outlet property="gamePieceImageView" destination="xtL-Na-8F2" id="XzE-k7-sDD"/>
-                        <outlet property="imageView" destination="lAf-ks-hbB" id="Z7o-sy-K7U"/>
-                        <outlet property="titleLabel" destination="3SE-ax-Tjc" id="gpd-YZ-U5F"/>
-                        <segue destination="Hdb-GZ-MTo" kind="show" identifier="NonToChance" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="Mso-c9-KcU"/>
-                        <segue destination="ZTD-I8-fT5" kind="show" identifier="NonToProperty" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="aY6-CT-a5H"/>
-                        <segue destination="DO4-ub-CgA" kind="presentation" identifier="NonToDetail" modalPresentationStyle="overFullScreen" id="brI-eK-T7q"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OTV-t4-pJa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1759" y="407"/>
+            <point key="canvasLocation" x="1868" y="619"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Egm-V3-Qei">
@@ -657,14 +450,6 @@
     </scenes>
     <resources>
         <image name="Home-50" width="50" height="50"/>
-        <image name="goblet_of_fire" width="1200" height="888"/>
         <image name="harry" width="620" height="465"/>
-        <image name="hogwarts express" width="1500" height="1177"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="aY6-CT-a5H"/>
-        <segue reference="J1s-cW-lBp"/>
-        <segue reference="Zsa-aI-7ux"/>
-        <segue reference="32J-nQ-Drb"/>
-    </inferredMetricsTieBreakers>
 </document>

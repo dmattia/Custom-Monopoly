@@ -101,7 +101,6 @@
 		F1C949D61C789602006A6A86 /* Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C949D51C789602006A6A86 /* Gameplay.swift */; };
 		F1C949D81C78962F006A6A86 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C949D71C78962F006A6A86 /* Player.swift */; };
 		F1C949DA1C7897F0006A6A86 /* globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C949D91C7897F0006A6A86 /* globals.swift */; };
-		F1C949DC1C78B05A006A6A86 /* ChanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C949DB1C78B05A006A6A86 /* ChanceViewController.swift */; };
 		F1C949DE1C78CF9A006A6A86 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C949DD1C78CF9A006A6A86 /* Firebase.framework */; };
 		F1C949E01C78D5D6006A6A86 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C949DF1C78D5D6006A6A86 /* libicucore.tbd */; };
 		F1C949E21C78D5E5006A6A86 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C949E11C78D5E5006A6A86 /* libc++.tbd */; };
@@ -115,8 +114,6 @@
 		F1FC69ED1C7826BE006C2611 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1FC69EB1C7826BE006C2611 /* LaunchScreen.storyboard */; };
 		F1FC69FB1C783484006C2611 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FC69FA1C783484006C2611 /* Board.swift */; };
 		F1FC69FD1C783682006C2611 /* BoardSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FC69FC1C783682006C2611 /* BoardSpace.swift */; };
-		F1FC69FF1C784455006C2611 /* PropertyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FC69FE1C784455006C2611 /* PropertyViewController.swift */; };
-		F1FC6A011C784EC4006C2611 /* NonPropertyOwnableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FC6A001C784EC4006C2611 /* NonPropertyOwnableViewController.swift */; };
 		F1FC6A031C786122006C2611 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FC6A021C786122006C2611 /* MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -226,7 +223,6 @@
 		F1C949D51C789602006A6A86 /* Gameplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gameplay.swift; sourceTree = "<group>"; };
 		F1C949D71C78962F006A6A86 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		F1C949D91C7897F0006A6A86 /* globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = globals.swift; sourceTree = "<group>"; };
-		F1C949DB1C78B05A006A6A86 /* ChanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChanceViewController.swift; sourceTree = "<group>"; };
 		F1C949DD1C78CF9A006A6A86 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = ../Firebase.framework; sourceTree = "<group>"; };
 		F1C949DF1C78D5D6006A6A86 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		F1C949E11C78D5E5006A6A86 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -242,8 +238,6 @@
 		F1FC69EE1C7826BE006C2611 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1FC69FA1C783484006C2611 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		F1FC69FC1C783682006C2611 /* BoardSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardSpace.swift; sourceTree = "<group>"; };
-		F1FC69FE1C784455006C2611 /* PropertyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyViewController.swift; sourceTree = "<group>"; };
-		F1FC6A001C784EC4006C2611 /* NonPropertyOwnableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonPropertyOwnableViewController.swift; sourceTree = "<group>"; };
 		F1FC6A021C786122006C2611 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -352,9 +346,6 @@
 			isa = PBXGroup;
 			children = (
 				F15917981C7BB478001B9AFB /* BoardSpaceViewController.swift */,
-				F1FC69FE1C784455006C2611 /* PropertyViewController.swift */,
-				F1FC6A001C784EC4006C2611 /* NonPropertyOwnableViewController.swift */,
-				F1C949DB1C78B05A006A6A86 /* ChanceViewController.swift */,
 				F1C949EB1C78EECE006A6A86 /* DetailViewController.swift */,
 				F159176A1C79B2EC001B9AFB /* ChooseThemeViewController.swift */,
 			);
@@ -610,7 +601,6 @@
 				F15917481C7916A3001B9AFB /* MaterialLayer.swift in Sources */,
 				F15917381C7916A3001B9AFB /* Material+UIImage+Crop.swift in Sources */,
 				F1FC69FD1C783682006C2611 /* BoardSpace.swift in Sources */,
-				F1C949DC1C78B05A006A6A86 /* ChanceViewController.swift in Sources */,
 				F15917461C7916A3001B9AFB /* MaterialKeyframeAnimation.swift in Sources */,
 				F1FC69E31C7826BE006C2611 /* AppDelegate.swift in Sources */,
 				F15917401C7916A3001B9AFB /* MaterialButton.swift in Sources */,
@@ -642,13 +632,11 @@
 				F15917451C7916A3001B9AFB /* MaterialGravity.swift in Sources */,
 				F15917421C7916A3001B9AFB /* MaterialDepth.swift in Sources */,
 				F15917541C7916A3001B9AFB /* NavigationBarView.swift in Sources */,
-				F1FC69FF1C784455006C2611 /* PropertyViewController.swift in Sources */,
 				F159176B1C79B2EC001B9AFB /* ChooseThemeViewController.swift in Sources */,
 				F159173B1C7916A3001B9AFB /* Material+UIImage+Resize.swift in Sources */,
 				F15916FE1C791697001B9AFB /* CaptureView.swift in Sources */,
 				F159174C1C7916A3001B9AFB /* MaterialShape.swift in Sources */,
 				F159173F1C7916A3001B9AFB /* MaterialBorder.swift in Sources */,
-				F1FC6A011C784EC4006C2611 /* NonPropertyOwnableViewController.swift in Sources */,
 				F15917441C7916A3001B9AFB /* MaterialFont.swift in Sources */,
 				F159174D1C7916A3001B9AFB /* MaterialSwitch.swift in Sources */,
 				F1C949C41C787256006A6A86 /* CoreImageBlurTransitionView.m in Sources */,
