@@ -107,7 +107,7 @@ class ChooseThemeViewController: UIViewController, UITableViewDelegate, UITableV
         
         print("Picked theme \(optionPressed)")
         
-        self.performSegueWithIdentifier("menuToGo", sender: nil)
+        self.performSegueWithIdentifier("menuToBoardSpace", sender: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -116,6 +116,9 @@ class ChooseThemeViewController: UIViewController, UITableViewDelegate, UITableV
             destinationVC?.boardSpace = myVars.gameBoard.getBoardSpace(0) as? MiscSpace
 
             print("Going to Go")
+        } else if segue.identifier == "menuToBoardSpace",
+            let destinationVC = segue.destinationViewController as? BoardSpaceViewController {
+                destinationVC.boardSpace = myVars.gameBoard.getBoardSpace(0)
         }
     }
 }

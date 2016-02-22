@@ -1,14 +1,16 @@
 //
-//  PropertyViewController.swift
+//  BoardSpaceViewController.swift
 //  Custom-Monopoly
 //
-//  Created by David Mattia on 2/20/16.
+//  Created by David Mattia on 2/22/16.
 //  Copyright © 2016 David Mattia. All rights reserved.
 //
 
 import UIKit
 
-class PropertyViewController: UIViewController {
+class BoardSpaceViewController: UIViewController {
+    
+    var boardSpace : BoardSpace?
     
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var costLabel: UILabel!
@@ -26,50 +28,51 @@ class PropertyViewController: UIViewController {
         }
     }
     
-    var property : Property?
-    var nextSpace : BoardSpace?
-    
     func display() {
-        if let property = property {
-            self.costLabel.text = "$\(property.price)"
-            self.titleLabel.text = property.space_name
+        self.titleLabel.text = boardSpace?.space_name
+        self.mainImage.image = boardSpace?.image
+        if let ownable = boardSpace as? Ownable {
+            self.costLabel.text = "$\(ownable.price)"
+        } else {
+            self.costLabel.text = ""
+        }
+        if let property = boardSpace as? Property {
             self.colorView.backgroundColor = property.color
+        } else {
+            self.colorView.backgroundColor = UIColor.clearColor()
         }
     }
     
     func moveToNextVC() {
+        // Elevate gamePiece so it does not move with the animation
         let window = UIApplication.sharedApplication().keyWindow
         
         window!.addSubview(self.gamePieceImageView)
         window!.bringSubviewToFront(self.gamePieceImageView)
         window!.makeKeyAndVisible()
-                
-        if nextSpace is Property {
-            self.gamePieceImageView.hidden = true
-            
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let nextVC = storyBoard.instantiateViewControllerWithIdentifier("Property") as? PropertyViewController
-            nextVC!.property = nextSpace as? Property
-            
-            let navController = UINavigationController(rootViewController: nextVC!)
-            let segue = RightToLeftSegue(identifier: "PropertyToProperty", source: self, destination: nextVC!, performHandler: { () -> Void in })
-
-            segue.perform()
-        } else if nextSpace is Railroad {
-            self.performSegueWithIdentifier("PropertyToNon", sender: nil)
-        } else if nextSpace is MiscSpace {
-            self.performSegueWithIdentifier("PropertyToChance", sender: nil)
-        }
+        
+        // Perform the animation to the next boardSpace
+        let nextSpace = myVars.gameBoard.getBoardSpace((boardSpace?.board_index)! + 1)
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let nextVC = storyBoard.instantiateViewControllerWithIdentifier("BoardSpace") as? BoardSpaceViewController
+        nextVC!.boardSpace = nextSpace
+        
+        // TODO: check what this next line does. I forget
+        let navController = UINavigationController(rootViewController: nextVC!)
+        let segue = RightToLeftSegue(identifier: "PropertyToProperty", source: self, destination: nextVC!, performHandler: { () -> Void in })
+        
+        segue.perform()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nextSpace = myVars.gameBoard.getBoardSpace((property?.board_index)! + 1)
         display()
         
         let active_player = myVars.gameplay.getActivePlayer()
         let image = UIImage(named: active_player.pictureName)
         self.gamePieceImageView.image = image
+        self.view.bringSubviewToFront(self.gamePieceImageView)
         
         gamePieceImageView.layer.borderWidth = 5.0
         gamePieceImageView.layer.masksToBounds = false
@@ -81,11 +84,14 @@ class PropertyViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        gamePieceImageView.hidden = true
+        print("Gameturn: \(myVars.gameplay.gameTurn)")
+        if myVars.gameplay.gameTurn != 0 {
+            self.gamePieceImageView.hidden = true
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
-        gamePieceImageView.hidden = false
+        self.gamePieceImageView.hidden = false
         
         let window = UIApplication.sharedApplication().keyWindow
         
@@ -99,12 +105,12 @@ class PropertyViewController: UIViewController {
         
         if myVars.gameplay.movesLeftInTurn > 0 {
             usleep(500000)
-            property?.on_leave()
+            boardSpace?.on_leave()
             myVars.gameplay.movesLeftInTurn -= 1
             moveToNextVC()
         } else {
             // Display action for landing
-            self.performSegueWithIdentifier("PropertyToDetail", sender: nil)
+            self.performSegueWithIdentifier("BoardSpaceToDetail", sender: nil)
             
             myVars.gameplay.gameTurn += 1
             myVars.gameplay.hasRolled = false
@@ -112,19 +118,19 @@ class PropertyViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "PropertyToNon" {
-            let destinationVC = segue.destinationViewController as? NonPropertyOwnableViewController
-            destinationVC?.boardSpace = nextSpace as? Railroad
-            print("Going to property: \(nextSpace)")
-        } else if segue.identifier == "PropertyToChance" {
-            let destinationVC = segue.destinationViewController as? ChanceViewController
-            destinationVC?.boardSpace = nextSpace as? MiscSpace
-        } else if segue.identifier == "PropertyToDetail" {
+        if segue.identifier == "BoardSpaceToDetail" {
             let destinationVC = segue.destinationViewController as? DetailViewController
-            destinationVC?.detailString = "Do you want to buy \(property!.space_name) for \(property!.price)?"
-            destinationVC?.shouldDisplayYesButton = true
-            destinationVC?.balance = myVars.gameplay.getActivePlayer().balance
-            destinationVC?.cost = property!.price
+            if let ownable = boardSpace as? Ownable {
+                destinationVC?.detailString = "Do you want to buy \(ownable.space_name) for \(ownable.price)?"
+                destinationVC?.shouldDisplayYesButton = true
+                destinationVC?.balance = myVars.gameplay.getActivePlayer().balance
+                destinationVC?.cost = ownable.price
+            } else {
+                destinationVC?.detailString = "Some kind of chance card"
+                destinationVC?.shouldDisplayYesButton = false
+                destinationVC?.balance = myVars.gameplay.getActivePlayer().balance
+            }
+            // ToDo: Add segue for passing Go
         }
     }
 }

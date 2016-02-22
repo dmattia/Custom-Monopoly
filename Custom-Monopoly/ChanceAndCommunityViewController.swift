@@ -207,6 +207,7 @@ class ChanceAndCommunityViewController : UIViewController, UIImagePickerControll
         if segue.identifier == "ChanceToBrown" {
             if let destinationVC = segue.destinationViewController as? TwoPropertyViewController {
                 destinationVC.boardName = self.boardName
+                /*
                 destinationVC.image1 = "house-50"
                 destinationVC.image2 = "house-50"
                 destinationVC.image1_name = "Mediterranean Avenue"
@@ -214,8 +215,12 @@ class ChanceAndCommunityViewController : UIViewController, UIImagePickerControll
                 
                 destinationVC.price1 = 60
                 destinationVC.price2 = 60
+                */
                 destinationVC.property_indexes_1 = [1]
                 destinationVC.property_indexes_2 = [2]
+
+                destinationVC.topBoardSpace = myVars.gameBoard.getBoardSpace(1)
+                destinationVC.topBoardSpace = myVars.gameBoard.getBoardSpace(3)
             } else {
                 print("Could not find destination view controller")
             }

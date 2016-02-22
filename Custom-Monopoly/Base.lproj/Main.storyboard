@@ -24,9 +24,94 @@
             <string>Roboto-Thin</string>
             <string>Roboto-Thin</string>
             <string>Roboto-Thin</string>
+            <string>Roboto-Thin</string>
+            <string>Roboto-Thin</string>
         </mutableArray>
     </customFonts>
     <scenes>
+        <!--Board Space View Controller-->
+        <scene sceneID="4qn-sj-9If">
+            <objects>
+                <viewController storyboardIdentifier="BoardSpace" id="t1s-YZ-L2i" customClass="BoardSpaceViewController" customModule="Custom_Monopoly" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="REq-Hp-7lu"/>
+                        <viewControllerLayoutGuide type="bottom" id="RQB-Pf-Wyx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1ip-G3-bwk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KMH-nb-gH8">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="83"/>
+                                <color key="backgroundColor" red="0.095018796990000001" green="0.29984669860000002" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="83" id="WwM-IF-89C"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fg8-dB-R8k">
+                                <rect key="frame" x="20" y="166" width="560" height="336"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Harry Potter" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="TOn-Gq-nR4">
+                                <rect key="frame" x="20" y="105" width="560" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="8Qy-fx-t4b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$400" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34r-cW-2T7">
+                                <rect key="frame" x="20" y="523" width="560" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="c74-hd-fnZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="harry" translatesAutoresizingMaskIntoConstraints="NO" id="GtE-bC-uY3">
+                                <rect key="frame" x="240" y="240" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="Dxb-RV-QhE"/>
+                                    <constraint firstAttribute="height" constant="120" id="zKJ-Iw-ZVg"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fg8-dB-R8k" firstAttribute="leading" secondItem="34r-cW-2T7" secondAttribute="leading" id="3Eq-lt-Arb"/>
+                            <constraint firstItem="TOn-Gq-nR4" firstAttribute="trailing" secondItem="fg8-dB-R8k" secondAttribute="trailing" id="4qT-eT-50Z"/>
+                            <constraint firstItem="GtE-bC-uY3" firstAttribute="centerY" secondItem="1ip-G3-bwk" secondAttribute="centerY" id="8x5-p0-dKt"/>
+                            <constraint firstItem="fg8-dB-R8k" firstAttribute="leading" secondItem="1ip-G3-bwk" secondAttribute="leadingMargin" id="OOj-5f-h9d"/>
+                            <constraint firstItem="GtE-bC-uY3" firstAttribute="centerX" secondItem="1ip-G3-bwk" secondAttribute="centerX" id="Oag-LJ-8LN"/>
+                            <constraint firstItem="34r-cW-2T7" firstAttribute="top" secondItem="fg8-dB-R8k" secondAttribute="bottom" constant="21" id="buN-co-QoW"/>
+                            <constraint firstItem="fg8-dB-R8k" firstAttribute="leading" secondItem="TOn-Gq-nR4" secondAttribute="leading" id="bwT-2U-L0D"/>
+                            <constraint firstItem="TOn-Gq-nR4" firstAttribute="centerX" secondItem="KMH-nb-gH8" secondAttribute="centerX" id="cwE-i6-vq6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KMH-nb-gH8" secondAttribute="trailing" constant="-20" id="dhx-nJ-x0x"/>
+                            <constraint firstAttribute="trailing" secondItem="KMH-nb-gH8" secondAttribute="trailing" id="eKv-1O-7Le"/>
+                            <constraint firstItem="KMH-nb-gH8" firstAttribute="top" secondItem="1ip-G3-bwk" secondAttribute="topMargin" id="ebM-6l-0yO"/>
+                            <constraint firstItem="fg8-dB-R8k" firstAttribute="top" secondItem="TOn-Gq-nR4" secondAttribute="bottom" constant="9" id="iK1-f5-cuU"/>
+                            <constraint firstItem="RQB-Pf-Wyx" firstAttribute="top" secondItem="34r-cW-2T7" secondAttribute="bottom" constant="25" id="l8p-fi-eaC"/>
+                            <constraint firstItem="34r-cW-2T7" firstAttribute="trailing" secondItem="fg8-dB-R8k" secondAttribute="trailing" id="nkw-Tv-dQH"/>
+                            <constraint firstItem="KMH-nb-gH8" firstAttribute="leading" secondItem="1ip-G3-bwk" secondAttribute="leading" id="oAu-T5-lxR"/>
+                            <constraint firstItem="TOn-Gq-nR4" firstAttribute="top" secondItem="KMH-nb-gH8" secondAttribute="bottom" constant="22" id="oWx-hF-YwZ"/>
+                            <constraint firstItem="KMH-nb-gH8" firstAttribute="leading" secondItem="1ip-G3-bwk" secondAttribute="leadingMargin" constant="-20" id="syS-ZP-Ji8"/>
+                            <constraint firstItem="KMH-nb-gH8" firstAttribute="top" secondItem="1ip-G3-bwk" secondAttribute="top" id="z7I-EY-NOq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="colorView" destination="KMH-nb-gH8" id="MiN-uz-nMP"/>
+                        <outlet property="costLabel" destination="34r-cW-2T7" id="wov-QR-GfX"/>
+                        <outlet property="gamePieceImageView" destination="GtE-bC-uY3" id="86U-Be-k1p"/>
+                        <outlet property="mainImage" destination="fg8-dB-R8k" id="AdE-RE-ygV"/>
+                        <outlet property="titleLabel" destination="TOn-Gq-nR4" id="Iao-B5-EES"/>
+                        <segue destination="DO4-ub-CgA" kind="presentation" identifier="BoardSpaceToDetail" modalPresentationStyle="overFullScreen" id="Zsa-aI-7ux"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bgz-sz-Dkq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-546" y="407"/>
+        </scene>
         <!--Property View Controller-->
         <scene sceneID="syq-gP-Jrp">
             <objects>
@@ -264,6 +349,7 @@
                     <connections>
                         <outlet property="tableView" destination="VJP-Qu-jaV" id="3hk-Al-3kk"/>
                         <segue destination="Hdb-GZ-MTo" kind="show" identifier="menuToGo" id="32J-nQ-Drb"/>
+                        <segue destination="t1s-YZ-L2i" kind="show" identifier="menuToBoardSpace" customClass="RightToLeftSegue" customModule="Custom_Monopoly" customModuleProvider="target" id="moM-4Q-5i0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kZa-ip-e7Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -578,7 +664,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="aY6-CT-a5H"/>
         <segue reference="J1s-cW-lBp"/>
-        <segue reference="0L5-gu-QWR"/>
-        <segue reference="U2Z-C4-Hq6"/>
+        <segue reference="Zsa-aI-7ux"/>
+        <segue reference="32J-nQ-Drb"/>
     </inferredMetricsTieBreakers>
 </document>

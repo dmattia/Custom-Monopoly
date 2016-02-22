@@ -47,19 +47,6 @@ class NewNameViewController : UIViewController, UITextFieldDelegate {
         if segue.identifier == "NameToChance" {
             let destinationVC = segue.destinationViewController as? ChanceAndCommunityViewController
             destinationVC!.boardName = self.boardNameField.text
-            
-            if let destinationVC = segue.destinationViewController as? TwoPropertyViewController {
-                destinationVC.boardName = self.boardNameField.text
-                destinationVC.image1 = "house-50"
-                destinationVC.image2 = "house-50"
-                destinationVC.image1_name = "Mediterranean Avenue"
-                destinationVC.image2_name = "Baltic Avenue"
-                
-                destinationVC.price1 = 60
-                destinationVC.price2 = 60
-                destinationVC.property_indexes_1 = [1]
-                destinationVC.property_indexes_2 = [2]
-            }
         }
     }
 }

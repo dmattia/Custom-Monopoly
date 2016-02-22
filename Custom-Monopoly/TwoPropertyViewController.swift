@@ -19,20 +19,17 @@ class TwoPropertyViewController : UIViewController, UIImagePickerControllerDeleg
     
     // From Segue
     var boardName : String?
-    var image1 : String?
-    var image2 : String?
-    var image1_name : String?
-    var image2_name : String?
-    var price1 : Int = 0
-    var price2 : Int = 0
     var property_indexes_1 = [Int]()
     var property_indexes_2 = [Int]()
+    var topBoardSpace : BoardSpace?
+    var bottomBoardSpace : BoardSpace?
     
     var topView = UIImageView()
     var bottomView = UIImageView()
-    var navBuffer = UIView()
     var topTextField : TextField?
     var bottomTextField : TextField?
+    
+    // Controlls to determine which picture gets updated
     var topClicked = false
     var bottomClicked = false
     
@@ -42,6 +39,7 @@ class TwoPropertyViewController : UIViewController, UIImagePickerControllerDeleg
         let saveButton : UIBarButtonItem = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "SaveData")
         self.navigationItem.rightBarButtonItem = saveButton
         
+        let navBuffer = UIView()
         navBuffer.grid.rows = 1
         topView.grid.rows = 3
         bottomView.grid.rows = 3
@@ -50,22 +48,23 @@ class TwoPropertyViewController : UIViewController, UIImagePickerControllerDeleg
         topView.backgroundColor = MaterialColor.blue.base
         bottomView.backgroundColor = MaterialColor.blue.base
         
-        topView.image = UIImage(named: image1!)
-        bottomView.image = UIImage(named: image2!)
+        if self.topBoardSpace != nil && self.bottomBoardSpace != nil {
+            topView.image = UIImage(named: self.topBoardSpace!.image_location)
+            bottomView.image = UIImage(named: self.bottomBoardSpace!.image_location)
+        }
         
         topView.contentMode = .ScaleAspectFit
         bottomView.contentMode = .ScaleAspectFit
         
-        topTextField = createTextView(self.image1_name!)
-        bottomTextField = createTextView(self.image2_name!)
+        topTextField = createTextView((self.topBoardSpace?.space_name)!)
+        bottomTextField = createTextView((self.bottomBoardSpace?.space_name)!)
         
         view.addSubview(topView)
         view.addSubview(topTextField!)
         view.addSubview(bottomView)
         view.addSubview(bottomTextField!)
         
-        
-        view.grid.views = [navBuffer, navBuffer, topView, topTextField!, navBuffer, bottomView, navBuffer, bottomTextField!]
+        view.grid.views = [navBuffer, navBuffer, topView, topTextField!, navBuffer, bottomView, bottomTextField!, navBuffer]
         
         let tapTop : UIGestureRecognizer = UITapGestureRecognizer(target: self, action: "topImageClicked")
         let tapBottom : UIGestureRecognizer = UITapGestureRecognizer(target: self, action: "bottomImageClicked")
@@ -98,6 +97,7 @@ class TwoPropertyViewController : UIViewController, UIImagePickerControllerDeleg
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     
+    // Creates a textfield with @initial_text as the initial text value
     func createTextView(placeholder : String) -> TextField {
         let textField = TextField()
         textField.grid.columns = 12
@@ -106,6 +106,7 @@ class TwoPropertyViewController : UIViewController, UIImagePickerControllerDeleg
         
         textField.clearButtonMode = .WhileEditing
         textField.placeholder = placeholder
+        textField.text = placeholder
         textField.font = RobotoFont.regularWithSize(20)
         textField.textColor = MaterialColor.blue.base
         textField.autocorrectionType = .No
@@ -113,7 +114,7 @@ class TwoPropertyViewController : UIViewController, UIImagePickerControllerDeleg
         textField.titleLabel = UILabel()
         textField.titleLabel!.font = RobotoFont.mediumWithSize(12)
         textField.titleLabelColor = UIColor.clearColor()
-        textField.titleLabelActiveColor = MaterialColor.blue.accent3
+        textField.titleLabelActiveColor = MaterialColor.white
         return textField
     }
     
@@ -137,71 +138,115 @@ class TwoPropertyViewController : UIViewController, UIImagePickerControllerDeleg
     func SaveData() {
         print("Saving Chance and Community Chest")
         
-        let topImage = topView.image
-        let bottomImage = bottomView.image
+        if let topImage = topView.image,
+            bottomImage = bottomView.image {
         
-        let chance_spot : [String : AnyObject] = [
-            "name": self.topTextField!.text!,
-            "price": self.price1,
-            "image": self.boardName! + "/" + self.topTextField!.text!
-        ]
-        let community_chest_spot : [String : AnyObject] = [
-            "name": self.bottomTextField!.text!,
-            "price": self.price2,
-            "image": self.boardName! + "/" + self.bottomTextField!.text!
-        ]
+                var price1 = 0
+                if self.topBoardSpace is Ownable {
+                    price1 = (self.topBoardSpace as! Ownable).price
+                }
+                
+                var price2 = 0
+                if self.bottomBoardSpace is Ownable {
+                    price2 = (self.bottomBoardSpace as! Ownable).price
+                }
         
-        // Todo: Ensure this isn't overwriting data
-        let transferManager = AWSS3TransferManager.defaultS3TransferManager()
-        let ref = Firebase(url:"https://blistering-fire-9767.firebaseio.com/")
-        let boardRef = ref.childByAppendingPath(self.boardName)
-        boardRef.childByAppendingPath("display_image").setValue(self.boardName! + "/" + self.topTextField!.text!)
-        for index in property_indexes_1 {
-            boardRef.childByAppendingPath("Property \(index)").setValue(chance_spot)
-        }
-        for index in property_indexes_2 {
-            boardRef.childByAppendingPath("Property \(index)").setValue(community_chest_spot)
-        }
-        
-        // Add images to s3 instance
-        let topFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory() + "temp")
-        let bottomFileURL2 = NSURL(fileURLWithPath: NSTemporaryDirectory() + "temp")
-        let uploadRequest1 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
-        let uploadRequest2 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
-        
-        let topData = UIImageJPEGRepresentation(topImage!, 0.5)
-        let bottomData = UIImageJPEGRepresentation(bottomImage!, 0.5)
-        topData!.writeToURL(topFileURL1, atomically: true)
-        bottomData!.writeToURL(bottomFileURL2, atomically: true)
-        
-        uploadRequest1.bucket = "custom-monopoly"
-        uploadRequest1.key =  self.boardName! + "/" + self.topTextField!.text!
-        uploadRequest1.body = topFileURL1
-        uploadRequest1.ACL = AWSS3ObjectCannedACL.PublicRead
-        
-        uploadRequest2.bucket = "custom-monopoly"
-        uploadRequest2.key =  self.boardName! + "/" + self.bottomTextField!.text!
-        uploadRequest2.body = bottomFileURL2
-        uploadRequest2.ACL = AWSS3ObjectCannedACL.PublicRead
-        
-        var task = transferManager.upload(uploadRequest1)
-        task.continueWithBlock { (task) -> AnyObject? in
-            if task.error != nil {
-                print("Error: \(task.error)")
+                let chance_spot : [String : AnyObject] = [
+                    "name": self.topTextField!.text!,
+                    "price": price1,
+                    "image": self.boardName! + "/" + self.topTextField!.text!
+                ]
+                let community_chest_spot : [String : AnyObject] = [
+                    "name": self.bottomTextField!.text!,
+                    "price": price2,
+                    "image": self.boardName! + "/" + self.bottomTextField!.text!
+                ]
+                
+                // Todo: Ensure this isn't overwriting data
+                let transferManager = AWSS3TransferManager.defaultS3TransferManager()
+                let ref = Firebase(url:"https://blistering-fire-9767.firebaseio.com/")
+                let boardRef = ref.childByAppendingPath(self.boardName)
+                boardRef.childByAppendingPath("display_image").setValue(self.boardName! + "/" + self.topTextField!.text!)
+                for index in property_indexes_1 {
+                    boardRef.childByAppendingPath("Property \(index)").setValue(chance_spot)
+                }
+                for index in property_indexes_2 {
+                    boardRef.childByAppendingPath("Property \(index)").setValue(community_chest_spot)
+                }
+                
+                // Add images to s3 instance
+                let topFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory() + "temp")
+                let bottomFileURL2 = NSURL(fileURLWithPath: NSTemporaryDirectory() + "temp")
+                let uploadRequest1 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
+                let uploadRequest2 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
+                
+                let topData = UIImageJPEGRepresentation(topImage, 0.5)
+                let bottomData = UIImageJPEGRepresentation(bottomImage, 0.5)
+                topData!.writeToURL(topFileURL1, atomically: true)
+                bottomData!.writeToURL(bottomFileURL2, atomically: true)
+                
+                uploadRequest1.bucket = "custom-monopoly"
+                uploadRequest1.key =  self.boardName! + "/" + self.topTextField!.text!
+                uploadRequest1.body = topFileURL1
+                uploadRequest1.ACL = AWSS3ObjectCannedACL.PublicRead
+                
+                uploadRequest2.bucket = "custom-monopoly"
+                uploadRequest2.key =  self.boardName! + "/" + self.bottomTextField!.text!
+                uploadRequest2.body = bottomFileURL2
+                uploadRequest2.ACL = AWSS3ObjectCannedACL.PublicRead
+                
+                var task = transferManager.upload(uploadRequest1)
+                task.continueWithBlock { (task) -> AnyObject? in
+                    if task.error != nil {
+                        print("Error: \(task.error)")
+                    } else {
+                        print("Upload top successful")
+                    }
+                    return nil
+                }
+                
+                task = transferManager.upload(uploadRequest2)
+                task.continueWithBlock { (task) -> AnyObject? in
+                    if task.error != nil {
+                        print("Error: \(task.error)")
+                    } else {
+                        print("Upload bottom successful")
+                    }
+                    return nil
+                }
             } else {
-                print("Upload top successful")
+                // At least one image is null
+                let cardView: CardView = CardView()
+                
+                // Title label.
+                let titleLabel: UILabel = UILabel()
+                titleLabel.text = "Error Saving Images"
+                titleLabel.textColor = MaterialColor.blue.darken1
+                titleLabel.font = RobotoFont.mediumWithSize(20)
+                cardView.titleLabel = titleLabel
+                
+                // Detail label.
+                let detailLabel: UILabel = UILabel()
+                detailLabel.text = "Please make sure that you have selected an image for both the top and bottom cards"
+                detailLabel.numberOfLines = 0
+                cardView.detailView = detailLabel
+                
+                // Yes button.
+                let btn1: FlatButton = FlatButton()
+                btn1.pulseColor = MaterialColor.blue.lighten1
+                //btn1.pulseFill = true
+                btn1.pulseScale = false
+                btn1.setTitle("Will Do", forState: .Normal)
+                btn1.setTitleColor(MaterialColor.blue.darken1, forState: .Normal)
+                
+                // Add buttons to left side.
+                cardView.leftButtons = [btn1]
+                
+                // To support orientation changes, use MaterialLayout.
+                view.addSubview(cardView)
+                cardView.translatesAutoresizingMaskIntoConstraints = false
+                MaterialLayout.alignFromTop(view, child: cardView, top: 200)
+                MaterialLayout.alignToParentHorizontally(view, child: cardView, left: 20, right: 20)
             }
-            return nil
-        }
-        
-        task = transferManager.upload(uploadRequest2)
-        task.continueWithBlock { (task) -> AnyObject? in
-            if task.error != nil {
-                print("Error: \(task.error)")
-            } else {
-                print("Upload bottom successful")
-            }
-            return nil
-        }
     }
 }
