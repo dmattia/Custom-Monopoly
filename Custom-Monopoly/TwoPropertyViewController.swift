@@ -1,8 +1,8 @@
 //
-//  ChanceAndCommunityViewController.swift
+//  TwoPropertyViewController.swift
 //  Custom-Monopoly
 //
-//  Created by David Mattia on 2/20/16.
+//  Created by David Mattia on 2/21/16.
 //  Copyright © 2016 David Mattia. All rights reserved.
 //
 
@@ -15,10 +15,18 @@ import AWSDynamoDB
 import AWSSQS
 import AWSSNS
 
-class ChanceAndCommunityViewController : UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+class TwoPropertyViewController : UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     // From Segue
     var boardName : String?
+    var image1 : String?
+    var image2 : String?
+    var image1_name : String?
+    var image2_name : String?
+    var price1 : Int = 0
+    var price2 : Int = 0
+    var property_indexes_1 = [Int]()
+    var property_indexes_2 = [Int]()
     
     var topView = UIImageView()
     var bottomView = UIImageView()
@@ -34,23 +42,20 @@ class ChanceAndCommunityViewController : UIViewController, UIImagePickerControll
         let saveButton : UIBarButtonItem = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "SaveData")
         self.navigationItem.rightBarButtonItem = saveButton
         
-        //self.navigationController?.navigationBarHidden = true
-        
         navBuffer.grid.rows = 1
         topView.grid.rows = 3
         bottomView.grid.rows = 3
         view.grid.axis.direction = .Vertical
         
-        topView.image = UIImage(named: "Chance")
-        bottomView.image = UIImage(named: "community 2")
+        topView.image = UIImage(named: image1!)
+        bottomView.image = UIImage(named: image2!)
         
         topView.contentMode = .ScaleAspectFit
         bottomView.contentMode = .ScaleAspectFit
         
-        topTextField = createTextView("Chance")
-        bottomTextField = createTextView("Community Chest")
+        topTextField = createTextView(self.image1_name!)
+        bottomTextField = createTextView(self.image2_name!)
         
-
         view.addSubview(topView)
         view.addSubview(topTextField!)
         view.addSubview(bottomView)
@@ -61,7 +66,7 @@ class ChanceAndCommunityViewController : UIViewController, UIImagePickerControll
         
         let tapTop : UIGestureRecognizer = UITapGestureRecognizer(target: self, action: "topImageClicked")
         let tapBottom : UIGestureRecognizer = UITapGestureRecognizer(target: self, action: "bottomImageClicked")
-
+        
         topView.userInteractionEnabled = true
         bottomView.userInteractionEnabled = true
         topView.addGestureRecognizer(tapTop)
@@ -128,22 +133,16 @@ class ChanceAndCommunityViewController : UIViewController, UIImagePickerControll
         print("Saving Chance and Community Chest")
         
         let topImage = topView.image
-        //let topImageData: NSData = UIImageJPEGRepresentation(topImage!, 0.1)!
-        //let topImageString: String = topImageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
-        
         let bottomImage = bottomView.image
-        //let bottomImageData: NSData = UIImageJPEGRepresentation(bottomImage!, 0.1)!
-        //let bottomImageString: String = bottomImageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
-        
         
         let chance_spot : [String : AnyObject] = [
             "name": self.topTextField!.text!,
-            "price": 0,
+            "price": self.price1,
             "image": self.boardName! + "/" + self.topTextField!.text!
         ]
         let community_chest_spot : [String : AnyObject] = [
             "name": self.bottomTextField!.text!,
-            "price": 0,
+            "price": self.price2,
             "image": self.boardName! + "/" + self.bottomTextField!.text!
         ]
         
@@ -152,10 +151,10 @@ class ChanceAndCommunityViewController : UIViewController, UIImagePickerControll
         let ref = Firebase(url:"https://blistering-fire-9767.firebaseio.com/")
         let boardRef = ref.childByAppendingPath(self.boardName)
         boardRef.childByAppendingPath("display_image").setValue(self.boardName! + "/" + self.topTextField!.text!)
-        for index in [2,17,33] {
+        for index in property_indexes_1 {
             boardRef.childByAppendingPath("Property \(index)").setValue(chance_spot)
         }
-        for index in [7,22,36] {
+        for index in property_indexes_2 {
             boardRef.childByAppendingPath("Property \(index)").setValue(community_chest_spot)
         }
         
@@ -164,7 +163,7 @@ class ChanceAndCommunityViewController : UIViewController, UIImagePickerControll
         let bottomFileURL2 = NSURL(fileURLWithPath: NSTemporaryDirectory() + "temp")
         let uploadRequest1 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
         let uploadRequest2 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
-
+        
         let topData = UIImageJPEGRepresentation(topImage!, 0.5)
         let bottomData = UIImageJPEGRepresentation(bottomImage!, 0.5)
         topData!.writeToURL(topFileURL1, atomically: true)
@@ -198,27 +197,6 @@ class ChanceAndCommunityViewController : UIViewController, UIImagePickerControll
                 print("Upload bottom successful")
             }
             return nil
-        }
-        
-        self.performSegueWithIdentifier("ChanceToBrown", sender: nil)
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ChanceToBrown" {
-            if let destinationVC = segue.destinationViewController as? TwoPropertyViewController {
-                destinationVC.boardName = self.boardName
-                destinationVC.image1 = "house-50"
-                destinationVC.image2 = "house-50"
-                destinationVC.image1_name = "Mediterranean Avenue"
-                destinationVC.image2_name = "Baltic Avenue"
-                
-                destinationVC.price1 = 60
-                destinationVC.price2 = 60
-                destinationVC.property_indexes_1 = [1]
-                destinationVC.property_indexes_2 = [2]
-            } else {
-                print("Could not find destination view controller")
-            }
         }
     }
 }

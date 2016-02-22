@@ -85,6 +85,8 @@
 		F159178F1C79C8AE001B9AFB /* AWSCognito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F159178E1C79C8AE001B9AFB /* AWSCognito.framework */; };
 		F15917911C79C8C9001B9AFB /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F15917901C79C8C9001B9AFB /* libsqlite3.tbd */; };
 		F15917931C79C8D6001B9AFB /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F15917921C79C8D6001B9AFB /* libz.tbd */; };
+		F15917951C79E3EE001B9AFB /* TwoPropertyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15917941C79E3EE001B9AFB /* TwoPropertyViewController.swift */; };
+		F15917971C7A0D24001B9AFB /* PickThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15917961C7A0D24001B9AFB /* PickThemeCell.swift */; };
 		F1C949B61C787245006A6A86 /* CoreImageBlurTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C949B51C787245006A6A86 /* CoreImageBlurTransition.m */; };
 		F1C949C41C787256006A6A86 /* CoreImageBlurTransitionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C949B81C787256006A6A86 /* CoreImageBlurTransitionView.m */; };
 		F1C949C51C787256006A6A86 /* CoreImageMotionBlurTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C949BA1C787256006A6A86 /* CoreImageMotionBlurTransition.m */; };
@@ -197,6 +199,8 @@
 		F159178E1C79C8AE001B9AFB /* AWSCognito.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCognito.framework; sourceTree = "<group>"; };
 		F15917901C79C8C9001B9AFB /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		F15917921C79C8D6001B9AFB /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		F15917941C79E3EE001B9AFB /* TwoPropertyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoPropertyViewController.swift; sourceTree = "<group>"; };
+		F15917961C7A0D24001B9AFB /* PickThemeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickThemeCell.swift; sourceTree = "<group>"; };
 		F1C949B41C78723A006A6A86 /* CoreImageBlurTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreImageBlurTransition.h; sourceTree = "<group>"; };
 		F1C949B51C787245006A6A86 /* CoreImageBlurTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreImageBlurTransition.m; sourceTree = "<group>"; };
 		F1C949B71C78724C006A6A86 /* CoreImageBlurTransitionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreImageBlurTransitionView.h; sourceTree = "<group>"; };
@@ -359,6 +363,7 @@
 			children = (
 				F15917651C791BEE001B9AFB /* NewNameViewController.swift */,
 				F15917671C794D5D001B9AFB /* ChanceAndCommunityViewController.swift */,
+				F15917941C79E3EE001B9AFB /* TwoPropertyViewController.swift */,
 			);
 			name = CreateViewControllers;
 			sourceTree = "<group>";
@@ -463,6 +468,7 @@
 		F1FC69F51C78272C006C2611 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F15917961C7A0D24001B9AFB /* PickThemeCell.swift */,
 				F1C949D11C787E40006A6A86 /* RightToLeftSegue.swift */,
 				F1FC69F91C782757006C2611 /* View Controllers */,
 				F1FC69F81C78274E006C2611 /* Storyboards */,
@@ -605,6 +611,7 @@
 				F15917461C7916A3001B9AFB /* MaterialKeyframeAnimation.swift in Sources */,
 				F1FC69E31C7826BE006C2611 /* AppDelegate.swift in Sources */,
 				F15917401C7916A3001B9AFB /* MaterialButton.swift in Sources */,
+				F15917971C7A0D24001B9AFB /* PickThemeCell.swift in Sources */,
 				F15917611C7916A3001B9AFB /* TextStorage.swift in Sources */,
 				F1C949C81C787256006A6A86 /* CoreImageTransitionHelper.m in Sources */,
 				F1C949EC1C78EECE006A6A86 /* DetailViewController.swift in Sources */,
@@ -612,6 +619,7 @@
 				F1C949D21C787E40006A6A86 /* RightToLeftSegue.swift in Sources */,
 				F15917601C7916A3001B9AFB /* TextField.swift in Sources */,
 				F159175F1C7916A3001B9AFB /* Text.swift in Sources */,
+				F15917951C79E3EE001B9AFB /* TwoPropertyViewController.swift in Sources */,
 				F15917681C794D5D001B9AFB /* ChanceAndCommunityViewController.swift in Sources */,
 				F15917001C791697001B9AFB /* FabButton.swift in Sources */,
 				F1C949B61C787245006A6A86 /* CoreImageBlurTransition.m in Sources */,

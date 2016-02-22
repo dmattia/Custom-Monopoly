@@ -14,6 +14,7 @@ class PropertyViewController: UIViewController {
     @IBOutlet weak var costLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var gamePieceImageView: UIImageView!
+    @IBOutlet weak var mainImage: UIImageView!
     
     override func canBecomeFirstResponder() -> Bool {
         return true
