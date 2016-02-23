@@ -45,7 +45,7 @@ class BoardSpaceViewController: UIViewController {
         }
     }
     
-    func moveToNextVC() {
+    func moveToBoardSpace(boardIndex : Int) {
         // Elevate gamePiece so it does not move with the animation
         let window = UIApplication.sharedApplication().keyWindow
         
@@ -54,7 +54,7 @@ class BoardSpaceViewController: UIViewController {
         window!.makeKeyAndVisible()
         
         // Perform the animation to the next boardSpace
-        let nextSpace = myVars.gameBoard.getBoardSpace((boardSpace?.board_index)! + 1)
+        let nextSpace = myVars.gameBoard.getBoardSpace(boardIndex)
         
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let nextVC = storyBoard.instantiateViewControllerWithIdentifier("BoardSpace") as? BoardSpaceViewController
@@ -65,6 +65,10 @@ class BoardSpaceViewController: UIViewController {
         let segue = RightToLeftSegue(identifier: "PropertyToProperty", source: self, destination: nextVC!, performHandler: { () -> Void in })
         
         segue.perform()
+    }
+    
+    func moveToNextVC() {
+        moveToBoardSpace((self.boardSpace?.board_index)! + 1)
     }
     
     override func viewDidLoad() {
