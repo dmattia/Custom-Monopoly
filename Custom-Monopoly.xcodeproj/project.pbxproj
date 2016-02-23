@@ -126,6 +126,7 @@
 		F1D2AC741C7BD5630039B4B7 /* AWSSQS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1D2AC631C7BD5630039B4B7 /* AWSSQS.framework */; };
 		F1D2AC761C7BD57A0039B4B7 /* AWSCognito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1D2AC751C7BD57A0039B4B7 /* AWSCognito.framework */; };
 		F1D2AC781C7BD5810039B4B7 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1D2AC771C7BD5810039B4B7 /* Firebase.framework */; };
+		F1D2AC7A1C7BF3900039B4B7 /* DownloadingImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D2AC791C7BF3900039B4B7 /* DownloadingImagesViewController.swift */; };
 		F1FC69E31C7826BE006C2611 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FC69E21C7826BE006C2611 /* AppDelegate.swift */; };
 		F1FC69E81C7826BE006C2611 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1FC69E61C7826BE006C2611 /* Main.storyboard */; };
 		F1FC69EA1C7826BE006C2611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1FC69E91C7826BE006C2611 /* Assets.xcassets */; };
@@ -266,6 +267,7 @@
 		F1D2AC631C7BD5630039B4B7 /* AWSSQS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSSQS.framework; sourceTree = "<group>"; };
 		F1D2AC751C7BD57A0039B4B7 /* AWSCognito.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCognito.framework; sourceTree = "<group>"; };
 		F1D2AC771C7BD5810039B4B7 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		F1D2AC791C7BF3900039B4B7 /* DownloadingImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadingImagesViewController.swift; sourceTree = "<group>"; };
 		F1FC69DF1C7826BE006C2611 /* Custom-Monopoly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Custom-Monopoly.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1FC69E21C7826BE006C2611 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1FC69E71C7826BE006C2611 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -402,6 +404,7 @@
 				F15917981C7BB478001B9AFB /* BoardSpaceViewController.swift */,
 				F1C949EB1C78EECE006A6A86 /* DetailViewController.swift */,
 				F159176A1C79B2EC001B9AFB /* ChooseThemeViewController.swift */,
+				F1D2AC791C7BF3900039B4B7 /* DownloadingImagesViewController.swift */,
 			);
 			name = GameViewControllers;
 			sourceTree = "<group>";
@@ -729,6 +732,7 @@
 				F15917471C7916A3001B9AFB /* MaterialLabel.swift in Sources */,
 				F15917991C7BB478001B9AFB /* BoardSpaceViewController.swift in Sources */,
 				F1C949C91C787256006A6A86 /* CoreImageTransitionView.m in Sources */,
+				F1D2AC7A1C7BF3900039B4B7 /* DownloadingImagesViewController.swift in Sources */,
 				F15917021C791697001B9AFB /* Grid.swift in Sources */,
 				F15917501C7916A3001B9AFB /* MaterialTransitionAnimation.swift in Sources */,
 			);

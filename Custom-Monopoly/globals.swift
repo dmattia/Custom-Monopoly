@@ -14,7 +14,7 @@ struct myVars {
         Property(name: "Borgin and Burkes", cost: 60, index: 1, color: MaterialColor.brown.base),
         MiscSpace(name: "Room of Requirement", index: 2),
         Property(name: "Knockturn Alley", cost: 60, index: 3, color: MaterialColor.brown.base),
-        Railroad(name: "Ministry of Magic Tax", cost: 200, index: 4),
+        TaxSpace(name: "Ministry of Magic Tax", cost: 200, index: 4),
         Railroad(name: "Hufflepuff", cost: 200, index: 5),
         Property(name: "Private Drive", cost: 100, index: 6, color: MaterialColor.blue.lighten2),
         MiscSpace(name: "Goblet of Fire", index: 7),
@@ -48,7 +48,7 @@ struct myVars {
         Railroad(name: "Gryffindor", cost: 200, index: 35),
         MiscSpace(name: "Goblet of Fire", index: 36),
         Property(name: "Ministry of Magic", cost: 350, index: 37, color: MaterialColor.blue.darken1),
-        Railroad(name: "Gringotts Banking Tax", cost: 100, index: 38),
+        TaxSpace(name: "Gringotts Banking Tax", cost: 100, index: 38),
         Property(name: "Hogwarts", cost: 400, index: 39, color: MaterialColor.blue.darken1)
     ]
     static var gameBoard = Board(name: "Monopoly Board")

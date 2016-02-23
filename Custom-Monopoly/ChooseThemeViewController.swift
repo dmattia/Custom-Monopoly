@@ -107,17 +107,6 @@ class ChooseThemeViewController: UIViewController, UITableViewDelegate, UITableV
         
         print("Picked theme \(optionPressed)")
         
-        self.performSegueWithIdentifier("menuToBoardSpace", sender: nil)
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        for var space in myVars.monopoly_board {
-            space.dowload_image()
-        }
-        
-        if segue.identifier == "menuToBoardSpace",
-            let destinationVC = segue.destinationViewController as? BoardSpaceViewController {
-                destinationVC.boardSpace = myVars.gameBoard.getBoardSpace(0)
-        }
+        self.performSegueWithIdentifier("ChooseToDownloading", sender: nil)
     }
 }

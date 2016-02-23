@@ -26,7 +26,6 @@ class Gameplay {
     
     func newTurn() {
         srandom(2)
-        self.gameTurn += 1
         self.hasRolled = true
         
         // Simulate a dice roll

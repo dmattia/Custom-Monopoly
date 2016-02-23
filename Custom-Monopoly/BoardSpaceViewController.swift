@@ -33,6 +33,8 @@ class BoardSpaceViewController: UIViewController {
         self.mainImage.image = boardSpace?.image
         if let ownable = boardSpace as? Ownable {
             self.costLabel.text = "$\(ownable.price)"
+        } else if let taxSpace = boardSpace as? TaxSpace {
+            self.costLabel.text = "$\(taxSpace.price)"
         } else {
             self.costLabel.text = ""
         }
@@ -59,7 +61,7 @@ class BoardSpaceViewController: UIViewController {
         nextVC!.boardSpace = nextSpace
         
         // TODO: check what this next line does. I forget
-        let navController = UINavigationController(rootViewController: nextVC!)
+        //let navController = UINavigationController(rootViewController: nextVC!)
         let segue = RightToLeftSegue(identifier: "PropertyToProperty", source: self, destination: nextVC!, performHandler: { () -> Void in })
         
         segue.perform()
@@ -84,13 +86,16 @@ class BoardSpaceViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        print("Gameturn: \(myVars.gameplay.gameTurn)")
-        if myVars.gameplay.gameTurn != 0 {
+        super.viewWillAppear(animated)
+        
+        if boardSpace?.board_index != 0 {
             self.gamePieceImageView.hidden = true
         }
     }
     
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
         self.gamePieceImageView.hidden = false
         
         let window = UIApplication.sharedApplication().keyWindow
@@ -126,7 +131,7 @@ class BoardSpaceViewController: UIViewController {
                 destinationVC?.balance = myVars.gameplay.getActivePlayer().balance
                 destinationVC?.cost = ownable.price
             } else {
-                destinationVC?.detailString = "Some kind of chance card"
+                destinationVC?.detailString = "Some kind of chance card or tax"
                 destinationVC?.shouldDisplayYesButton = false
                 destinationVC?.balance = myVars.gameplay.getActivePlayer().balance
             }

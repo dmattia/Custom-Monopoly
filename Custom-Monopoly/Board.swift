@@ -12,7 +12,7 @@ class Board {
     
     init(name: String) {
         self.name = name
-        board = myVars.monopoly_board
+        self.board = myVars.monopoly_board
     }
     
     func getBoardSpace(index: Int) -> BoardSpace {
