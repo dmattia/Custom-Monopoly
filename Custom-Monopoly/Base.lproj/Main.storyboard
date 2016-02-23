@@ -103,7 +103,7 @@
                                     <constraint firstAttribute="height" constant="52" id="8Qy-fx-t4b"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="harry" translatesAutoresizingMaskIntoConstraints="NO" id="GtE-bC-uY3">
@@ -119,7 +119,7 @@
                                     <constraint firstAttribute="height" constant="52" id="dyn-kW-k1E"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -148,7 +148,7 @@
                         <outlet property="gamePieceImageView" destination="GtE-bC-uY3" id="86U-Be-k1p"/>
                         <outlet property="mainImage" destination="fg8-dB-R8k" id="AdE-RE-ygV"/>
                         <outlet property="titleLabel" destination="TOn-Gq-nR4" id="Iao-B5-EES"/>
-                        <segue destination="DO4-ub-CgA" kind="presentation" identifier="BoardSpaceToDetail" modalPresentationStyle="overFullScreen" id="Zsa-aI-7ux"/>
+                        <segue destination="DO4-ub-CgA" kind="presentation" identifier="BoardSpaceToDetail" modalPresentationStyle="overFullScreen" id="74g-7g-y2C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgz-sz-Dkq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -176,7 +176,7 @@
                                 </state>
                                 <connections>
                                     <action selector="playButtonPressed:" destination="dvS-ge-9Cn" eventType="touchUpInside" id="6q5-5w-yqW"/>
-                                    <segue destination="7pf-3o-nPO" kind="show" id="Hhv-6b-XUF"/>
+                                    <segue destination="7pf-3o-nPO" kind="show" identifier="MenutoChoose" id="Hhv-6b-XUF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hmm-iq-5F6" customClass="RaisedButton" customModule="Custom_Monopoly" customModuleProvider="target">
@@ -196,7 +196,7 @@
                                     <constraint firstAttribute="height" constant="105" id="VcC-AM-NJa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="50"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Xr1-r3-Uvc">
@@ -208,13 +208,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdH-M1-lsS">
                                 <rect key="frame" x="253" y="239" width="94" height="46"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="25"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Players" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36S-92-FeV">
                                 <rect key="frame" x="243" y="198" width="114" height="34"/>
                                 <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="25"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -277,7 +277,7 @@
                                                         <constraint firstAttribute="width" constant="477.5" id="aTG-9j-YcN"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="30"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b06-zg-GxB">
@@ -383,7 +383,7 @@
                                 </constraints>
                                 <state key="normal" image="Home-50"/>
                                 <connections>
-                                    <segue destination="tgn-se-5aX" kind="presentation" id="KDX-Bp-4aS"/>
+                                    <action selector="homeClicked:" destination="DO4-ub-CgA" eventType="touchUpInside" id="nkd-xN-QLg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -405,17 +405,19 @@
                             <constraint firstAttribute="leadingMargin" secondItem="dRi-Z6-pST" secondAttribute="leading" id="wIE-Zi-Eiw"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="OHv-eW-wjY"/>
                     <connections>
                         <outlet property="closeButton" destination="cCv-V6-L9K" id="gRl-zY-12J"/>
                         <outlet property="detailLabel" destination="uof-td-wuM" id="GMY-H4-98x"/>
                         <outlet property="homeButton" destination="dRi-Z6-pST" id="ive-Bc-H23"/>
                         <outlet property="moneyLabel" destination="rzT-nu-0vY" id="Cyc-NH-Fus"/>
                         <outlet property="yesButton" destination="D3F-1P-XxX" id="96H-7G-tUB"/>
+                        <segue destination="tgn-se-5aX" kind="presentation" identifier="DetailToHome" id="P2T-H9-e0C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yr1-PO-njw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1100" y="2027"/>
+            <point key="canvasLocation" x="1100" y="2011"/>
         </scene>
         <!--New Name View Controller-->
         <scene sceneID="Ib4-co-6LD">
@@ -431,33 +433,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="KTL-98-u82" kind="show" identifier="NameToChance" id="d4E-ER-c9m"/>
+                        <segue destination="hvE-Ky-DNq" kind="show" identifier="NameToTwo" id="lpT-1o-7N1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I4X-Fi-dOB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1868" y="-879"/>
-        </scene>
-        <!--Chance And Community View Controller-->
-        <scene sceneID="egp-5q-kdz">
-            <objects>
-                <viewController id="KTL-98-u82" customClass="ChanceAndCommunityViewController" customModule="Custom_Monopoly" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="T9d-17-HEX"/>
-                        <viewControllerLayoutGuide type="bottom" id="UzH-Vc-5AW"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="G8b-Va-mdE">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <segue destination="hvE-Ky-DNq" kind="show" identifier="ChanceToBrown" id="GfK-V7-Ii8"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e1p-LK-SQx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1868" y="-171"/>
         </scene>
         <!--Two Property View Controller-->
         <scene sceneID="FsF-92-phG">
@@ -475,12 +456,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fb6-Wc-Pkk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1868" y="567"/>
+            <point key="canvasLocation" x="1868" y="-171"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Egm-V3-Qei">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tgn-se-5aX" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="root" automaticallyAdjustsScrollViewInsets="NO" id="tgn-se-5aX" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aKd-1i-fS8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

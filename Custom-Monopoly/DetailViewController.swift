@@ -47,6 +47,12 @@ class DetailViewController : UIViewController {
         self.moneyLabel.text = "You have $\(balance)"
     }
     
+    @IBAction func homeClicked(sender: AnyObject) {
+        print("Popping to home view controller")
+        
+        self.performSegueWithIdentifier("DetailToHome", sender: nil)
+    }
+    
     @IBAction func yesClicked(sender: AnyObject) {
         goalAmount = balance - cost
         

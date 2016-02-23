@@ -48,16 +48,15 @@ class TwoPropertyViewController : UIViewController, UIImagePickerControllerDeleg
         topView.backgroundColor = MaterialColor.blue.base
         bottomView.backgroundColor = MaterialColor.blue.base
         
-        if self.topBoardSpace != nil && self.bottomBoardSpace != nil {
-            topView.image = UIImage(named: self.topBoardSpace!.image_location)
-            bottomView.image = UIImage(named: self.bottomBoardSpace!.image_location)
-        }
-        
         topView.contentMode = .ScaleAspectFit
         bottomView.contentMode = .ScaleAspectFit
         
-        topTextField = createTextView((self.topBoardSpace?.space_name)!)
-        bottomTextField = createTextView((self.bottomBoardSpace?.space_name)!)
+        if let top = self.topBoardSpace {
+            self.topTextField = createTextView(top.space_name)
+        }
+        if let bottom = self.bottomBoardSpace {
+            self.bottomTextField = createTextView(bottom.space_name)
+        }
         
         view.addSubview(topView)
         view.addSubview(topTextField!)
@@ -114,7 +113,7 @@ class TwoPropertyViewController : UIViewController, UIImagePickerControllerDeleg
         textField.titleLabel = UILabel()
         textField.titleLabel!.font = RobotoFont.mediumWithSize(12)
         textField.titleLabelColor = UIColor.clearColor()
-        textField.titleLabelActiveColor = MaterialColor.white
+        textField.titleLabelActiveColor = MaterialColor.black
         return textField
     }
     
@@ -150,7 +149,7 @@ class TwoPropertyViewController : UIViewController, UIImagePickerControllerDeleg
                 if self.bottomBoardSpace is Ownable {
                     price2 = (self.bottomBoardSpace as! Ownable).price
                 }
-        
+                
                 let chance_spot : [String : AnyObject] = [
                     "name": self.topTextField!.text!,
                     "price": price1,
@@ -162,7 +161,6 @@ class TwoPropertyViewController : UIViewController, UIImagePickerControllerDeleg
                     "image": self.boardName! + "/" + self.bottomTextField!.text!
                 ]
                 
-                // Todo: Ensure this isn't overwriting data
                 let transferManager = AWSS3TransferManager.defaultS3TransferManager()
                 let ref = Firebase(url:"https://blistering-fire-9767.firebaseio.com/")
                 let boardRef = ref.childByAppendingPath(self.boardName)

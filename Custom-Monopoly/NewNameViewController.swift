@@ -39,17 +39,25 @@ class NewNameViewController : UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        self.performSegueWithIdentifier("NameToChance", sender: nil)
+        //self.performSegueWithIdentifier("NameToChance", sender: nil)
+        self.performSegueWithIdentifier("NameToTwo", sender: nil)
+        
         return true
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // ensure every picture is downloaded
-        
-        
         if segue.identifier == "NameToChance" {
             let destinationVC = segue.destinationViewController as? ChanceAndCommunityViewController
             destinationVC!.boardName = self.boardNameField.text
+        } else if segue.identifier == "NameToTwo",
+            let destinationVC = segue.destinationViewController as? TwoPropertyViewController {
+                destinationVC.boardName = self.boardNameField.text
+                
+                destinationVC.property_indexes_1 = [2,17,33]
+                destinationVC.property_indexes_2 = [7,22,36]
+                
+                destinationVC.topBoardSpace = myVars.gameBoard.getBoardSpace(2)
+                destinationVC.bottomBoardSpace = myVars.gameBoard.getBoardSpace(7)
         }
     }
 }
