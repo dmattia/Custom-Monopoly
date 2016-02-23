@@ -76,7 +76,7 @@ extension BoardSpace {
     func on_leave() {
         print("leaving space: \(self.space_name)")
     }
-    mutating func dowload_and_return_image() {
+    mutating func dowload_image() {
         let downloadingFilePath1 = NSTemporaryDirectory() + "temp-download"
         let downloadingFileURL1 = NSURL(fileURLWithPath: downloadingFilePath1)
         let transferManager = AWSS3TransferManager.defaultS3TransferManager()
@@ -127,7 +127,7 @@ class Property: Ownable {
     var color : UIColor
     var owner : Player?
     
-    init(name: String, cost: Int, index: Int, color: UIColor, image_location: String = "") {
+    init(name: String, cost: Int, index: Int, color: UIColor, image_location: String = "Harry Potter/Harry Potter") {
         self.space_name = name
         self.price = cost
         self.board_index = index
@@ -146,7 +146,7 @@ class Railroad : Ownable {
     var price : Int
     var owner : Player?
     
-    init(name: String, cost: Int, index: Int, image_location : String = "") {
+    init(name: String, cost: Int, index: Int, image_location : String = "Harry Potter/Harry Potter") {
         self.space_name = name
         self.price = cost
         self.board_index = index
@@ -162,7 +162,7 @@ class MiscSpace : BoardSpace {
     var image_location : String
     var image : UIImage?
     
-    init(name: String, index: Int, image_location : String = "") {
+    init(name: String, index: Int, image_location : String = "Harry Potter/Harry Potter") {
         self.space_name = name
         self.board_index = index
         self.image_location = image_location

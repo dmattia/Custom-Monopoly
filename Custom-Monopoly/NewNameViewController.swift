@@ -44,6 +44,9 @@ class NewNameViewController : UIViewController, UITextFieldDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // ensure every picture is downloaded
+        
+        
         if segue.identifier == "NameToChance" {
             let destinationVC = segue.destinationViewController as? ChanceAndCommunityViewController
             destinationVC!.boardName = self.boardNameField.text

@@ -111,12 +111,11 @@ class ChooseThemeViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "menuToGo" {
-            let destinationVC = segue.destinationViewController as? ChanceViewController
-            destinationVC?.boardSpace = myVars.gameBoard.getBoardSpace(0) as? MiscSpace
-
-            print("Going to Go")
-        } else if segue.identifier == "menuToBoardSpace",
+        for var space in myVars.monopoly_board {
+            space.dowload_image()
+        }
+        
+        if segue.identifier == "menuToBoardSpace",
             let destinationVC = segue.destinationViewController as? BoardSpaceViewController {
                 destinationVC.boardSpace = myVars.gameBoard.getBoardSpace(0)
         }
