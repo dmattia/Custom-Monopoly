@@ -20,6 +20,24 @@ class CreatorViewController : UIViewController, UICollectionViewDataSource, UICo
         
         let collectionViewLayout : UICollectionViewFlowLayout = self.boardSpaceCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         collectionViewLayout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
+        collectionViewLayout.headerReferenceSize = CGSize(width: 0, height: 80)
+    }
+    
+    func collectionView(collectionView: UICollectionView,
+        viewForSupplementaryElementOfKind kind: String,
+        atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+            switch kind {
+            case UICollectionElementKindSectionHeader:
+                let headerView =
+                collectionView.dequeueReusableSupplementaryViewOfKind(kind,
+                    withReuseIdentifier: "sectionHeader",
+                    forIndexPath: indexPath)
+                    as! CreatorHeaderView
+                headerView.headerLabel.text = "Section \(indexPath.section)"
+                return headerView
+            default:
+                assert(false, "Unexpected element kind")
+            }
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {

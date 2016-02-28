@@ -111,6 +111,7 @@
 		F1C949E81C78D600006A6A86 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C949E71C78D600006A6A86 /* SystemConfiguration.framework */; };
 		F1C949EC1C78EECE006A6A86 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C949EB1C78EECE006A6A86 /* DetailViewController.swift */; };
 		F1D2AC7A1C7BF3900039B4B7 /* DownloadingImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D2AC791C7BF3900039B4B7 /* DownloadingImagesViewController.swift */; };
+		F1F4E1231C83AD67002F65B0 /* CreatorHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F4E1221C83AD67002F65B0 /* CreatorHeaderView.swift */; };
 		F1FC69E31C7826BE006C2611 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FC69E21C7826BE006C2611 /* AppDelegate.swift */; };
 		F1FC69E81C7826BE006C2611 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1FC69E61C7826BE006C2611 /* Main.storyboard */; };
 		F1FC69EA1C7826BE006C2611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1FC69E91C7826BE006C2611 /* Assets.xcassets */; };
@@ -238,6 +239,7 @@
 		F1C949E71C78D600006A6A86 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F1C949EB1C78EECE006A6A86 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F1D2AC791C7BF3900039B4B7 /* DownloadingImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadingImagesViewController.swift; sourceTree = "<group>"; };
+		F1F4E1221C83AD67002F65B0 /* CreatorHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorHeaderView.swift; sourceTree = "<group>"; };
 		F1FC69DF1C7826BE006C2611 /* Custom-Monopoly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Custom-Monopoly.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1FC69E21C7826BE006C2611 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1FC69E71C7826BE006C2611 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				F1A65C4C1C80BCD800144718 /* CreatorViewController.swift */,
+				F1F4E1221C83AD67002F65B0 /* CreatorHeaderView.swift */,
 				F15917651C791BEE001B9AFB /* NewNameViewController.swift */,
 				F15917671C794D5D001B9AFB /* ChanceAndCommunityViewController.swift */,
 				F15917941C79E3EE001B9AFB /* TwoPropertyViewController.swift */,
@@ -725,6 +728,7 @@
 				F15917521C7916A3001B9AFB /* Menu.swift in Sources */,
 				F159174B1C7916A3001B9AFB /* MaterialRadius.swift in Sources */,
 				F1C949C61C787256006A6A86 /* CoreImageMotionBlurTransitionView.m in Sources */,
+				F1F4E1231C83AD67002F65B0 /* CreatorHeaderView.swift in Sources */,
 				F1C949CC1C787261006A6A86 /* UIViewController+CoreImageTransition.m in Sources */,
 				F15917351C7916A3001B9AFB /* Material+UIFont.swift in Sources */,
 				F1C949D81C78962F006A6A86 /* Player.swift in Sources */,

@@ -473,10 +473,15 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FjN-B5-DAh">
                                 <rect key="frame" x="20" y="28" width="560" height="552"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewLayout key="collectionViewLayout" id="Vf1-qB-vWI" customClass="KTCenterFlowLayout"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nzq-8T-GUf">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCellId" id="Nst-FT-ip8">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                        <rect key="frame" x="0.0" y="50" width="120" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
@@ -487,6 +492,27 @@
                                         <size key="customSize" width="120" height="120"/>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sectionHeader" id="LNu-pT-NVR" customClass="CreatorHeaderView" customModule="Custom_Monopoly" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="560" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Section Header" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gM-W5-sLi">
+                                            <rect key="frame" x="8" y="8" width="544" height="34"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="leadingMargin" secondItem="0gM-W5-sLi" secondAttribute="leading" id="9O1-h5-P6P"/>
+                                        <constraint firstAttribute="topMargin" secondItem="0gM-W5-sLi" secondAttribute="top" id="MeX-uP-fVW"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="0gM-W5-sLi" secondAttribute="trailing" id="Xpr-EE-T1p"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="0gM-W5-sLi" secondAttribute="bottom" id="pra-xk-STv"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="headerLabel" destination="0gM-W5-sLi" id="dKA-j2-v2e"/>
+                                    </connections>
+                                </collectionReusableView>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
