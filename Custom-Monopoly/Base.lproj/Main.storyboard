@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tgn-se-5aX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZJM-aR-24C">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -457,6 +457,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fb6-Wc-Pkk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1868" y="-171"/>
+        </scene>
+        <!--Creator View Controller-->
+        <scene sceneID="NEc-iD-Aih">
+            <objects>
+                <viewController id="ZJM-aR-24C" customClass="CreatorViewController" customModule="Custom_Monopoly" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AYn-C2-L0c"/>
+                        <viewControllerLayoutGuide type="bottom" id="ESe-Iq-R3h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GnU-Bp-wQ4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FjN-B5-DAh">
+                                <rect key="frame" x="20" y="28" width="560" height="552"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewLayout key="collectionViewLayout" id="Vf1-qB-vWI" customClass="KTCenterFlowLayout"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCellId" id="Nst-FT-ip8">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <size key="customSize" width="120" height="120"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ESe-Iq-R3h" firstAttribute="top" secondItem="FjN-B5-DAh" secondAttribute="bottom" constant="20" id="QTX-tH-wgs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FjN-B5-DAh" secondAttribute="trailing" id="dTN-vj-XXB"/>
+                            <constraint firstItem="FjN-B5-DAh" firstAttribute="top" secondItem="AYn-C2-L0c" secondAttribute="bottom" constant="8" id="xG3-ss-uzN"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="FjN-B5-DAh" secondAttribute="leading" id="zE0-uJ-s1W"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="boardSpaceCollectionView" destination="FjN-B5-DAh" id="yMP-qv-Egn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2D4-9f-N8V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1868" y="567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Egm-V3-Qei">

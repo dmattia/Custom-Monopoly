@@ -32,11 +32,12 @@ class ChooseThemeViewController: UIViewController, UITableViewDelegate, UITableV
         let ref = Firebase(url:"https://blistering-fire-9767.firebaseio.com/")
         ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
             self.data = snapshot.children.allObjects
-            for var row in 1...self.data!.count {
+            let imageCount = self.data!.count
+            for _ in 1...imageCount {
                 self.images.append(UIImage())
             }
             
-            for var row in 1...self.data!.count {
+            for row in 1...imageCount {
                 let snap : FDataSnapshot = self.data![row-1] as! FDataSnapshot
                 let dict = snap.value as! NSDictionary
                 if let imageURL = dict["display_image"] as? String {

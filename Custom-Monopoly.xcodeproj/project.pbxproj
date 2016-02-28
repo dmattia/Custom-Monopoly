@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5330BD4C5356026AA1CDAE65 /* Pods_Custom_Monopoly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058FCBA658BB1F4884C08E8B /* Pods_Custom_Monopoly.framework */; };
 		F13CD7071C7BFBE4006D918C /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F13CD7061C7BFBE4006D918C /* Firebase.framework */; };
 		F13CD7191C7BFBF9006D918C /* AWSAPIGateway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F13CD7081C7BFBF9006D918C /* AWSAPIGateway.framework */; };
 		F13CD71A1C7BFBF9006D918C /* AWSAutoScaling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F13CD7091C7BFBF9006D918C /* AWSAutoScaling.framework */; };
@@ -89,6 +90,7 @@
 		F15917951C79E3EE001B9AFB /* TwoPropertyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15917941C79E3EE001B9AFB /* TwoPropertyViewController.swift */; };
 		F15917971C7A0D24001B9AFB /* PickThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15917961C7A0D24001B9AFB /* PickThemeCell.swift */; };
 		F15917991C7BB478001B9AFB /* BoardSpaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15917981C7BB478001B9AFB /* BoardSpaceViewController.swift */; };
+		F1A65C4D1C80BCD800144718 /* CreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A65C4C1C80BCD800144718 /* CreatorViewController.swift */; };
 		F1C949B61C787245006A6A86 /* CoreImageBlurTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C949B51C787245006A6A86 /* CoreImageBlurTransition.m */; };
 		F1C949C41C787256006A6A86 /* CoreImageBlurTransitionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C949B81C787256006A6A86 /* CoreImageBlurTransitionView.m */; };
 		F1C949C51C787256006A6A86 /* CoreImageMotionBlurTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C949BA1C787256006A6A86 /* CoreImageMotionBlurTransition.m */; };
@@ -119,6 +121,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		058FCBA658BB1F4884C08E8B /* Pods_Custom_Monopoly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Custom_Monopoly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5685609951A0325D006719C3 /* Pods-Custom-Monopoly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Custom-Monopoly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Custom-Monopoly/Pods-Custom-Monopoly.release.xcconfig"; sourceTree = "<group>"; };
 		F13CD7061C7BFBE4006D918C /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
 		F13CD7081C7BFBF9006D918C /* AWSAPIGateway.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSAPIGateway.framework; sourceTree = "<group>"; };
 		F13CD7091C7BFBF9006D918C /* AWSAutoScaling.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSAutoScaling.framework; sourceTree = "<group>"; };
@@ -202,6 +206,8 @@
 		F15917941C79E3EE001B9AFB /* TwoPropertyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoPropertyViewController.swift; sourceTree = "<group>"; };
 		F15917961C7A0D24001B9AFB /* PickThemeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickThemeCell.swift; sourceTree = "<group>"; };
 		F15917981C7BB478001B9AFB /* BoardSpaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardSpaceViewController.swift; sourceTree = "<group>"; };
+		F1961340392D5BFFD1D864ED /* Pods-Custom-Monopoly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Custom-Monopoly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Custom-Monopoly/Pods-Custom-Monopoly.debug.xcconfig"; sourceTree = "<group>"; };
+		F1A65C4C1C80BCD800144718 /* CreatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorViewController.swift; sourceTree = "<group>"; };
 		F1C949B41C78723A006A6A86 /* CoreImageBlurTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreImageBlurTransition.h; sourceTree = "<group>"; };
 		F1C949B51C787245006A6A86 /* CoreImageBlurTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreImageBlurTransition.m; sourceTree = "<group>"; };
 		F1C949B71C78724C006A6A86 /* CoreImageBlurTransitionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreImageBlurTransitionView.h; sourceTree = "<group>"; };
@@ -275,12 +281,30 @@
 				F1C949E01C78D5D6006A6A86 /* libicucore.tbd in Frameworks */,
 				F13CD71D1C7BFBF9006D918C /* AWSDynamoDB.framework in Frameworks */,
 				F1C949D41C787E8C006A6A86 /* QuartzCore.framework in Frameworks */,
+				5330BD4C5356026AA1CDAE65 /* Pods_Custom_Monopoly.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		399885C6EB6659BEC3CF9CE0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F1961340392D5BFFD1D864ED /* Pods-Custom-Monopoly.debug.xcconfig */,
+				5685609951A0325D006719C3 /* Pods-Custom-Monopoly.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C41783220EAA3ED34370EB75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				058FCBA658BB1F4884C08E8B /* Pods_Custom_Monopoly.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F15916F11C791663001B9AFB /* Material */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,6 +382,7 @@
 		F15917641C791BCD001B9AFB /* CreateViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F1A65C4C1C80BCD800144718 /* CreatorViewController.swift */,
 				F15917651C791BEE001B9AFB /* NewNameViewController.swift */,
 				F15917671C794D5D001B9AFB /* ChanceAndCommunityViewController.swift */,
 				F15917941C79E3EE001B9AFB /* TwoPropertyViewController.swift */,
@@ -428,6 +453,8 @@
 			children = (
 				F1FC69E11C7826BE006C2611 /* Custom-Monopoly */,
 				F1FC69E01C7826BE006C2611 /* Products */,
+				399885C6EB6659BEC3CF9CE0 /* Pods */,
+				C41783220EAA3ED34370EB75 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -520,9 +547,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1FC69F11C7826BE006C2611 /* Build configuration list for PBXNativeTarget "Custom-Monopoly" */;
 			buildPhases = (
+				0B98FEC00DF5AE95DC0A40AF /* Check Pods Manifest.lock */,
 				F1FC69DB1C7826BE006C2611 /* Sources */,
 				F1FC69DC1C7826BE006C2611 /* Frameworks */,
 				F1FC69DD1C7826BE006C2611 /* Resources */,
+				3151C15BD78686E6C30B1012 /* Embed Pods Frameworks */,
+				465A620D19E7B55A5947004C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -584,6 +614,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0B98FEC00DF5AE95DC0A40AF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3151C15BD78686E6C30B1012 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Custom-Monopoly/Pods-Custom-Monopoly-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		465A620D19E7B55A5947004C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Custom-Monopoly/Pods-Custom-Monopoly-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F1FC69DB1C7826BE006C2611 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -632,6 +710,7 @@
 				F15917341C7916A3001B9AFB /* Material+String.swift in Sources */,
 				F1C949DA1C7897F0006A6A86 /* globals.swift in Sources */,
 				F159175D1C7916A3001B9AFB /* SearchBarView.swift in Sources */,
+				F1A65C4D1C80BCD800144718 /* CreatorViewController.swift in Sources */,
 				F15917451C7916A3001B9AFB /* MaterialGravity.swift in Sources */,
 				F15917421C7916A3001B9AFB /* MaterialDepth.swift in Sources */,
 				F15917541C7916A3001B9AFB /* NavigationBarView.swift in Sources */,
@@ -771,6 +850,7 @@
 		};
 		F1FC69F21C7826BE006C2611 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1961340392D5BFFD1D864ED /* Pods-Custom-Monopoly.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -792,6 +872,7 @@
 		};
 		F1FC69F31C7826BE006C2611 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5685609951A0325D006719C3 /* Pods-Custom-Monopoly.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
