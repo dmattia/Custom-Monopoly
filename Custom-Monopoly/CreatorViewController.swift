@@ -17,6 +17,9 @@ class CreatorViewController : UIViewController, UICollectionViewDataSource, UICo
         
         self.boardSpaceCollectionView.delegate = self
         self.boardSpaceCollectionView.dataSource = self
+        
+        let collectionViewLayout : UICollectionViewFlowLayout = self.boardSpaceCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        collectionViewLayout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -26,14 +29,22 @@ class CreatorViewController : UIViewController, UICollectionViewDataSource, UICo
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return random() % 3 + 2
     }
     
     func collectionView(collectionView: UICollectionView, canMoveItemAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
     
+    func collectionView(collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+            let screenWidth = UIScreen.mainScreen().bounds.width
+            let imageWidth = screenWidth / 5
+            return CGSize(width: imageWidth, height: imageWidth)
+    }
+    
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 5
+        return 20
     }
 }
