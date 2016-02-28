@@ -20,7 +20,7 @@ class CreatorViewController : UIViewController, UICollectionViewDataSource, UICo
         
         let collectionViewLayout : UICollectionViewFlowLayout = self.boardSpaceCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         collectionViewLayout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
-        collectionViewLayout.headerReferenceSize = CGSize(width: 0, height: 80)
+        collectionViewLayout.headerReferenceSize = CGSize(width: 0, height: 30)
     }
     
     func collectionView(collectionView: UICollectionView,

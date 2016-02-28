@@ -432,31 +432,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <segue destination="hvE-Ky-DNq" kind="show" identifier="NameToTwo" id="lpT-1o-7N1"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I4X-Fi-dOB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1868" y="-879"/>
-        </scene>
-        <!--Two Property View Controller-->
-        <scene sceneID="FsF-92-phG">
-            <objects>
-                <viewController id="hvE-Ky-DNq" customClass="TwoPropertyViewController" customModule="Custom_Monopoly" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="QIc-oV-uMD"/>
-                        <viewControllerLayoutGuide type="bottom" id="78V-rM-otw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Snb-MN-paV">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fb6-Wc-Pkk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1868" y="-171"/>
         </scene>
         <!--Creator View Controller-->
         <scene sceneID="NEc-iD-Aih">
@@ -497,17 +476,18 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Section Header" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gM-W5-sLi">
-                                            <rect key="frame" x="8" y="8" width="544" height="34"/>
+                                            <rect key="frame" x="8" y="0.0" width="544" height="50"/>
+                                            <color key="backgroundColor" red="0.97647058819999999" green="0.14901960780000001" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="leadingMargin" secondItem="0gM-W5-sLi" secondAttribute="leading" id="9O1-h5-P6P"/>
-                                        <constraint firstAttribute="topMargin" secondItem="0gM-W5-sLi" secondAttribute="top" id="MeX-uP-fVW"/>
+                                        <constraint firstItem="0gM-W5-sLi" firstAttribute="top" secondItem="LNu-pT-NVR" secondAttribute="topMargin" constant="-8" id="QiN-Sf-hSF"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="0gM-W5-sLi" secondAttribute="bottom" constant="-8" id="Rdw-p8-Quh"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="0gM-W5-sLi" secondAttribute="trailing" id="Xpr-EE-T1p"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="0gM-W5-sLi" secondAttribute="bottom" id="pra-xk-STv"/>
                                     </constraints>
                                     <connections>
                                         <outlet property="headerLabel" destination="0gM-W5-sLi" id="dKA-j2-v2e"/>
@@ -529,7 +509,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2D4-9f-N8V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1868" y="567"/>
+            <point key="canvasLocation" x="1868" y="-171"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Egm-V3-Qei">

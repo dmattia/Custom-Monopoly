@@ -83,11 +83,9 @@
 		F15917611C7916A3001B9AFB /* TextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15917321C7916A3001B9AFB /* TextStorage.swift */; };
 		F15917621C7916A3001B9AFB /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15917331C7916A3001B9AFB /* TextView.swift */; };
 		F15917661C791BEE001B9AFB /* NewNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15917651C791BEE001B9AFB /* NewNameViewController.swift */; };
-		F15917681C794D5D001B9AFB /* ChanceAndCommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15917671C794D5D001B9AFB /* ChanceAndCommunityViewController.swift */; };
 		F159176B1C79B2EC001B9AFB /* ChooseThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F159176A1C79B2EC001B9AFB /* ChooseThemeViewController.swift */; };
 		F15917911C79C8C9001B9AFB /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F15917901C79C8C9001B9AFB /* libsqlite3.tbd */; };
 		F15917931C79C8D6001B9AFB /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F15917921C79C8D6001B9AFB /* libz.tbd */; };
-		F15917951C79E3EE001B9AFB /* TwoPropertyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15917941C79E3EE001B9AFB /* TwoPropertyViewController.swift */; };
 		F15917971C7A0D24001B9AFB /* PickThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15917961C7A0D24001B9AFB /* PickThemeCell.swift */; };
 		F15917991C7BB478001B9AFB /* BoardSpaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15917981C7BB478001B9AFB /* BoardSpaceViewController.swift */; };
 		F1A65C4D1C80BCD800144718 /* CreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A65C4C1C80BCD800144718 /* CreatorViewController.swift */; };
@@ -112,6 +110,7 @@
 		F1C949EC1C78EECE006A6A86 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C949EB1C78EECE006A6A86 /* DetailViewController.swift */; };
 		F1D2AC7A1C7BF3900039B4B7 /* DownloadingImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D2AC791C7BF3900039B4B7 /* DownloadingImagesViewController.swift */; };
 		F1F4E1231C83AD67002F65B0 /* CreatorHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F4E1221C83AD67002F65B0 /* CreatorHeaderView.swift */; };
+		F1F4E1271C83B05A002F65B0 /* CreatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F4E1261C83B05A002F65B0 /* CreatorCell.swift */; };
 		F1FC69E31C7826BE006C2611 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FC69E21C7826BE006C2611 /* AppDelegate.swift */; };
 		F1FC69E81C7826BE006C2611 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1FC69E61C7826BE006C2611 /* Main.storyboard */; };
 		F1FC69EA1C7826BE006C2611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1FC69E91C7826BE006C2611 /* Assets.xcassets */; };
@@ -200,11 +199,9 @@
 		F15917321C7916A3001B9AFB /* TextStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStorage.swift; sourceTree = "<group>"; };
 		F15917331C7916A3001B9AFB /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		F15917651C791BEE001B9AFB /* NewNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewNameViewController.swift; sourceTree = "<group>"; };
-		F15917671C794D5D001B9AFB /* ChanceAndCommunityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChanceAndCommunityViewController.swift; sourceTree = "<group>"; };
 		F159176A1C79B2EC001B9AFB /* ChooseThemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseThemeViewController.swift; sourceTree = "<group>"; };
 		F15917901C79C8C9001B9AFB /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		F15917921C79C8D6001B9AFB /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		F15917941C79E3EE001B9AFB /* TwoPropertyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoPropertyViewController.swift; sourceTree = "<group>"; };
 		F15917961C7A0D24001B9AFB /* PickThemeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickThemeCell.swift; sourceTree = "<group>"; };
 		F15917981C7BB478001B9AFB /* BoardSpaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardSpaceViewController.swift; sourceTree = "<group>"; };
 		F1961340392D5BFFD1D864ED /* Pods-Custom-Monopoly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Custom-Monopoly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Custom-Monopoly/Pods-Custom-Monopoly.debug.xcconfig"; sourceTree = "<group>"; };
@@ -240,6 +237,7 @@
 		F1C949EB1C78EECE006A6A86 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F1D2AC791C7BF3900039B4B7 /* DownloadingImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadingImagesViewController.swift; sourceTree = "<group>"; };
 		F1F4E1221C83AD67002F65B0 /* CreatorHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorHeaderView.swift; sourceTree = "<group>"; };
+		F1F4E1261C83B05A002F65B0 /* CreatorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorCell.swift; sourceTree = "<group>"; };
 		F1FC69DF1C7826BE006C2611 /* Custom-Monopoly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Custom-Monopoly.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1FC69E21C7826BE006C2611 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1FC69E71C7826BE006C2611 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -386,9 +384,8 @@
 			children = (
 				F1A65C4C1C80BCD800144718 /* CreatorViewController.swift */,
 				F1F4E1221C83AD67002F65B0 /* CreatorHeaderView.swift */,
+				F1F4E1261C83B05A002F65B0 /* CreatorCell.swift */,
 				F15917651C791BEE001B9AFB /* NewNameViewController.swift */,
-				F15917671C794D5D001B9AFB /* ChanceAndCommunityViewController.swift */,
-				F15917941C79E3EE001B9AFB /* TwoPropertyViewController.swift */,
 			);
 			name = CreateViewControllers;
 			sourceTree = "<group>";
@@ -677,6 +674,7 @@
 				F1FC6A031C786122006C2611 /* MenuViewController.swift in Sources */,
 				F15917391C7916A3001B9AFB /* Material+UIImage+Network.swift in Sources */,
 				F159174E1C7916A3001B9AFB /* MaterialTableViewCell.swift in Sources */,
+				F1F4E1271C83B05A002F65B0 /* CreatorCell.swift in Sources */,
 				F15917011C791697001B9AFB /* FlatButton.swift in Sources */,
 				F15917561C7916A3001B9AFB /* RaisedButton.swift in Sources */,
 				F159173E1C7916A3001B9AFB /* MaterialBasicAnimation.swift in Sources */,
@@ -696,8 +694,6 @@
 				F1C949D21C787E40006A6A86 /* RightToLeftSegue.swift in Sources */,
 				F15917601C7916A3001B9AFB /* TextField.swift in Sources */,
 				F159175F1C7916A3001B9AFB /* Text.swift in Sources */,
-				F15917951C79E3EE001B9AFB /* TwoPropertyViewController.swift in Sources */,
-				F15917681C794D5D001B9AFB /* ChanceAndCommunityViewController.swift in Sources */,
 				F15917001C791697001B9AFB /* FabButton.swift in Sources */,
 				F1C949B61C787245006A6A86 /* CoreImageBlurTransition.m in Sources */,
 				F159173A1C7916A3001B9AFB /* Material+UIImage+PhotoLibrary.swift in Sources */,
