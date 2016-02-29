@@ -70,7 +70,10 @@ class CreatorViewController : UIViewController, UICollectionViewDataSource, UICo
     }
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = self.boardSpaceCollectionView.dequeueReusableCellWithReuseIdentifier("collectionCellId", forIndexPath: indexPath)
+        let cell = self.boardSpaceCollectionView.dequeueReusableCellWithReuseIdentifier("collectionCellId", forIndexPath: indexPath) as! CreatorCell
+        
+        cell.nameLabel.text = "Hello"
+        cell.backgroundColor = MaterialColor.blue.base
         
         return cell
     }
@@ -87,9 +90,8 @@ class CreatorViewController : UIViewController, UICollectionViewDataSource, UICo
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
             let frameWidth = self.boardSpaceCollectionView.frame.width
-            //let screenWidth = UIScreen.mainScreen().bounds.width
             let imageWidth = frameWidth / 5
-            return CGSize(width: imageWidth, height: imageWidth)
+            return CGSize(width: imageWidth, height: imageWidth * 1.25)
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {

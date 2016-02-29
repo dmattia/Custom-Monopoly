@@ -6,8 +6,9 @@
 //  Copyright © 2016 David Mattia. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class CreatorCell: UICollectionViewCell {
-    
+    @IBOutlet weak var cellImage: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
 }
