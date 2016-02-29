@@ -463,14 +463,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_holder" translatesAutoresizingMaskIntoConstraints="NO" id="XX8-Jc-PXB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="121" height="101"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="image_holder" translatesAutoresizingMaskIntoConstraints="NO" id="XX8-Jc-PXB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="121" height="88"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Property Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Brv-Ob-g1G">
-                                                    <rect key="frame" x="2" y="99" width="116" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="OQh-iB-Dpd"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Property Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Brv-Ob-g1G">
+                                                    <rect key="frame" x="2" y="88" width="116" height="32"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -484,7 +481,7 @@
                                             <constraint firstItem="XX8-Jc-PXB" firstAttribute="top" secondItem="Nst-FT-ip8" secondAttribute="topMargin" constant="-8" id="6UC-5f-L3f"/>
                                             <constraint firstItem="XX8-Jc-PXB" firstAttribute="leading" secondItem="Nst-FT-ip8" secondAttribute="leadingMargin" constant="-8" id="NiZ-tB-i4Y"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="Brv-Ob-g1G" secondAttribute="bottom" constant="-8" id="ms9-zY-Mfd"/>
-                                            <constraint firstItem="Brv-Ob-g1G" firstAttribute="top" secondItem="XX8-Jc-PXB" secondAttribute="bottom" constant="-2" id="paH-xV-xeI"/>
+                                            <constraint firstItem="Brv-Ob-g1G" firstAttribute="top" secondItem="XX8-Jc-PXB" secondAttribute="bottom" id="mwR-Up-FUY"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="XX8-Jc-PXB" secondAttribute="trailing" constant="-9" id="pcl-zK-x6K"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="Brv-Ob-g1G" secondAttribute="trailing" constant="-6" id="uxd-b3-pxe"/>
                                         </constraints>

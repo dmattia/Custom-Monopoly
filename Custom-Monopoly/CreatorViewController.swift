@@ -34,7 +34,8 @@ class CreatorViewController : UIViewController, UICollectionViewDataSource, UICo
                     forIndexPath: indexPath)
                     as! CreatorHeaderView
                 headerView.headerLabel.backgroundColor = MaterialColor.blue.base
-                headerView.headerLabel.text = "Section \(indexPath.section)"
+                headerView.headerLabel.text = myVars.gameSets[indexPath.section].getName()
+                headerView.headerLabel.backgroundColor = myVars.gameSets[indexPath.section].getColor()
                 return headerView
             default:
                 assert(false, "Unexpected element kind")
@@ -53,7 +54,6 @@ class CreatorViewController : UIViewController, UICollectionViewDataSource, UICo
             
             let itemsInSection = self.boardSpaceCollectionView.numberOfItemsInSection(section)
             let frameWidth = self.boardSpaceCollectionView.frame.width
-            //let screenWidth = UIScreen.mainScreen().bounds.width
             let imageWidth = (frameWidth / 4)
             let left_margin = (frameWidth - imageWidth * CGFloat(itemsInSection)) / 2.0
             
@@ -81,8 +81,9 @@ class CreatorViewController : UIViewController, UICollectionViewDataSource, UICo
         cell.nameLabel.text = myVars.gameSets[indexPath.section].getNameAtIndex(indexPath.row)
         cell.nameLabel.minimumScaleFactor = 0.3
         cell.nameLabel.adjustsFontSizeToFitWidth = true
-        cell.nameLabel.numberOfLines = 1
-        cell.backgroundColor = MaterialColor.blue.base
+        cell.nameLabel.numberOfLines = 2
+        //cell.backgroundColor = MaterialColor.blue.base
+        cell.backgroundColor = myVars.gameSets[indexPath.section].getColor()
         
         return cell
     }

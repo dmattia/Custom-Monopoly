@@ -13,13 +13,23 @@ import UIKit
 class BoardSpaceSet {
     private var spaces : [BoardSpace]
     private var name : String
+    private var color : UIColor
     
-    init(name : String, space_indices : [Int]) {
+    init(name : String, space_indices : [Int], color : UIColor) {
         self.name = name
         self.spaces = []
         for space_index in space_indices {
             self.spaces.append(myVars.gameBoard.getBoardSpace(space_index))
         }
+        self.color = color
+    }
+    
+    func getColor() -> UIColor {
+        return self.color
+    }
+    
+    func getName() -> String {
+        return self.name
     }
     
     func getNumberOfSpacesInSet() -> Int {
