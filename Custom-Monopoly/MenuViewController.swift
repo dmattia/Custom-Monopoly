@@ -16,6 +16,8 @@ class MenuViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        myVars.gameBoard.saveToFirebase()
+        
         stepper.minimumValue = 1.00
         stepper.maximumValue = 4.00
         stepper.stepValue = 1.00

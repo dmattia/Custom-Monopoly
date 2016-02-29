@@ -79,7 +79,7 @@ class Property: Ownable {
     var color : UIColor
     var owner : Player?
     
-    init(name: String, cost: Int, index: Int, color: UIColor, image_location: String = "Harry Potter/Harry Potter") {
+    init(name: String, cost: Int, index: Int, color: UIColor, image_location: String = "Harry Potter/harry.jpg") {
         self.space_name = name
         self.price = cost
         self.board_index = index
@@ -98,7 +98,7 @@ class Railroad : Ownable {
     var price : Int
     var owner : Player?
     
-    init(name: String, cost: Int, index: Int, image_location : String = "Harry Potter/Harry Potter") {
+    init(name: String, cost: Int, index: Int, image_location : String = "Harry Potter/harry.jpg") {
         self.space_name = name
         self.price = cost
         self.board_index = index
@@ -114,7 +114,7 @@ class TaxSpace : BoardSpace {
     var image : UIImage?
     var price : Int
     
-    init(name: String, cost: Int, index: Int, image_location: String = "Harry Potter/Harry Potter") {
+    init(name: String, cost: Int, index: Int, image_location: String = "Harry Potter/harry.jpg") {
         self.space_name = name
         self.price = cost
         self.board_index = index
@@ -129,7 +129,7 @@ class MiscSpace : BoardSpace {
     var image_location : String
     var image : UIImage?
     
-    init(name: String, index: Int, image_location : String = "Harry Potter/Harry Potter") {
+    init(name: String, index: Int, image_location : String = "Harry Potter/harry.jpg") {
         self.space_name = name
         self.board_index = index
         self.image_location = image_location

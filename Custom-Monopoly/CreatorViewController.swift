@@ -12,13 +12,10 @@ import KTCenterFlowLayout
 class CreatorViewController : UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var boardSpaceCollectionView: UICollectionView!
-    private let counts : [Int] = [2, 3, 2, 3, 2, 2, 3, 3]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        myVars.gameBoard.saveToFirebase()
-        
+                
         self.boardSpaceCollectionView.delegate = self
         self.boardSpaceCollectionView.dataSource = self
         
@@ -79,14 +76,14 @@ class CreatorViewController : UIViewController, UICollectionViewDataSource, UICo
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = self.boardSpaceCollectionView.dequeueReusableCellWithReuseIdentifier("collectionCellId", forIndexPath: indexPath) as! CreatorCell
         
-        cell.nameLabel.text = "Hello"
+        cell.nameLabel.text = myVars.gameSets[indexPath.section].getNameAtIndex(indexPath.row)
         cell.backgroundColor = MaterialColor.blue.base
         
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return counts[section]
+        return myVars.gameSets[section].getNumberOfSpacesInSet()
     }
     
     func collectionView(collectionView: UICollectionView, canMoveItemAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -102,6 +99,6 @@ class CreatorViewController : UIViewController, UICollectionViewDataSource, UICo
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return counts.count
+        return myVars.gameSets.count
     }
 }

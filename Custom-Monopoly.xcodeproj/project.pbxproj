@@ -111,6 +111,7 @@
 		F1D2AC7A1C7BF3900039B4B7 /* DownloadingImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D2AC791C7BF3900039B4B7 /* DownloadingImagesViewController.swift */; };
 		F1F4E1231C83AD67002F65B0 /* CreatorHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F4E1221C83AD67002F65B0 /* CreatorHeaderView.swift */; };
 		F1F4E1271C83B05A002F65B0 /* CreatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F4E1261C83B05A002F65B0 /* CreatorCell.swift */; };
+		F1F4E12B1C83E386002F65B0 /* BoardSpaceSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F4E12A1C83E386002F65B0 /* BoardSpaceSet.swift */; };
 		F1FC69E31C7826BE006C2611 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FC69E21C7826BE006C2611 /* AppDelegate.swift */; };
 		F1FC69E81C7826BE006C2611 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1FC69E61C7826BE006C2611 /* Main.storyboard */; };
 		F1FC69EA1C7826BE006C2611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1FC69E91C7826BE006C2611 /* Assets.xcassets */; };
@@ -238,6 +239,7 @@
 		F1D2AC791C7BF3900039B4B7 /* DownloadingImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadingImagesViewController.swift; sourceTree = "<group>"; };
 		F1F4E1221C83AD67002F65B0 /* CreatorHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorHeaderView.swift; sourceTree = "<group>"; };
 		F1F4E1261C83B05A002F65B0 /* CreatorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorCell.swift; sourceTree = "<group>"; };
+		F1F4E12A1C83E386002F65B0 /* BoardSpaceSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardSpaceSet.swift; sourceTree = "<group>"; };
 		F1FC69DF1C7826BE006C2611 /* Custom-Monopoly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Custom-Monopoly.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1FC69E21C7826BE006C2611 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1FC69E71C7826BE006C2611 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -483,6 +485,7 @@
 			children = (
 				F1FC69FA1C783484006C2611 /* Board.swift */,
 				F1FC69FC1C783682006C2611 /* BoardSpace.swift */,
+				F1F4E12A1C83E386002F65B0 /* BoardSpaceSet.swift */,
 				F1C949D51C789602006A6A86 /* Gameplay.swift */,
 				F1C949D71C78962F006A6A86 /* Player.swift */,
 			);
@@ -729,6 +732,7 @@
 				F15917351C7916A3001B9AFB /* Material+UIFont.swift in Sources */,
 				F1C949D81C78962F006A6A86 /* Player.swift in Sources */,
 				F15917491C7916A3001B9AFB /* MaterialLayout.swift in Sources */,
+				F1F4E12B1C83E386002F65B0 /* BoardSpaceSet.swift in Sources */,
 				F15917621C7916A3001B9AFB /* TextView.swift in Sources */,
 				F15917411C7916A3001B9AFB /* MaterialColor.swift in Sources */,
 				F159175C1C7916A3001B9AFB /* RobotoFont.swift in Sources */,
