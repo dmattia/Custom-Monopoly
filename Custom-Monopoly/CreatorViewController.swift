@@ -12,7 +12,7 @@ import KTCenterFlowLayout
 class CreatorViewController : UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var boardSpaceCollectionView: UICollectionView!
-    private let counts : [Int] = [2, 3, 2, 3, 2, 2, 3, 3, 4, 4, 4]
+    private let counts : [Int] = [2, 3, 2, 3, 2, 2, 3, 3]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +34,7 @@ class CreatorViewController : UIViewController, UICollectionViewDataSource, UICo
                     withReuseIdentifier: "sectionHeader",
                     forIndexPath: indexPath)
                     as! CreatorHeaderView
+                headerView.headerLabel.backgroundColor = MaterialColor.blue.base
                 headerView.headerLabel.text = "Section \(indexPath.section)"
                 return headerView
             default:
@@ -48,7 +49,7 @@ class CreatorViewController : UIViewController, UICollectionViewDataSource, UICo
             let itemsInSection = self.boardSpaceCollectionView.numberOfItemsInSection(section)
             let frameWidth = self.boardSpaceCollectionView.frame.width
             //let screenWidth = UIScreen.mainScreen().bounds.width
-            let imageWidth = (frameWidth / 5)
+            let imageWidth = (frameWidth / 4)
             let left_margin = (frameWidth - imageWidth * CGFloat(itemsInSection)) / 2.0
             
             print("The frame is \(frameWidth) wide")
@@ -58,9 +59,9 @@ class CreatorViewController : UIViewController, UICollectionViewDataSource, UICo
             print("-------------------------------------")
             
             return UIEdgeInsets(top: 20,
-                left: left_margin - 20,
+                left: left_margin - 30,
                 bottom: 20,
-                right: left_margin - 20)
+                right: left_margin - 30)
     }
     
     func collectionView(collectionView: UICollectionView,
@@ -90,7 +91,7 @@ class CreatorViewController : UIViewController, UICollectionViewDataSource, UICo
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
             let frameWidth = self.boardSpaceCollectionView.frame.width
-            let imageWidth = frameWidth / 5
+            let imageWidth = frameWidth / 4
             return CGSize(width: imageWidth, height: imageWidth * 1.25)
     }
     
