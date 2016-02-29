@@ -17,6 +17,8 @@ class CreatorViewController : UIViewController, UICollectionViewDataSource, UICo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        myVars.gameBoard.saveToFirebase()
+        
         self.boardSpaceCollectionView.delegate = self
         self.boardSpaceCollectionView.dataSource = self
         
@@ -40,6 +42,10 @@ class CreatorViewController : UIViewController, UICollectionViewDataSource, UICo
             default:
                 assert(false, "Unexpected element kind")
             }
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        print("Selected cell at: \(indexPath)")
     }
     
     func collectionView(collectionView: UICollectionView,

@@ -12,10 +12,10 @@ struct myVars {
     static var monopoly_board : [BoardSpace] = [
         MiscSpace(name: "Go", index: 0),
         Property(name: "Borgin and Burkes", cost: 60, index: 1, color: MaterialColor.brown.base),
-        MiscSpace(name: "Room of Requirement", index: 2),
+        MiscSpace(name: "Room of Requirement", index: 2, image_location: "Harry Potter/HP02"),
         Property(name: "Knockturn Alley", cost: 60, index: 3, color: MaterialColor.brown.base),
         TaxSpace(name: "Ministry of Magic Tax", cost: 200, index: 4),
-        Railroad(name: "Hufflepuff", cost: 200, index: 5),
+        Railroad(name: "Hufflepuff", cost: 200, index: 5, image_location: "Harry Potter/HP05"),
         Property(name: "Private Drive", cost: 100, index: 6, color: MaterialColor.blue.lighten2),
         MiscSpace(name: "Goblet of Fire", index: 7),
         Property(name: "The Burrow", cost: 100, index: 8, color: MaterialColor.blue.lighten2),
