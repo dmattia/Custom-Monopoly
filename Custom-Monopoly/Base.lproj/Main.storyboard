@@ -555,29 +555,20 @@
                                     <constraint firstAttribute="height" constant="83" id="xGT-oY-HrY"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_holder" translatesAutoresizingMaskIntoConstraints="NO" id="uCy-2A-aAs">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_holder" translatesAutoresizingMaskIntoConstraints="NO" id="uCy-2A-aAs">
                                 <rect key="frame" x="20" y="166" width="560" height="268"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="268" id="VEI-Xf-GDQ"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Harry Potter" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="2Zh-mx-qVG">
-                                <rect key="frame" x="20" y="105" width="560" height="52"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="fZl-sK-e4M"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="30"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$400" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmO-Ep-cdS">
-                                <rect key="frame" x="20" y="455" width="560" height="52"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="uEN-ZJ-FdE"/>
-                                </constraints>
+                                <rect key="frame" x="20" y="455" width="560" height="35.5"/>
                                 <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMB-eB-3Pw" customClass="MaterialButton">
-                                <rect key="frame" x="20" y="542" width="560" height="38"/>
+                                <rect key="frame" x="20" y="525.5" width="560" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="DiX-0C-Gv2"/>
@@ -590,29 +581,34 @@
                                     <action selector="saveClicked:" destination="wZ6-dI-y0Y" eventType="touchUpInside" id="eav-Rd-M36"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Park Place" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="R65-jG-52q">
+                                <rect key="frame" x="20" y="97" width="560" height="54"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="caI-8v-m53"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="35"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="uCy-2A-aAs" firstAttribute="centerY" secondItem="fDh-d7-Yq3" secondAttribute="centerY" id="38r-rM-hEy"/>
-                            <constraint firstItem="2Zh-mx-qVG" firstAttribute="top" secondItem="6r1-sE-vir" secondAttribute="bottom" constant="22" id="6TB-Lp-wOr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="uCy-2A-aAs" secondAttribute="trailing" id="CxN-TL-QfG"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="YMB-eB-3Pw" secondAttribute="leading" id="E7n-SN-iOE"/>
-                            <constraint firstItem="6r1-sE-vir" firstAttribute="top" secondItem="fDh-d7-Yq3" secondAttribute="topMargin" id="EBS-y4-plX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6r1-sE-vir" secondAttribute="trailing" constant="-20" id="RJP-Tn-O9e"/>
-                            <constraint firstItem="6r1-sE-vir" firstAttribute="leading" secondItem="fDh-d7-Yq3" secondAttribute="leadingMargin" constant="-20" id="T2h-bP-NPD"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="uCy-2A-aAs" secondAttribute="leading" id="T9O-vL-ro8"/>
-                            <constraint firstItem="gmO-Ep-cdS" firstAttribute="centerX" secondItem="fDh-d7-Yq3" secondAttribute="centerX" id="YAe-aQ-E3h"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="2Zh-mx-qVG" secondAttribute="leading" id="cWv-7v-zMg"/>
-                            <constraint firstItem="uCy-2A-aAs" firstAttribute="centerX" secondItem="fDh-d7-Yq3" secondAttribute="centerX" id="fTp-5g-Cfh"/>
-                            <constraint firstItem="gmO-Ep-cdS" firstAttribute="top" secondItem="uCy-2A-aAs" secondAttribute="bottom" constant="21" id="fVM-4s-bBL"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="2Zh-mx-qVG" secondAttribute="trailing" id="hNa-er-1hW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="YMB-eB-3Pw" secondAttribute="trailing" id="i7O-dw-cTH"/>
-                            <constraint firstItem="YMB-eB-3Pw" firstAttribute="top" secondItem="gmO-Ep-cdS" secondAttribute="bottom" constant="35" id="jbw-Hw-4Tc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gmO-Ep-cdS" secondAttribute="trailing" id="l0r-AY-FUe"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="gmO-Ep-cdS" secondAttribute="leading" id="luA-x8-vbE"/>
-                            <constraint firstItem="uCy-2A-aAs" firstAttribute="top" secondItem="2Zh-mx-qVG" secondAttribute="bottom" constant="9" id="oBW-kb-shY"/>
-                            <constraint firstItem="2Zh-mx-qVG" firstAttribute="centerX" secondItem="fDh-d7-Yq3" secondAttribute="centerX" id="qCE-vq-BYd"/>
-                            <constraint firstItem="YMB-eB-3Pw" firstAttribute="centerX" secondItem="fDh-d7-Yq3" secondAttribute="centerX" id="qtF-3N-tUH"/>
+                            <constraint firstItem="6r1-sE-vir" firstAttribute="leading" secondItem="fDh-d7-Yq3" secondAttribute="leadingMargin" constant="-20" id="9TH-ZV-znX"/>
+                            <constraint firstItem="gmO-Ep-cdS" firstAttribute="top" secondItem="uCy-2A-aAs" secondAttribute="bottom" constant="21" id="CXs-Ya-O44"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uCy-2A-aAs" secondAttribute="trailing" id="F12-TL-uHL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="R65-jG-52q" secondAttribute="trailing" id="G4T-aB-GRK"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="uCy-2A-aAs" secondAttribute="leading" id="McC-ht-irp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YMB-eB-3Pw" secondAttribute="trailing" id="Mu0-S3-ivL"/>
+                            <constraint firstItem="594-HK-CuY" firstAttribute="top" secondItem="YMB-eB-3Pw" secondAttribute="bottom" constant="36.5" id="PIi-yJ-Nxo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gmO-Ep-cdS" secondAttribute="trailing" id="WKm-g4-wyH"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="YMB-eB-3Pw" secondAttribute="leading" id="ZSE-87-HN3"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="R65-jG-52q" secondAttribute="leading" id="ZTN-iR-tkr"/>
+                            <constraint firstItem="uCy-2A-aAs" firstAttribute="top" secondItem="R65-jG-52q" secondAttribute="bottom" constant="15" id="d3U-J3-IRe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6r1-sE-vir" secondAttribute="trailing" constant="-20" id="fKt-pw-X2B"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="gmO-Ep-cdS" secondAttribute="leading" id="sns-pE-LLD"/>
+                            <constraint firstItem="6r1-sE-vir" firstAttribute="top" secondItem="fDh-d7-Yq3" secondAttribute="topMargin" id="tuc-dY-zQW"/>
+                            <constraint firstItem="R65-jG-52q" firstAttribute="top" secondItem="6r1-sE-vir" secondAttribute="bottom" constant="14" id="uWc-QA-27K"/>
+                            <constraint firstItem="YMB-eB-3Pw" firstAttribute="top" secondItem="gmO-Ep-cdS" secondAttribute="bottom" constant="35" id="xr1-K9-K3p"/>
                         </constraints>
                     </view>
                 </viewController>
