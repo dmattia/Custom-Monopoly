@@ -112,6 +112,7 @@
 		F1F4E1231C83AD67002F65B0 /* CreatorHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F4E1221C83AD67002F65B0 /* CreatorHeaderView.swift */; };
 		F1F4E1271C83B05A002F65B0 /* CreatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F4E1261C83B05A002F65B0 /* CreatorCell.swift */; };
 		F1F4E12B1C83E386002F65B0 /* BoardSpaceSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F4E12A1C83E386002F65B0 /* BoardSpaceSet.swift */; };
+		F1F4E12D1C83F87D002F65B0 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F4E12C1C83F87D002F65B0 /* PreviewViewController.swift */; };
 		F1FC69E31C7826BE006C2611 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FC69E21C7826BE006C2611 /* AppDelegate.swift */; };
 		F1FC69E81C7826BE006C2611 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1FC69E61C7826BE006C2611 /* Main.storyboard */; };
 		F1FC69EA1C7826BE006C2611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1FC69E91C7826BE006C2611 /* Assets.xcassets */; };
@@ -240,6 +241,7 @@
 		F1F4E1221C83AD67002F65B0 /* CreatorHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorHeaderView.swift; sourceTree = "<group>"; };
 		F1F4E1261C83B05A002F65B0 /* CreatorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorCell.swift; sourceTree = "<group>"; };
 		F1F4E12A1C83E386002F65B0 /* BoardSpaceSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardSpaceSet.swift; sourceTree = "<group>"; };
+		F1F4E12C1C83F87D002F65B0 /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		F1FC69DF1C7826BE006C2611 /* Custom-Monopoly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Custom-Monopoly.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1FC69E21C7826BE006C2611 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1FC69E71C7826BE006C2611 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				F1A65C4C1C80BCD800144718 /* CreatorViewController.swift */,
+				F1F4E12C1C83F87D002F65B0 /* PreviewViewController.swift */,
 				F1F4E1221C83AD67002F65B0 /* CreatorHeaderView.swift */,
 				F1F4E1261C83B05A002F65B0 /* CreatorCell.swift */,
 				F15917651C791BEE001B9AFB /* NewNameViewController.swift */,
@@ -707,6 +710,7 @@
 				F159175E1C7916A3001B9AFB /* SideNavigationViewController.swift in Sources */,
 				F159173C1C7916A3001B9AFB /* Material+UIImage+Size.swift in Sources */,
 				F1C949C51C787256006A6A86 /* CoreImageMotionBlurTransition.m in Sources */,
+				F1F4E12D1C83F87D002F65B0 /* PreviewViewController.swift in Sources */,
 				F1C949D61C789602006A6A86 /* Gameplay.swift in Sources */,
 				F15917511C7916A3001B9AFB /* MaterialView.swift in Sources */,
 				F15917341C7916A3001B9AFB /* Material+String.swift in Sources */,

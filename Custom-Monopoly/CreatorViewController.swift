@@ -43,6 +43,8 @@ class CreatorViewController : UIViewController, UICollectionViewDataSource, UICo
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         print("Selected cell at: \(indexPath)")
+        
+        self.performSegueWithIdentifier("showPreview", sender: nil)
     }
     
     func collectionView(collectionView: UICollectionView,
@@ -77,6 +79,9 @@ class CreatorViewController : UIViewController, UICollectionViewDataSource, UICo
         let cell = self.boardSpaceCollectionView.dequeueReusableCellWithReuseIdentifier("collectionCellId", forIndexPath: indexPath) as! CreatorCell
         
         cell.nameLabel.text = myVars.gameSets[indexPath.section].getNameAtIndex(indexPath.row)
+        cell.nameLabel.minimumScaleFactor = 0.3
+        cell.nameLabel.adjustsFontSizeToFitWidth = true
+        cell.nameLabel.numberOfLines = 1
         cell.backgroundColor = MaterialColor.blue.base
         
         return cell
@@ -84,10 +89,6 @@ class CreatorViewController : UIViewController, UICollectionViewDataSource, UICo
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return myVars.gameSets[section].getNumberOfSpacesInSet()
-    }
-    
-    func collectionView(collectionView: UICollectionView, canMoveItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
     }
     
     func collectionView(collectionView: UICollectionView,
