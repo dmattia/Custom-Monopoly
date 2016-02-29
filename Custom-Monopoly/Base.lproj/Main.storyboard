@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZJM-aR-24C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tgn-se-5aX">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -429,6 +429,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="ZJM-aR-24C" kind="show" identifier="nameToCreate" id="DpT-nc-g7R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I4X-Fi-dOB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -447,8 +450,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FjN-B5-DAh">
-                                <rect key="frame" x="20" y="28" width="560" height="552"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="20" y="0.0" width="560" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nzq-8T-GUf">
                                     <size key="itemSize" width="120" height="120"/>
                                     <size key="headerReferenceSize" width="50" height="50"/>
@@ -457,7 +460,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCellId" id="Nst-FT-ip8" customClass="CreatorCell" customModule="Custom_Monopoly" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="120" height="120"/>
+                                        <rect key="frame" x="0.0" y="114" width="120" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
@@ -493,7 +496,7 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sectionHeader" id="LNu-pT-NVR" customClass="CreatorHeaderView" customModule="Custom_Monopoly" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="560" height="50"/>
+                                    <rect key="frame" x="0.0" y="64" width="560" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Section Header" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gM-W5-sLi">
@@ -520,7 +523,7 @@
                         <constraints>
                             <constraint firstItem="ESe-Iq-R3h" firstAttribute="top" secondItem="FjN-B5-DAh" secondAttribute="bottom" constant="20" id="QTX-tH-wgs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FjN-B5-DAh" secondAttribute="trailing" id="dTN-vj-XXB"/>
-                            <constraint firstItem="FjN-B5-DAh" firstAttribute="top" secondItem="AYn-C2-L0c" secondAttribute="bottom" constant="8" id="xG3-ss-uzN"/>
+                            <constraint firstItem="FjN-B5-DAh" firstAttribute="top" secondItem="GnU-Bp-wQ4" secondAttribute="topMargin" id="ff9-gk-FM3"/>
                             <constraint firstAttribute="leadingMargin" secondItem="FjN-B5-DAh" secondAttribute="leading" id="zE0-uJ-s1W"/>
                         </constraints>
                     </view>

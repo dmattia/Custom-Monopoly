@@ -38,7 +38,9 @@ class NewNameViewController : UIViewController, UITextFieldDelegate {
         view.grid.views = [boardNameField]
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {        
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.performSegueWithIdentifier("nameToCreate", sender: nil)
+        
         return true
     }
     

@@ -23,6 +23,10 @@ class BoardSpaceSet {
         }
         self.color = color
     }
+
+    func getSpaces() -> [BoardSpace] {
+        return spaces
+    }
     
     func getColor() -> UIColor {
         return self.color
@@ -38,5 +42,5 @@ class BoardSpaceSet {
     
     func getNameAtIndex(index: Int) -> String {
         return spaces[index].space_name
-    }
+    }    
 }

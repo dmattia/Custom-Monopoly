@@ -53,15 +53,4 @@ struct myVars {
     ]
     static var gameBoard = Board(name: "Monopoly Board")
     static var gameplay = Gameplay()
-    
-    static var gameSets : [BoardSpaceSet] = [
-        BoardSpaceSet(name: "Brown Pieces", space_indices: [1, 3], color: MaterialColor.brown.base),
-        BoardSpaceSet(name: "Light Blue Pieces", space_indices: [6, 8, 9], color: MaterialColor.blue.lighten2),
-        BoardSpaceSet(name: "Purple Pieces", space_indices: [11, 13, 14], color: MaterialColor.purple.lighten1),
-        BoardSpaceSet(name: "Orange Pieces", space_indices: [16, 18, 19], color: MaterialColor.orange.base),
-        BoardSpaceSet(name: "Red Pieces", space_indices: [21, 23, 24], color: MaterialColor.red.base),
-        BoardSpaceSet(name: "Yellow Pieces", space_indices: [26, 27, 29], color: MaterialColor.yellow.darken2),
-        BoardSpaceSet(name: "Green Pieces", space_indices: [31, 32, 34], color: MaterialColor.green.base),
-        BoardSpaceSet(name: "Blue Pieces", space_indices: [37, 39], color: MaterialColor.blue.darken1)
-    ]
 }
