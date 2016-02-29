@@ -611,6 +611,12 @@
                             <constraint firstItem="YMB-eB-3Pw" firstAttribute="top" secondItem="gmO-Ep-cdS" secondAttribute="bottom" constant="35" id="xr1-K9-K3p"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="previewColorView" destination="6r1-sE-vir" id="pw9-tk-Jbu"/>
+                        <outlet property="previewCost" destination="gmO-Ep-cdS" id="Pgp-kQ-0ks"/>
+                        <outlet property="previewImage" destination="uCy-2A-aAs" id="DQ6-BD-oi4"/>
+                        <outlet property="previewName" destination="R65-jG-52q" id="O84-fO-NfI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gnx-NP-M2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

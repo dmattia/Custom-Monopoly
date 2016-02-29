@@ -40,6 +40,10 @@ class BoardSpaceSet {
         return spaces.count
     }
     
+    func getSpaceAtIndex(index : Int) -> BoardSpace {
+        return spaces[index]
+    }
+    
     func getNameAtIndex(index: Int) -> String {
         return spaces[index].space_name
     }    

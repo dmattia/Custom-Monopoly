@@ -79,6 +79,19 @@ class CreatorViewController : UIViewController, UICollectionViewDataSource, UICo
         self.performSegueWithIdentifier("showPreview", sender: nil)
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showPreview" {
+            let destinationVC = segue.destinationViewController as! PreviewViewController
+            
+            let clickedIndexPath = self.boardSpaceCollectionView.indexPathsForSelectedItems()?[0]
+            let spaceClicked = gameSets[clickedIndexPath!.section].getSpaceAtIndex(clickedIndexPath!.row)
+            
+            destinationVC.propertyColor = gameSets[clickedIndexPath!.section].getColor()
+            destinationVC.propertyName = spaceClicked.space_name
+            destinationVC.cost = (spaceClicked as? Ownable)?.price
+        }
+    }
+    
     func collectionView(collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
         insetForSectionAtIndex section: Int) -> UIEdgeInsets {
