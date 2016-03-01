@@ -9,25 +9,25 @@
 import UIKit
 
 class Gameplay {
-    var players : [Player]
-    var board : Board
-    var gameTurn : Int
-    var hasRolled : Bool
-    var movesLeftInTurn : Int
-    
+    var players: [Player]
+    var board: Board
+    var gameTurn: Int
+    var hasRolled: Bool
+    var movesLeftInTurn: Int
+
     func addPlayer(player: Player) {
         players.append(player)
     }
-    
+
     func getActivePlayer() -> Player {
         // Returns the player who's turn it currently is
         return players[gameTurn % players.count]
     }
-    
+
     func newTurn() {
         srandom(2)
         self.hasRolled = true
-        
+
         // Simulate a dice roll
         let randomValue = random() % 36 + 1
         if randomValue <= 1 {
@@ -54,10 +54,10 @@ class Gameplay {
             self.movesLeftInTurn = 12
         }
     }
-    
+
     init() {
         players = [Player]()
-        board = myVars.gameBoard
+        board = MyVars.gameBoard
         gameTurn = 0
         hasRolled = false
         movesLeftInTurn = 0

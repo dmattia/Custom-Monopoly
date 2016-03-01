@@ -90,16 +90,18 @@ public protocol CaptureSessionDelegate {
 	:name:	captureSessionFailedWithError
 	*/
 	optional func captureSessionFailedWithError(capture: CaptureSession, error: NSError)
-	
+
 	/**
 	:name:	captureSessionDidSwitchCameras
 	*/
-	optional func captureSessionDidSwitchCameras(capture: CaptureSession, position: AVCaptureDevicePosition)
+	optional func captureSessionDidSwitchCameras(capture: CaptureSession,
+        position: AVCaptureDevicePosition)
 	
 	/**
 	:name:	captureSessionWillSwitchCameras
 	*/
-	optional func captureSessionWillSwitchCameras(capture: CaptureSession, position: AVCaptureDevicePosition)
+	optional func captureSessionWillSwitchCameras(capture: CaptureSession,
+        position: AVCaptureDevicePosition)
 	
 	/**
 	:name:	captureStillImageAsynchronously

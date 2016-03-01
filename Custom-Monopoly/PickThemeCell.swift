@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PickThemeCell : MaterialTableViewCell {
+class PickThemeCell: MaterialTableViewCell {
     @IBOutlet weak var themeImageView: UIImageView!
     @IBOutlet weak var themeTitleLabel: UILabel!
 }

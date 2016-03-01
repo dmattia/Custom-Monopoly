@@ -11,10 +11,11 @@ import QuartzCore
 
 class RightToLeftSegue: UIStoryboardSegue {
     override func perform() {
-        let src: UIViewController = self.sourceViewController 
-        let dst: UIViewController = self.destinationViewController 
+        let src: UIViewController = self.sourceViewController
+        let dst: UIViewController = self.destinationViewController
         let transition: CATransition = CATransition()
-        let timeFunc : CAMediaTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        let timeFunc: CAMediaTimingFunction =
+            CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         transition.duration = 0.625
         transition.timingFunction = timeFunc
         transition.type = kCATransitionPush
@@ -23,4 +24,3 @@ class RightToLeftSegue: UIStoryboardSegue {
         src.navigationController!.pushViewController(dst, animated: true)
     }
 }
-
